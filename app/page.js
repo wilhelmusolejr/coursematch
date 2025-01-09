@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBook } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBook, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons"; // Import brand icons
 
 import cla from "../public/images/cla-1.png";
@@ -27,7 +27,7 @@ export default function Home() {
     <>
       {/* HEADER */}
       <div
-        className={`${poppins.className} header bg-red-200 min-h-screen flex flex-col `}
+        className={`${poppins.className} header min-h-screen flex flex-col `}
       >
         {/* NAVIGATOR */}
         <nav className="container p-5 shadow-sm shadow-black ">
@@ -50,7 +50,7 @@ export default function Home() {
             {/* main heading */}
             <div className="main-heading mb-8">
               <h1 className="text-3xl font-bold	tracking-wider">CourseMatch</h1>
-              <p className="capitalize font-light">
+              <p className="capitalize font-light text-sm">
                 Personalized course prediction system
               </p>
             </div>
@@ -206,7 +206,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-5">
             {/* item */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-gray-200">
+              <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
                 <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
               </div>
               <p>linkedin.com/wilhelmus</p>
@@ -214,9 +214,25 @@ export default function Home() {
 
             {/* item */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-gray-200"></div>
+              <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
+                <FontAwesomeIcon icon={faGlobe} /> {/* GitHub */}
+              </div>
               <p>wilhelmus.vercel.app</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* BANNER */}
+      <div
+        className={`${poppins.className} container px-5 py-20 secondary-color`}
+      >
+        <div className="text-center">
+          <h2 className="capitalize font-bold text-2xl mb-5">
+            Are you ready to know your course?
+          </h2>
+          <div className="inline-block px-6 py-3 rounded-3xl font-bold uppercase tracking-wider primary-color">
+            Get started
           </div>
         </div>
       </div>
