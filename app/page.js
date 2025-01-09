@@ -243,24 +243,90 @@ export default function Home() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
+      {/* FOOTER */}
+      <footer className={`${poppins.className} primary-color`}>
+        <div className="container px-5 py-10 flex flex-col gap-10">
+          {/*  */}
+          <div className="flex gap-5 flex-wrap">
+            {/* LOGO */}
+            <div className="logo">
+              <h1 className={`${coiny.className} text-lg tracking-wider`}>
+                CourseMatch
+              </h1>
+            </div>
+
+            <p className="font-light">
+              CourseMatch: Personalized Course Prediction System is designed to
+              help students at Western Mindanao State University discover their
+              ideal academic paths with ease.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="">
+            <h3 className="uppercase text-2xl font-semibold mb-5">
+              Quick links
+            </h3>
+            <ul className="flex gap-3 flex-col tracking-wider font-light">
+              <li>Home</li>
+              <li>Features</li>
+              <li>Courses</li>
+              <li>About Us</li>
+            </ul>
+          </div>
+
+          {/* Contact Information */}
+          <div className="">
+            <h3 className="uppercase text-2xl font-semibold mb-5">
+              Contact Information
+            </h3>
+            <div className="flex flex-wrap gap-5">
+              {/* item */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
+                  <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
+                </div>
+                <p>linkedin.com/wilhelmus</p>
+              </div>
+
+              {/* item */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
+                  <FontAwesomeIcon icon={faGlobe} /> {/* GitHub */}
+                </div>
+                <p>wilhelmus.vercel.app</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="">
+            <h3 className="uppercase text-2xl font-semibold mb-5">
+              Social Links
+            </h3>
+
+            <div className="flex flex-wrap gap-3">
+              {/* item */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
+                  <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
+                </div>
+              </div>
+              {/* item */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
+                  <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-10 text-center secondary-color">
+          <p>Discover your future today with CourseMatch!</p>
+        </div>
+      </footer>
     </>
   );
 }
