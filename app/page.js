@@ -6,8 +6,9 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons"; // Import brand
 
 import cla from "../public/images/cla-1.png";
 import aboutme from "../public/images/about-me.png";
+import logo from "../public/images/logo.png";
 
-import { Coiny, Poppins } from "next/font/google";
+import { Coiny } from "next/font/google";
 
 const coiny = Coiny({
   subsets: ["latin"], // Or other subsets as needed
@@ -15,26 +16,18 @@ const coiny = Coiny({
   display: "swap", // Important for performance
 });
 
-const poppins = Poppins({
-  subsets: ["latin"], // Or other subsets as needed
-  weight: "400", // Or other weights like '700', 'regular', etc.
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  display: "swap", // Important for performance
-});
-
 export default function Home() {
   return (
     <>
       {/* HEADER */}
-      <div
-        className={`${poppins.className} header min-h-screen flex flex-col `}
-      >
+      <div className={` header min-h-screen flex flex-col `}>
         {/* NAVIGATOR */}
         <nav className="container p-5 shadow-sm shadow-black ">
           {/* NAVIGATOR - CONTAINER */}
           <div className="nav-container flex justify-between items-center">
             {/* LOGO */}
-            <div className="logo ">
+            <div className="logo flex gap-3 items-center">
+              <Image src={logo} alt="My Image" width={35} height={35} />
               <h1 className={`${coiny.className} text-lg tracking-wider`}>
                 CourseMatch
               </h1>
@@ -72,7 +65,7 @@ export default function Home() {
       </div>
 
       {/* FEATURES */}
-      <div className={`${poppins.className} container px-5 py-10 text-black`}>
+      <div className={` container px-5 py-10 text-black`}>
         {/* Heading */}
         <div className="heading text-center my-10">
           <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
@@ -142,9 +135,7 @@ export default function Home() {
       </div>
 
       {/* COURSES */}
-      <div
-        className={`${poppins.className} container px-5 py-10 secondary-color`}
-      >
+      <div className={` container px-5 py-10 secondary-color`}>
         {/* Heading */}
         <div className="heading text-center my-10">
           <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
@@ -175,7 +166,7 @@ export default function Home() {
       </div>
 
       {/* ABOUT */}
-      <div className={`${poppins.className} container px-5 py-10 text-black`}>
+      <div className={` container px-5 py-10 text-black`}>
         {/* Heading */}
         <div className="heading text-center my-10">
           <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
@@ -224,9 +215,7 @@ export default function Home() {
       </div>
 
       {/* BANNER */}
-      <div
-        className={`${poppins.className} container px-5 py-20 secondary-color`}
-      >
+      <div className={` container px-5 py-20 secondary-color`}>
         <div className="text-center">
           <h2 className="capitalize font-bold text-2xl mb-5">
             Are you ready to know your course?
@@ -245,7 +234,7 @@ export default function Home() {
       <br />
 
       {/* FOOTER */}
-      <footer className={`${poppins.className} primary-color`}>
+      <footer className={` primary-color`}>
         <div className="container px-5 py-10 flex flex-col gap-10">
           {/*  */}
           <div className="flex gap-5 flex-wrap">
