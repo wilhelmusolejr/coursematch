@@ -15,7 +15,26 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: white;
+  /* background: var(--background); */
   font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  background-color: #aa0022;
+}
+
+.secondary-color {
+  background-color: #00448b;
+}
+
+.primary-color-light {
+  background-color: #fff4f6;
+}
+
+.primary-text-color {
+  color: #aa0022;
+}
+.secondary-text-color {
+  color: #00448b;
 }

@@ -1,101 +1,250 @@
 import Image from "next/image";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faBook } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons"; // Import brand icons
+
+import cla from "../public/images/cla-1.png";
+import aboutme from "../public/images/about-me.png";
+
+import { Coiny, Poppins } from "next/font/google";
+
+const coiny = Coiny({
+  subsets: ["latin"], // Or other subsets as needed
+  weight: "400", // Or other weights like '700', 'regular', etc.
+  display: "swap", // Important for performance
+});
+
+const poppins = Poppins({
+  subsets: ["latin"], // Or other subsets as needed
+  weight: "400", // Or other weights like '700', 'regular', etc.
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap", // Important for performance
+});
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* HEADER */}
+      <div
+        className={`${poppins.className} header bg-red-200 min-h-screen flex flex-col `}
+      >
+        {/* NAVIGATOR */}
+        <nav className="container p-5 shadow-sm shadow-black ">
+          {/* NAVIGATOR - CONTAINER */}
+          <div className="nav-container flex justify-between items-center">
+            {/* LOGO */}
+            <div className="logo ">
+              <h1 className={`${coiny.className} text-lg tracking-wider`}>
+                CourseMatch
+              </h1>
+            </div>
+            {/* BURGER */}
+            <FontAwesomeIcon icon={faBars} className=" w-8"></FontAwesomeIcon>
+          </div>
+        </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* content */}
+        <div className="header-container p-5 text-center flex-grow flex justify-center items-center">
+          <div className="bg-black py-10 px-5 rounded-xl">
+            {/* main heading */}
+            <div className="main-heading mb-8">
+              <h1 className="text-3xl font-bold	tracking-wider">CourseMatch</h1>
+              <p className="capitalize font-light">
+                Personalized course prediction system
+              </p>
+            </div>
+
+            <p className="text-left font-extralight mb-10">
+              Discover your ideal academic path with CourseMatch, an intelligent
+              system designed for Western Mindanao State University to predict
+              the perfect course for you based on your unique answers and
+              preferences.
+            </p>
+
+            <div className="">
+              <div className="inline-block px-6 py-3 rounded-3xl font-bold uppercase tracking-wider secondary-color">
+                Get started
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* FEATURES */}
+      <div className={`${poppins.className} container px-5 py-10 text-black`}>
+        {/* Heading */}
+        <div className="heading text-center my-10">
+          <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
+            Our main features
+          </div>
+          <h2 className="capitalize  font-bold text-2xl">
+            Our breakthrough features
+          </h2>
+        </div>
+
+        {/* list */}
+        <div className="flex flex-wrap gap-10">
+          {/* item */}
+          <div className="flex flex-col gap-3">
+            <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+              <FontAwesomeIcon
+                icon={faBook}
+                className=" w-4 secondary-text-color"
+              ></FontAwesomeIcon>
+            </div>
+            <h3 className="capitalize text-xl font-medium">
+              Course Prediction Engine
+            </h3>
+            <p className="font-light">
+              Accurately predicts the most suitable course for students based on
+              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
+              preferences).
+            </p>
+          </div>
+
+          {/* item */}
+          <div className="flex flex-col gap-3 secondary-color p-5 rounded-2xl text-white">
+            <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+              <FontAwesomeIcon
+                icon={faBook}
+                className=" w-4 secondary-text-color"
+              ></FontAwesomeIcon>
+            </div>
+            <h3 className="capitalize text-xl font-medium">
+              Downloadable Results{" "}
+            </h3>
+            <p className="font-extralight">
+              Accurately predicts the most suitable course for students based on
+              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
+              preferences).
+            </p>
+          </div>
+
+          {/* item */}
+          <div className="flex flex-col gap-3">
+            <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+              <FontAwesomeIcon
+                icon={faBook}
+                className=" w-4 secondary-text-color"
+              ></FontAwesomeIcon>
+            </div>
+            <h3 className="capitalize text-xl font-medium">
+              Course Prediction Engine
+            </h3>
+            <p className="font-light">
+              Accurately predicts the most suitable course for students based on
+              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
+              preferences).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* COURSES */}
+      <div
+        className={`${poppins.className} container px-5 py-10 secondary-color`}
+      >
+        {/* Heading */}
+        <div className="heading text-center my-10">
+          <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
+            Our main features
+          </div>
+          <h2 className="capitalize  font-bold text-2xl">
+            Our breakthrough features
+          </h2>
+        </div>
+
+        {/* list */}
+        <div className="flex flex-wrap  gap-10 items-center justify-center">
+          {/* item */}
+          <div className="bg-white p-5 rounded-xl w-52 h-52 flex items-center justify-center">
+            <Image src={cla} alt="My Image" />
+          </div>
+
+          {/* item */}
+          <div className="bg-white p-5 rounded-xl w-52 h-52 flex items-center justify-center">
+            <Image src={cla} alt="My Image" />
+          </div>
+
+          {/* item */}
+          <div className="bg-white p-5 rounded-xl w-52 h-52 flex items-center justify-center">
+            <Image src={cla} alt="My Image" />
+          </div>
+        </div>
+      </div>
+
+      {/* ABOUT */}
+      <div className={`${poppins.className} container px-5 py-10 text-black`}>
+        {/* Heading */}
+        <div className="heading text-center my-10">
+          <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
+            Who we are
+          </div>
+          <h2 className="capitalize  font-bold text-2xl">What Drives Us</h2>
+        </div>
+
+        <div className="flex flex-col gap-10">
+          <div className="">
+            <Image src={aboutme} alt="My Image" className="rounded-lg" />
+          </div>
+
+          <div className="">
+            <h3 className="capitalize text-xl font-medium">About me</h3>
+            <p className="font-light	leading-relaxed		">
+              Wilhelmus is a passionate full-stack web developer and designer
+              with a background in Computer Science. With expertise in Laravel,
+              the MERN stack, and a knack for creating intuitive user
+              interfaces, Wilhelmus brings innovative ideas to life. Known for
+              their dedication to crafting efficient and impactful digital
+              solutions, they thrive on building projects that solve real-world
+              problems, including personalized systems like course prediction
+              platforms.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-5">
+            {/* item */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-md bg-gray-200">
+                <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
+              </div>
+              <p>linkedin.com/wilhelmus</p>
+            </div>
+
+            {/* item */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-md bg-gray-200"></div>
+              <p>wilhelmus.vercel.app</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </>
   );
 }
