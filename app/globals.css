@@ -42,3 +42,20 @@ nav {
 .secondary-text-color {
   color: #00448b;
 }
+
+.header-container .container {
+  background-image: url("../public/images/header_background.png"); /* Use background-image */
+  background-size: cover; /* Or contain, depending on your needs */
+  background-repeat: no-repeat;
+  background-color: rgba(32, 32, 32, 0.8); /* Black with 50% opacity */
+  background-blend-mode: multiply; /* Blends the color with the image */
+}
+
+.banner {
+  background-image: url("../public/images/ccsbldg.png"); /* Use background-image */
+  background-size: cover; /* Or contain, depending on your needs */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 68, 139, 0.8); /* Black with 50% opacity */
+  background-blend-mode: multiply; /* Blends the color with the image */
+}

@@ -6,15 +6,13 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons"; // Import brand
 
 import cla from "../public/images/cla-1.png";
 import aboutme from "../public/images/about-me.png";
-import logo from "../public/images/logo.png";
 
-import { Coiny } from "next/font/google";
-
-const coiny = Coiny({
-  subsets: ["latin"], // Or other subsets as needed
-  weight: "400", // Or other weights like '700', 'regular', etc.
-  display: "swap", // Important for performance
-});
+import Logo from "./components/Logo";
+import SectionHeading from "./components/SectionHeading";
+import Button from "./components/Button";
+import FeatureItem from "./components/FeatureItem";
+import SectionContainer from "./components/SectionContainer";
+import IconWithBg from "./components/IconWithBg";
 
 export default function Home() {
   return (
@@ -22,24 +20,19 @@ export default function Home() {
       {/* HEADER */}
       <div className={` header min-h-screen flex flex-col `}>
         {/* NAVIGATOR */}
-        <nav className="container p-5 shadow-sm shadow-black ">
+        <nav className="container px-5 py-7 shadow-sm shadow-black ">
           {/* NAVIGATOR - CONTAINER */}
           <div className="nav-container flex justify-between items-center">
             {/* LOGO */}
-            <div className="logo flex gap-3 items-center">
-              <Image src={logo} alt="My Image" width={35} height={35} />
-              <h1 className={`${coiny.className} text-lg tracking-wider`}>
-                CourseMatch
-              </h1>
-            </div>
+            <Logo />
             {/* BURGER */}
-            <FontAwesomeIcon icon={faBars} className=" w-8"></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faBars} className=" w-5"></FontAwesomeIcon>
           </div>
         </nav>
 
         {/* content */}
         <div className="header-container p-5 text-center flex-grow flex justify-center items-center">
-          <div className="bg-black py-10 px-5 rounded-xl">
+          <div className="container py-10 px-5 rounded-xl">
             {/* main heading */}
             <div className="main-heading mb-8">
               <h1 className="text-3xl font-bold	tracking-wider">CourseMatch</h1>
@@ -56,45 +49,30 @@ export default function Home() {
             </p>
 
             <div className="">
-              <div className="inline-block px-6 py-3 rounded-3xl font-bold uppercase tracking-wider secondary-color">
-                Get started
-              </div>
+              <Button>Get started</Button>
             </div>
           </div>
         </div>
       </div>
 
       {/* FEATURES */}
-      <div className={` container px-5 py-10 text-black`}>
+      <SectionContainer className={"text-black"}>
         {/* Heading */}
-        <div className="heading text-center my-10">
-          <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
-            Our main features
-          </div>
-          <h2 className="capitalize  font-bold text-2xl">
-            Our breakthrough features
-          </h2>
-        </div>
+        <SectionHeading
+          overlineText="Our main features"
+          headingText="Our breakthrough features"
+        />
 
         {/* list */}
         <div className="flex flex-wrap gap-10">
           {/* item */}
-          <div className="flex flex-col gap-3">
-            <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
-              <FontAwesomeIcon
-                icon={faBook}
-                className=" w-4 secondary-text-color"
-              ></FontAwesomeIcon>
-            </div>
-            <h3 className="capitalize text-xl font-medium">
-              Course Prediction Engine
-            </h3>
-            <p className="font-light">
-              Accurately predicts the most suitable course for students based on
+          <FeatureItem
+            headingText="Course Prediction Engine"
+            descriptionText="Accurately predicts the most suitable course for students based on
               their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
-              preferences).
-            </p>
-          </div>
+              preferences)."
+            icon={faBook}
+          />
 
           {/* item */}
           <div className="flex flex-col gap-3 secondary-color p-5 rounded-2xl text-white">
@@ -115,36 +93,23 @@ export default function Home() {
           </div>
 
           {/* item */}
-          <div className="flex flex-col gap-3">
-            <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
-              <FontAwesomeIcon
-                icon={faBook}
-                className=" w-4 secondary-text-color"
-              ></FontAwesomeIcon>
-            </div>
-            <h3 className="capitalize text-xl font-medium">
-              Course Prediction Engine
-            </h3>
-            <p className="font-light">
-              Accurately predicts the most suitable course for students based on
+          <FeatureItem
+            headingText="Course Prediction Engine"
+            descriptionText="Accurately predicts the most suitable course for students based on
               their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
-              preferences).
-            </p>
-          </div>
+              preferences)."
+            icon={faBook}
+          />
         </div>
-      </div>
+      </SectionContainer>
 
       {/* COURSES */}
-      <div className={` container px-5 py-10 secondary-color`}>
+      <SectionContainer className={"secondary-color"}>
         {/* Heading */}
-        <div className="heading text-center my-10">
-          <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
-            Our main features
-          </div>
-          <h2 className="capitalize  font-bold text-2xl">
-            Our breakthrough features
-          </h2>
-        </div>
+        <SectionHeading
+          overlineText="Our main features"
+          headingText="Our breakthrough features"
+        />
 
         {/* list */}
         <div className="flex flex-wrap  gap-10 items-center justify-center">
@@ -163,17 +128,15 @@ export default function Home() {
             <Image src={cla} alt="My Image" />
           </div>
         </div>
-      </div>
+      </SectionContainer>
 
       {/* ABOUT */}
-      <div className={` container px-5 py-10 text-black`}>
+      <SectionContainer className={"text-black"}>
         {/* Heading */}
-        <div className="heading text-center my-10">
-          <div className="inline-block px-6 py-3 rounded-3xl capitalize mb-3 primary-color-light primary-text-color">
-            Who we are
-          </div>
-          <h2 className="capitalize  font-bold text-2xl">What Drives Us</h2>
-        </div>
+        <SectionHeading
+          overlineText="Who we are"
+          headingText="What drives us"
+        />
 
         <div className="flex flex-col gap-10">
           <div className="">
@@ -197,34 +160,32 @@ export default function Home() {
           <div className="flex flex-wrap gap-5">
             {/* item */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
-                <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
-              </div>
-              <p>linkedin.com/wilhelmus</p>
+              <IconWithBg icon={faLinkedin} />
+              <a href="https://linkedin.com/wilhelmus" target="blank">
+                linkedin.com/wilhelmus
+              </a>
             </div>
 
             {/* item */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
-                <FontAwesomeIcon icon={faGlobe} /> {/* GitHub */}
-              </div>
-              <p>wilhelmus.vercel.app</p>
+              <IconWithBg icon={faGlobe} />
+              <a href="https://wilhelmus.vercel.app" target="blank">
+                wilhelmus.vercel.app
+              </a>
             </div>
           </div>
         </div>
-      </div>
+      </SectionContainer>
 
       {/* BANNER */}
-      <div className={` container px-5 py-20 secondary-color`}>
+      <SectionContainer className={"banner"}>
         <div className="text-center">
           <h2 className="capitalize font-bold text-2xl mb-5">
             Are you ready to know your course?
           </h2>
-          <div className="inline-block px-6 py-3 rounded-3xl font-bold uppercase tracking-wider primary-color">
-            Get started
-          </div>
+          <Button color="primary-color">Get Started</Button>
         </div>
-      </div>
+      </SectionContainer>
 
       <br />
       <br />
@@ -239,11 +200,7 @@ export default function Home() {
           {/*  */}
           <div className="flex gap-5 flex-wrap">
             {/* LOGO */}
-            <div className="logo">
-              <h1 className={`${coiny.className} text-lg tracking-wider`}>
-                CourseMatch
-              </h1>
-            </div>
+            <Logo />
 
             <p className="font-light">
               CourseMatch: Personalized Course Prediction System is designed to
@@ -273,17 +230,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-5">
               {/* item */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
-                  <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
-                </div>
+                <IconWithBg icon={faLinkedin} />
                 <p>linkedin.com/wilhelmus</p>
               </div>
 
               {/* item */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
-                  <FontAwesomeIcon icon={faGlobe} /> {/* GitHub */}
-                </div>
+                <IconWithBg icon={faLinkedin} />
                 <p>wilhelmus.vercel.app</p>
               </div>
             </div>
@@ -298,15 +251,11 @@ export default function Home() {
             <div className="flex flex-wrap gap-3">
               {/* item */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
-                  <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
-                </div>
+                <IconWithBg icon={faLinkedin} />
               </div>
               {/* item */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-md bg-gray-200 p-3 secondary-text-color">
-                  <FontAwesomeIcon icon={faLinkedin} /> {/* GitHub */}
-                </div>
+                <IconWithBg icon={faLinkedin} />
               </div>
             </div>
           </div>
