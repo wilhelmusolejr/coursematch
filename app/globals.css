@@ -43,7 +43,7 @@ nav {
   color: #00448b;
 }
 
-.header-container .container {
+.header-container {
   background-image: url("../public/images/header_background.png"); /* Use background-image */
   background-size: cover; /* Or contain, depending on your needs */
   background-repeat: no-repeat;
@@ -59,3 +59,21 @@ nav {
   background-color: rgba(0, 68, 139, 0.8); /* Black with 50% opacity */
   background-blend-mode: multiply; /* Blends the color with the image */
 }
+
+/* {item}
+<div className="flex flex-col gap-3 secondary-color p-5 rounded-2xl text-white">
+<div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+  <FontAwesomeIcon
+    icon={faBook}
+    className=" w-4 secondary-text-color"
+  ></FontAwesomeIcon>
+</div>
+<h3 className="capitalize text-xl font-medium">
+  Downloadable Results{" "}
+</h3>
+<p className="font-extralight">
+  Accurately predicts the most suitable course for students based on
+  their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
+  preferences).
+</p>
+</div> */
