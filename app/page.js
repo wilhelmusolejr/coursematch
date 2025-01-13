@@ -69,7 +69,7 @@ export default function Home() {
               </p>
             </div>
 
-            <p className="text-left font-extralight lg:text-lg lg:max-w-2xl lg:text-center mb-10 max-w-md z-10">
+            <p className="text-left font-extralight lg:max-w-2xl lg:text-center mb-10 max-w-md z-10">
               Discover your ideal academic path with CourseMatch, an intelligent
               system designed for Western Mindanao State University to predict
               the perfect course for you based on your unique answers and
@@ -141,7 +141,7 @@ export default function Home() {
       </SectionContainer>
 
       {/* COURSES */}
-      <div className="secondary-color">
+      <div className="secondary-color courses border-blue-500 border-y-8">
         <SectionContainer>
           {/* Heading */}
           <SectionHeading
@@ -231,7 +231,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <div className="primary-color">
+        <div className="primary-color border-red-500 border-t-8	">
           <SectionContainer>
             <div className="container flex flex-wrap gap-16">
               {/* ITEM 1 */}
