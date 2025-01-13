@@ -98,11 +98,25 @@ export default function Home() {
             descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
             icon={faBook}
           />
-          <FeatureItem
-            headingText="Downloadable Results"
-            descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
-            icon={faBook}
-          />
+
+          {/* {item} */}
+          <div className="flex flex-col  mx-auto  gap-3 secondary-color p-5 rounded-2xl text-white">
+            <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+              <FontAwesomeIcon
+                icon={faBook}
+                className=" w-4 secondary-text-color"
+              ></FontAwesomeIcon>
+            </div>
+            <h3 className="capitalize text-xl font-medium">
+              Downloadable Results{" "}
+            </h3>
+            <p className="font-extralight">
+              Accurately predicts the most suitable course for students based on
+              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
+              preferences).
+            </p>
+          </div>
+
           <FeatureItem
             headingText="Personalized Recommendations"
             descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
@@ -127,23 +141,24 @@ export default function Home() {
       </SectionContainer>
 
       {/* COURSES */}
-      <SectionContainer className={"secondary-color"}>
-        {/* Heading */}
-        <SectionHeading
-          overlineText="Our main features"
-          headingText="Our breakthrough features"
-        />
+      <div className="secondary-color">
+        <SectionContainer>
+          {/* Heading */}
+          <SectionHeading
+            overlineText="Our main features"
+            headingText="Our breakthrough features"
+          />
 
-        {/* list */}
-        <div className="flex flex-wrap gap-10 justify-center">
-          {/* item */}
-          <ImageCard src={cla} />
-          <ImageCard src={cla} />
-          <ImageCard src={cla} />
-          <ImageCard src={cla} />
-          <ImageCard src={cla} />
-        </div>
-      </SectionContainer>
+          {/* list */}
+          <div className=" max-w-5xl mx-auto grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <ImageCard src={cla} />
+            <ImageCard src={cla} />
+            <ImageCard src={cla} />
+            <ImageCard src={cla} />
+            <ImageCard src={cla} />
+          </div>
+        </SectionContainer>
+      </div>
 
       {/* ABOUT */}
       <SectionContainer className={"text-black"}>
@@ -153,14 +168,14 @@ export default function Home() {
           headingText="What drives us"
         />
 
-        <div className="flex flex-col md:flex-row gap-5">
-          <div className="max-w-80 m-auto">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-10">
+          <div className="max-w-80 ">
             <Image src={aboutme} alt="My Image" className="rounded-lg" />
           </div>
 
-          <div className="w-full">
+          <div className="w-full lg:w-1/2">
             <h3 className="capitalize text-xl font-medium">About me</h3>
-            <p className="font-light leading-relaxed ">
+            <p className="font-light leading-relaxed  ">
               Wilhelmus is a passionate full-stack web developer and designer
               with a background in Computer Science. With expertise in Laravel,
               the MERN stack, and a knack for creating intuitive user
@@ -212,76 +227,80 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <SectionContainer className={"primary-color "}>
-          <div className="container flex flex-wrap gap-16">
-            {/* ITEM 1 */}
-            <div className="flex gap-5 flex-col w-full">
-              {/* LOGO */}
-              <Logo />
+        <div className="primary-color">
+          <SectionContainer>
+            <div className="container flex flex-wrap gap-16">
+              {/* ITEM 1 */}
+              <div className="flex gap-5 flex-col w-full xl:w-auto">
+                {/* LOGO */}
+                <Logo />
 
-              <p className="font-light max-w-md">
-                CourseMatch: Personalized Course Prediction System is designed
-                to help students at Western Mindanao State University discover
-                their ideal academic paths with ease.
-              </p>
-            </div>
+                <p className="font-light max-w-md">
+                  CourseMatch: Personalized Course Prediction System is designed
+                  to help students at Western Mindanao State University discover
+                  their ideal academic paths with ease.
+                </p>
+              </div>
 
-            {/* Quick Links */}
-            <div className="">
-              <h3 className="uppercase text-2xl font-semibold mb-5">
-                Quick links
-              </h3>
+              <div className="flex flex-grow gap-16 2xl:justify-end flex-wrap">
+                {/* Quick Links */}
+                <div className="">
+                  <h3 className="uppercase text-2xl font-semibold mb-5">
+                    Quick links
+                  </h3>
 
-              {/* LIST */}
-              <ul className="flex gap-3 flex-col tracking-wider font-light">
-                <li>Home</li>
-                <li>Features</li>
-                <li>Courses</li>
-                <li>About Us</li>
-              </ul>
-            </div>
-
-            {/* Contact Information */}
-            <div className="">
-              <h3 className="uppercase text-2xl font-semibold mb-5">
-                Contact Information
-              </h3>
-
-              {/* LIST */}
-              <div className="flex flex-col gap-5">
-                {/* item */}
-                <div className="flex items-center gap-3">
-                  <IconWithBg icon={faLinkedin} />
-                  <p>linkedin.com/wilhelmus</p>
+                  {/* LIST */}
+                  <ul className="flex gap-3 flex-col tracking-wider font-light">
+                    <li>Home</li>
+                    <li>Features</li>
+                    <li>Courses</li>
+                    <li>About Us</li>
+                  </ul>
                 </div>
-                {/* item */}
-                <div className="flex items-center gap-3">
-                  <IconWithBg icon={faLinkedin} />
-                  <p>wilhelmus.vercel.app</p>
+
+                {/* Contact Information */}
+                <div className="">
+                  <h3 className="uppercase text-2xl font-semibold mb-5">
+                    Contact Information
+                  </h3>
+
+                  {/* LIST */}
+                  <div className="flex flex-col gap-5">
+                    {/* item */}
+                    <div className="flex items-center gap-3">
+                      <IconWithBg icon={faLinkedin} />
+                      <p>linkedin.com/wilhelmus</p>
+                    </div>
+                    {/* item */}
+                    <div className="flex items-center gap-3">
+                      <IconWithBg icon={faLinkedin} />
+                      <p>wilhelmus.vercel.app</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="">
+                  <h3 className="uppercase text-2xl font-semibold mb-5">
+                    Social Links
+                  </h3>
+
+                  <div className="flex flex-wrap gap-3">
+                    {/* item */}
+                    <div className="flex items-center gap-3">
+                      <IconWithBg icon={faLinkedin} />
+                    </div>
+                    {/* item */}
+                    <div className="flex items-center gap-3">
+                      <IconWithBg icon={faLinkedin} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Social Links */}
-            <div className="">
-              <h3 className="uppercase text-2xl font-semibold mb-5">
-                Social Links
-              </h3>
-
-              <div className="flex flex-wrap gap-3">
-                {/* item */}
-                <div className="flex items-center gap-3">
-                  <IconWithBg icon={faLinkedin} />
-                </div>
-                {/* item */}
-                <div className="flex items-center gap-3">
-                  <IconWithBg icon={faLinkedin} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </SectionContainer>
-        <div className="py-10 text-center secondary-color">
+          </SectionContainer>
+        </div>
+        <div className="py-10 text-center darker-secondary-color">
           <p>Discover your future today with CourseMatch!</p>
         </div>
       </footer>
