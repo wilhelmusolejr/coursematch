@@ -45,18 +45,37 @@ nav {
 }
 
 .header-container {
-  background-image: url("../public/images/header_background.png"); /* Use background-image */
-  background-size: cover; /* Or contain, depending on your needs */
+  background: url("../public/images/header_background.png");
   background-repeat: no-repeat;
-  background-color: rgba(32, 32, 32, 0.8); /* Black with 50% opacity */
-  background-blend-mode: multiply; /* Blends the color with the image */
+  background-position: center;
+  background-size: cover; /* Or contain, depending on your needs */
+
+  position: relative;
+}
+
+.header-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem /* 12px */;
+  background-color: rgba(32, 32, 32, 0.8);
 }
 
 .banner {
   background-image: url("../public/images/ccsbldg.png");
   background-size: cover; /* Or contain, depending on your needs */
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 50% bottom;
+
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
   background-color: rgba(0, 68, 139, 0.9); /* Black with 50% opacity */
-  background-blend-mode: multiply; /* Blends the color with the image */
 }

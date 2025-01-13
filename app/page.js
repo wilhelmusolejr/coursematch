@@ -58,9 +58,9 @@ export default function Home() {
 
         {/* content */}
         <div className="w-full px-5 md:px-10 py-10 flex-grow flex flex-col">
-          <div className="header-container py-10 px-5 rounded-xl text-center flex-grow flex flex-col justify-center items-center">
+          <div className="header-container py-10 px-5 rounded-xl text-center flex-grow flex flex-col justify-center items-center ">
             {/* main heading */}
-            <div className="main-heading mb-8">
+            <div className="main-heading mb-8 z-10">
               <h1 className="text-3xl lg:text-5xl font-bold	tracking-wider">
                 CourseMatch
               </h1>
@@ -69,14 +69,14 @@ export default function Home() {
               </p>
             </div>
 
-            <p className="text-left font-extralight lg:text-lg lg:max-w-2xl lg:text-center mb-10 max-w-md">
+            <p className="text-left font-extralight lg:text-lg lg:max-w-2xl lg:text-center mb-10 max-w-md z-10">
               Discover your ideal academic path with CourseMatch, an intelligent
               system designed for Western Mindanao State University to predict
               the perfect course for you based on your unique answers and
               preferences.
             </p>
 
-            <div className="">
+            <div className="z-10">
               <Button>Get started</Button>
             </div>
           </div>
@@ -209,8 +209,12 @@ export default function Home() {
       </SectionContainer>
 
       {/* BANNER */}
-      <SectionContainer className={"banner md:w-11/12 m-auto md:rounded-xl"}>
-        <div className="text-center">
+      <SectionContainer
+        className={
+          "banner md:w-11/12 h-80 m-auto md:rounded-3xl flex justify-center items-center"
+        }
+      >
+        <div className="text-center relative">
           <h2 className="capitalize font-bold text-2xl mb-5">
             Are you ready to know your course?
           </h2>
