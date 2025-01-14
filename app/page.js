@@ -14,6 +14,7 @@ import FeatureItem from "./components/FeatureItem";
 import SectionContainer from "./components/SectionContainer";
 import IconWithBg from "./components/IconWithBg";
 import ImageCard from "./components/ImageCard";
+import Navigator from "./components/Navigator";
 
 export default function Home() {
   return (
@@ -21,40 +22,7 @@ export default function Home() {
       {/* HEADER */}
       <div className={`header min-h-screen flex flex-col `}>
         {/* NAVIGATOR */}
-        <nav className="w-full px-5 md:px-10 py-7 shadow-sm shadow-black ">
-          {/* NAVIGATOR - CONTAINER */}
-          <div className=" flex justify-between items-center">
-            {/* LOGO */}
-            <Logo />
-
-            <div className="lg:flex gap-10 items-center hidden">
-              <ul className="flex gap-5">
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Features</a>
-                </li>
-                <li>
-                  <a href="#">Courses</a>
-                </li>
-                <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">Recommendation</a>
-                </li>
-              </ul>
-
-              <Button>Account</Button>
-            </div>
-            {/* BURGER */}
-            <FontAwesomeIcon
-              icon={faBars}
-              className=" w-5 lg:hidden"
-            ></FontAwesomeIcon>
-          </div>
-        </nav>
+        <Navigator />
 
         {/* content */}
         <div className="w-full px-5 md:px-10 py-10 flex-grow flex flex-col">
