@@ -61,7 +61,7 @@ export default function Home() {
           <div className="header-container py-10 px-5 rounded-xl text-center flex-grow flex flex-col justify-center items-center ">
             {/* main heading */}
             <div className="main-heading mb-8 z-10">
-              <h1 className="text-3xl lg:text-5xl font-bold	tracking-wider">
+              <h1 className="text-3xl md:text-5xl font-bold	tracking-wider">
                 CourseMatch
               </h1>
               <p className="capitalize font-light text-sm">
@@ -107,7 +107,7 @@ export default function Home() {
                 className=" w-4 secondary-text-color"
               ></FontAwesomeIcon>
             </div>
-            <h3 className="capitalize text-xl font-medium">
+            <h3 className="capitalize text-xl md:text-2xl font-medium">
               Downloadable Results{" "}
             </h3>
             <p className="font-extralight">
@@ -174,7 +174,9 @@ export default function Home() {
           </div>
 
           <div className="w-full lg:w-1/2">
-            <h3 className="capitalize text-xl font-medium">About me</h3>
+            <h3 className="capitalize text-xl md:text-2xl font-medium">
+              About me
+            </h3>
             <p className="font-light leading-relaxed  ">
               Wilhelmus is a passionate full-stack web developer and designer
               with a background in Computer Science. With expertise in Laravel,
@@ -215,7 +217,7 @@ export default function Home() {
         }
       >
         <div className="text-center relative">
-          <h2 className="capitalize font-bold text-2xl mb-5">
+          <h2 className="capitalize font-bold text-2xl lg:text-4xl md:text-3xl mb-5 w-11/12 mx-auto">
             Are you ready to know your course?
           </h2>
           <Button color="primary-color">Get Started</Button>

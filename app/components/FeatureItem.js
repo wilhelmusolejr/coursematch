@@ -9,7 +9,9 @@ export default function FeatureItem({ headingText, descriptionText, icon }) {
           className=" w-4 secondary-text-color"
         ></FontAwesomeIcon>
       </div>
-      <h3 className="capitalize text-xl font-medium">{headingText}</h3>
+      <h3 className="capitalize text-xl md:text-2xl font-medium">
+        {headingText}
+      </h3>
       <p className="font-light">{descriptionText}</p>
     </div>
   );
