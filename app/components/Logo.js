@@ -10,11 +10,13 @@ const coiny = Coiny({
 
 export default function Logo() {
   return (
-    <div className="logo flex gap-3 items-center">
-      <Image src={logo} alt="My Image" width={35} height={35} />
-      <h1 className={`${coiny.className} text-lg tracking-wider`}>
+    <a href="/" className="logo flex gap-2   items-center">
+      <Image src={logo} alt="My Image" width={50} height={50} />
+      <h1
+        className={`${coiny.className} lg:text-2xl xl:text-3xl text-xl pt-2 tracking-wider`}
+      >
         CourseMatch
       </h1>
-    </div>
+    </a>
   );
 }

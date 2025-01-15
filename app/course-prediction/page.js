@@ -137,7 +137,7 @@ export default function CoursePrediction() {
                 {/* item */}
                 <CourseCard
                   className={
-                    "lighter-secondary-color border-blue-700 border-1 order-1 lg:order-2 text-white pb-10"
+                    "lighter-secondary-color border-blue-700 border-2 order-1 lg:order-2 text-white pb-12"
                   }
                 >
                   <div className="mb-5">
