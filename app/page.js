@@ -1,10 +1,24 @@
 import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBook, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleDown,
+  faBook,
+  faGlobe,
+  faRobot,
+  faBookOpen,
+  faMicrochip,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons"; // Import brand icons
 
-import cla from "../public/images/cla-1.png";
+import ca from "../public/images/gallery/CA.jpeg";
+import cais from "../public/images/gallery/cais.jpeg";
+import ccje from "../public/images/gallery/ccje.jpeg";
+import ccs from "../public/images/gallery/ccs.jpg";
+import che from "../public/images/gallery/che.png";
+import cla from "../public/images/gallery/cla.jpeg";
+
 import aboutme from "../public/images/about-me.png";
 
 import Logo from "./components/Logo";
@@ -25,7 +39,7 @@ export default function Home() {
         <Navigator />
 
         {/* content */}
-        <div className="w-full px-5 md:px-10 py-10 flex-grow flex flex-col">
+        <div className="w-full mt-24 px-5 md:px-10 py-10 flex-grow flex flex-col">
           <div className="header-container py-10 px-5 rounded-xl text-center flex-grow flex flex-col justify-center items-center ">
             {/* main heading */}
             <div className="main-heading mb-8 z-10">
@@ -61,22 +75,23 @@ export default function Home() {
 
         {/* list */}
         <div className="grid gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {/* {item} */}
           <FeatureItem
-            headingText="Course Prediction Engine"
-            descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
-            icon={faBook}
+            headingText="Downloadable Results"
+            descriptionText="Allows users to download their course prediction results in PDF format for future reference."
+            icon={faCircleDown}
           />
 
           {/* {item} */}
           <div className="flex flex-col  mx-auto  gap-3 secondary-color p-5 rounded-2xl text-white">
             <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
               <FontAwesomeIcon
-                icon={faBook}
+                icon={faBookOpen}
                 className=" w-4 secondary-text-color"
               ></FontAwesomeIcon>
             </div>
             <h3 className="capitalize text-xl md:text-2xl font-medium">
-              Downloadable Results{" "}
+              Course Prediction Engine
             </h3>
             <p className="font-extralight">
               Accurately predicts the most suitable course for students based on
@@ -86,24 +101,19 @@ export default function Home() {
           </div>
 
           <FeatureItem
-            headingText="Personalized Recommendations"
-            descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
-            icon={faBook}
+            headingText="AI-Powered Course Insights"
+            descriptionText="Uses machine learning algorithms to analyze trends in student choices."
+            icon={faMicrochip}
           />
           <FeatureItem
-            headingText="Course Prediction Engine"
-            descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
-            icon={faBook}
+            headingText="Free & Open for Everyone"
+            descriptionText="Designed to be beginner-friendly and straightforward, making it accessible to all students."
+            icon={faStar}
           />
           <FeatureItem
-            headingText="Downloadable Results"
-            descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
-            icon={faBook}
-          />
-          <FeatureItem
-            headingText="Personalized Recommendations"
-            descriptionText="Accurately predicts the most suitable course for students based on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences)."
-            icon={faBook}
+            headingText="Real-Time Prediction"
+            descriptionText="Allows students to update their information and receive real-time refined predictions based on new data."
+            icon={faRobot}
           />
         </div>
       </SectionContainer>
@@ -119,10 +129,11 @@ export default function Home() {
 
           {/* list */}
           <div className=" max-w-5xl mx-auto grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <ImageCard src={cla} />
-            <ImageCard src={cla} />
-            <ImageCard src={cla} />
-            <ImageCard src={cla} />
+            <ImageCard src={ca} />
+            <ImageCard src={cais} />
+            <ImageCard src={ccje} />
+            <ImageCard src={ccs} />
+            <ImageCard src={che} />
             <ImageCard src={cla} />
           </div>
         </SectionContainer>

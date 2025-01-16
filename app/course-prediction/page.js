@@ -24,7 +24,7 @@ export default function CoursePrediction() {
         <Navigator />
 
         {/* content */}
-        <div className="w-full px-5 md:px-10 py-10 flex-grow flex flex-col text-black">
+        <div className="w-full mt-24 px-5 md:px-10 py-10 flex-grow flex flex-col text-black">
           <div className="border container mx-auto border-black py-10 px-5 rounded-xl primary-color-extra-light ">
             {/* Fill up form */}
             <div className="fill-up-form">
