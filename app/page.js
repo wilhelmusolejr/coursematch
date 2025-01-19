@@ -18,6 +18,13 @@ import ccje from "../public/images/gallery/ccje.jpeg";
 import ccs from "../public/images/gallery/ccs.jpg";
 import che from "../public/images/gallery/che.png";
 import cla from "../public/images/gallery/cla.jpeg";
+import cn from "../public/images/gallery/cn.png";
+import coe from "../public/images/gallery/coe.png";
+import cpads from "../public/images/gallery/cpads.jpeg";
+import csm from "../public/images/gallery/csm.jpeg";
+import csspe from "../public/images/gallery/csspe.jpeg";
+import cswcd from "../public/images/gallery/cswcd.jpeg";
+import cte from "../public/images/gallery/cte.jpeg";
 
 import aboutme from "../public/images/about-me.png";
 
@@ -135,6 +142,13 @@ export default function Home() {
             <ImageCard src={ccs} />
             <ImageCard src={che} />
             <ImageCard src={cla} />
+            <ImageCard src={cn} />
+            <ImageCard src={coe} />
+            <ImageCard src={cpads} />
+            <ImageCard src={csm} />
+            <ImageCard src={csspe} />
+            <ImageCard src={cswcd} />
+            <ImageCard src={cte} />
           </div>
         </SectionContainer>
       </div>
