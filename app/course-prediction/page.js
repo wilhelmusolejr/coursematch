@@ -2,9 +2,14 @@
 
 import Button from "../components/Button";
 import CourseCard from "../components/CourseCard";
+import ImageCard from "../components/ImageCard";
 import Input from "../components/Input";
 import Label from "../components/Label";
 import Navigator from "../components/Navigator";
+
+import cais from "../../public/images/gallery/cais.jpeg";
+import cn from "../../public/images/gallery/cn.png";
+import csspe from "../../public/images/gallery/csspe.jpeg";
 
 export default function CoursePrediction() {
   // Submit form
@@ -137,9 +142,11 @@ export default function CoursePrediction() {
                 {/* item */}
                 <CourseCard
                   className={
-                    "lighter-secondary-color border-blue-700 border-2 order-1 lg:order-2 text-white pb-12"
+                    "lighter-secondary-color border-blue-700 border-2 order-1 lg:order-2 text-white pb-20"
                   }
                 >
+                  <ImageCard src={cais} className="w-1/2 mx-auto mb-5" />
+
                   <div className="mb-5">
                     <h2 className="uppercase font-semibold text-lg">
                       College of liberal arts
@@ -158,7 +165,11 @@ export default function CoursePrediction() {
                 </CourseCard>
 
                 {/* item */}
-                <CourseCard className={"dark-white-color order-2 lg:order-1"}>
+                <CourseCard
+                  className={"dark-white-color order-2 lg:order-1 pb-12"}
+                >
+                  <ImageCard src={csspe} className="w-1/2 mx-auto mb-5" />
+
                   <div className="mb-5">
                     <h2 className="uppercase font-semibold text-lg">
                       College of liberal arts
@@ -178,6 +189,8 @@ export default function CoursePrediction() {
 
                 {/* item */}
                 <CourseCard className={"dark-white-color order-3"}>
+                  <ImageCard src={cn} className="w-1/2 mx-auto mb-5" />
+
                   <div className="mb-5">
                     <h2 className="uppercase font-semibold text-lg">
                       College of liberal arts

@@ -28,12 +28,11 @@ export default function Navigator() {
             <li>
               <a href="#">About Us</a>
             </li>
-            {/* <li>
-              <Link href="/course-prediction">Recommendation</Link>
-            </li> */}
           </ul>
 
-          <Button>Recommendation</Button>
+          <Button type="link" href="/course-prediction">
+            Recommendation
+          </Button>
         </div>
         {/* BURGER */}
         <FontAwesomeIcon

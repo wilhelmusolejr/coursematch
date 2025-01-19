@@ -66,7 +66,9 @@ export default function Home() {
             </p>
 
             <div className="z-10">
-              <Button>Get started</Button>
+              <Button type="link" href="/course-prediction">
+                Get started
+              </Button>
             </div>
           </div>
         </div>
