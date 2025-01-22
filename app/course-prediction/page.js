@@ -124,6 +124,48 @@ export default function CoursePrediction() {
     randomCourses = assignProbabilities(randomCourses);
 
     console.log(randomCourses);
+    randomCourses[0].description = `<p>
+                    The highest recommendation is
+                    <strong className="uppercase">
+                      ${randomCourses[0].name.toUpperCase()}
+                    </strong>
+                    , with a probability of ${randomCourses[0].probability}%,
+                    making it the most suitable option given your
+                    <em>
+                      GPA ${gpa}, CET Score ${oapr},
+                    </em>
+                    and <em>Strand HUMSS</em>. This course aligns well with your
+                    academic achievements and has a strong career trajectory in
+                    fields such as <em>${randomCourses[0].related_work}</em>.
+                  </p>`;
+
+    randomCourses[1].description = `<p>
+                    The second-best match is 
+                    <strong className="uppercase">
+                      ${randomCourses[1].name.toUpperCase()}
+                    </strong>, with a probability of ${
+                      randomCourses[1].probability
+                    }%.
+                    While it is slightly lower than first course, this program
+                    also fits your skills and interests, providing excellent
+                    opportunities in <em>${
+                      randomCourses[1].related_work
+                    }</em>. If
+                    you have a passion for this field, it remains a strong
+                    alternative.
+                  </p>`;
+
+    randomCourses[2].description = `<p>
+                    Lastly,
+                    <strong className="uppercase">
+                      ${randomCourses[2].name.toUpperCase()}
+                    </strong>
+                    emerged as another potential option, with a probability of 
+                    ${randomCourses[2].probability}%. Though it ranks third, it
+                    still represents a viable path based on your academic
+                    background and could lead to career opportunities in 
+                    <em>${randomCourses[2].related_work}</em>.
+                  </p>`;
 
     setThreeCourses(randomCourses);
     setForm(true);
@@ -292,50 +334,8 @@ export default function CoursePrediction() {
                   Result
                 </h1>
 
-                <div className="flex gap-5 flex-col lg:flex-row lg:items-end  justify-center items-center mb-5 md:mb-16">
-                  {threeCourses &&
-                    threeCourses.map((course, index) => (
-                      <CourseCard
-                        key={index}
-                        className="dark-white-color border-2 order-1 lg:order-2 pb-20"
-                      >
-                        <ImageCard
-                          src={course.photo}
-                          className="w-1/2 mx-auto mb-10 mt-5"
-                        />
-
-                        <div className="mb-5">
-                          <h2 className="uppercase font-semibold text-lg">
-                            {course.full_name}{" "}
-                            {/* Use the dynamic course name */}
-                          </h2>
-                          <p className="text-sm font-light uppercase hidden">
-                            Highly recommended (
-                            {Math.floor(Math.random() * 21) + 60}%)
-                          </p>
-                          <div className="flex gap-1 text-yellow-500">
-                            {[...Array(5)].map((_, i) => (
-                              <FontAwesomeIcon
-                                key={i}
-                                icon={faStar}
-                                className="w-4"
-                              />
-                            ))}
-                          </div>
-                        </div>
-
-                        <p className="font-light">
-                          Based on your excellent GPA of 90.0 and CET score of
-                          90.0, it is evident that you have a strong academic
-                          background. The <strong>{course.course_name}</strong>{" "}
-                          is a perfect fit for you as it aligns well with your
-                          strand.
-                        </p>
-                      </CourseCard>
-                    ))}
-                </div>
-
-                <div className="p-4 flex gap-5 flex-col max-w-lg mx-auto">
+                {/* paragraph */}
+                <div className=" flex gap-5 flex-col w-full md:w-9/12 mx-auto">
                   <p>
                     Hi{" "}
                     <strong className="capitalize">
@@ -346,48 +346,160 @@ export default function CoursePrediction() {
                     background, our system has identified the top three courses
                     that best align with your strengths and interests.
                   </p>
+                </div>
 
-                  <p>
-                    The highest recommendation is{" "}
-                    <strong className="uppercase">
-                      {threeCourses[0].full_name}
-                    </strong>
-                    , with a probability of {threeCourses[0].probability}%,
-                    making it the most suitable option given your
-                    <em>
-                      {" "}
-                      GPA {gpa}, CET Score {oapr},
-                    </em>{" "}
-                    and <em>Strand HUMSS</em>. This course aligns well with your
-                    academic achievements and has a strong career trajectory in
-                    fields such as <em>{threeCourses[0].related_work}</em>.
-                  </p>
+                <div className="flex gap-5 flex-col lg:flex-row lg:items-end  justify-center items-center my-10 md:my-16">
+                  {threeCourses && (
+                    <>
+                      {/* item */}
+                      <CourseCard
+                        className={
+                          "dark-white-color border-2 order-1 lg:order-2  pb-20"
+                        }
+                      >
+                        <ImageCard
+                          src={cais}
+                          className="w-1/2 mx-auto mb-10 mt-5"
+                        />
 
-                  <p>
-                    The second-best match is{" "}
-                    <strong className="uppercase">
-                      {threeCourses[1].full_name}
-                    </strong>
-                    , with a probability of {threeCourses[1].probability}%.
-                    While it is slightly lower than first course, this program
-                    also fits your skills and interests, providing excellent
-                    opportunities in <em>{threeCourses[1].related_work}</em>. If
-                    you have a passion for this field, it remains a strong
-                    alternative.
-                  </p>
+                        <div className="mb-5">
+                          <h2 className="uppercase font-semibold text-lg">
+                            College of liberal arts
+                          </h2>
+                          <p className="text-sm font-light uppercase hidden">
+                            highly recommended (63%)
+                          </p>
+                          <div className="flex gap-1 text-yellow-500">
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                          </div>
+                        </div>
 
-                  <p>
-                    Lastly,{" "}
-                    <strong className="uppercase">
-                      {threeCourses[2].full_name}
-                    </strong>{" "}
-                    emerged as another potential option, with a probability of{" "}
-                    {threeCourses[2].probability}%. Though it ranks third, it
-                    still represents a viable path based on your academic
-                    background and could lead to career opportunities in{" "}
-                    <em>{threeCourses[2].related_work}</em>.
-                  </p>
+                        <p
+                          className="font-light"
+                          dangerouslySetInnerHTML={{
+                            __html: threeCourses[0].description,
+                          }}
+                        ></p>
+                      </CourseCard>
 
+                      {/* item */}
+                      <CourseCard
+                        className={"dark-white-color order-2 lg:order-1 pb-12"}
+                      >
+                        <ImageCard
+                          src={csspe}
+                          className="w-1/2 mx-auto mb-10 mt-5"
+                        />
+
+                        <div className="mb-5">
+                          <h2 className="uppercase font-semibold text-lg">
+                            College of liberal arts
+                          </h2>
+                          <p className="text-sm font-light uppercase hidden">
+                            highly recommended (63%)
+                          </p>
+                          <div className="flex gap-1 text-yellow-500">
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4 "
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4 "
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4 "
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4 "
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4 "
+                            ></FontAwesomeIcon>
+                          </div>
+                        </div>
+
+                        <p
+                          className="font-light"
+                          dangerouslySetInnerHTML={{
+                            __html: threeCourses[1].description,
+                          }}
+                        ></p>
+                      </CourseCard>
+
+                      {/* item */}
+                      <CourseCard className={"dark-white-color order-3"}>
+                        <ImageCard
+                          src={cn}
+                          className="w-1/2 mx-auto mb-10 mt-5"
+                        />
+
+                        <div className="mb-5">
+                          <h2 className="uppercase font-semibold text-lg">
+                            College of liberal arts
+                          </h2>
+                          <p className="text-sm font-light uppercase hidden">
+                            highly recommended (63%)
+                          </p>
+                          <div className="flex gap-1 text-yellow-500">
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                          </div>
+                        </div>
+
+                        <p
+                          className="font-light"
+                          dangerouslySetInnerHTML={{
+                            __html: threeCourses[2].description,
+                          }}
+                        ></p>
+                      </CourseCard>
+                    </>
+                  )}
+                </div>
+
+                {/* paragraph */}
+                <div className=" flex gap-5 flex-col w-full md:w-9/12 mx-auto">
                   <p>
                     It is important to consider your personal interests,
                     long-term goals, and passion for the field when making your
@@ -396,7 +508,7 @@ export default function CoursePrediction() {
                     key role in your success.
                   </p>
 
-                  <p className="mt-4 text-sm text-gray-500">
+                  <p className="mt-4 text-sm max-w-lg mx-auto text-gray-500">
                     <em>
                       *This recommendation system was trained using the Western
                       Mindanao State University 2020 dataset, which consists of

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +10,10 @@ import Logo from "./Logo";
 import Button from "./Button";
 
 export default function Navigator() {
+  const pathname = usePathname(); // This will get the current path
+
+  console.log(pathname);
+
   return (
     <nav className="w-full px-5 md:px-10 py-7 shadow-sm shadow-black fixed z-20">
       {/* NAVIGATOR - CONTAINER */}
@@ -30,7 +37,15 @@ export default function Navigator() {
             </li>
           </ul>
 
-          <Button type="link" href="/course-prediction">
+          <Button
+            type="link"
+            href="/course-prediction"
+            onClick={function () {
+              if (pathname === "/course-prediction") {
+                window.location.reload(); // Trigger page reload
+              }
+            }}
+          >
             Recommendation
           </Button>
         </div>
