@@ -40,54 +40,80 @@ export default function CoursePrediction() {
   let courses = [
     {
       name: "ca",
+      full_name: "College of Agriculture",
+      related_work: "Agricultural Scientist",
       photo: ca,
     },
     {
       name: "cais",
+      full_name: "College of Asian and Islamic Studies",
+      related_work: "Cultural Analyst",
       photo: cais,
     },
     {
       name: "ccje",
+      full_name: "College of Criminal Justice Education",
+      related_work: "Police Officer",
       photo: ccje,
     },
     {
       name: "ccs",
+      full_name: "College of Computing Studies",
+      related_work: "Software Engineer",
       photo: ccs,
     },
     {
       name: "che",
+      full_name: "College of Home Economics",
+      related_work: "Nutritionist",
       photo: che,
     },
     {
       name: "cla",
+      full_name: "College of Liberal Arts",
+      related_work: "Journalist",
       photo: cla,
     },
     {
       name: "cn",
+      full_name: "College of Nursing",
+      related_work: "Registered Nurse",
       photo: cn,
     },
     {
       name: "coe",
+      full_name: "College of Engineering",
+      related_work: "Civil Engineer",
       photo: coe,
     },
     {
       name: "cpads",
+      full_name: "College of Public Administration and Development Studies",
+      related_work: "Public Administrator",
       photo: cpads,
     },
     {
       name: "csm",
+      full_name: "College of Science and Mathematics",
+      related_work: "Data Analyst",
       photo: csm,
     },
     {
       name: "csspe",
+      full_name: "College of Sports Science and Physical Education",
+      related_work: "Sports Coach",
       photo: csspe,
     },
     {
       name: "cswcd",
+      full_name: "College of Social Work and Community Development",
+      related_work: "Social Worker",
       photo: cswcd,
     },
     {
       name: "cte",
+      full_name: "College of Teacher Education",
+      related_work: "High School Teacher",
       photo: cte,
     },
   ];
@@ -280,7 +306,8 @@ export default function CoursePrediction() {
 
                         <div className="mb-5">
                           <h2 className="uppercase font-semibold text-lg">
-                            {course.name} {/* Use the dynamic course name */}
+                            {course.full_name}{" "}
+                            {/* Use the dynamic course name */}
                           </h2>
                           <p className="text-sm font-light uppercase hidden">
                             Highly recommended (
@@ -323,7 +350,7 @@ export default function CoursePrediction() {
                   <p>
                     The highest recommendation is{" "}
                     <strong className="uppercase">
-                      {threeCourses[0].name}
+                      {threeCourses[0].full_name}
                     </strong>
                     , with a probability of {threeCourses[0].probability}%,
                     making it the most suitable option given your
@@ -333,33 +360,32 @@ export default function CoursePrediction() {
                     </em>{" "}
                     and <em>Strand HUMSS</em>. This course aligns well with your
                     academic achievements and has a strong career trajectory in
-                    fields such as{" "}
-                    <em>[mention relevant industries or career paths]</em>.
+                    fields such as <em>{threeCourses[0].related_work}</em>.
                   </p>
 
                   <p>
                     The second-best match is{" "}
                     <strong className="uppercase">
-                      {threeCourses[1].name}
+                      {threeCourses[1].full_name}
                     </strong>
                     , with a probability of {threeCourses[1].probability}%.
-                    While it is slightly lower than COURSE 1, this program also
-                    fits your skills and interests, providing excellent
-                    opportunities in
-                    <em>[mention related career paths]</em>. If you have a
-                    passion for this field, it remains a strong alternative.
+                    While it is slightly lower than first course, this program
+                    also fits your skills and interests, providing excellent
+                    opportunities in <em>{threeCourses[1].related_work}</em>. If
+                    you have a passion for this field, it remains a strong
+                    alternative.
                   </p>
 
                   <p>
                     Lastly,{" "}
                     <strong className="uppercase">
-                      {threeCourses[2].name}
+                      {threeCourses[2].full_name}
                     </strong>{" "}
-                    emerged as another potential option, with a probability of
+                    emerged as another potential option, with a probability of{" "}
                     {threeCourses[2].probability}%. Though it ranks third, it
                     still represents a viable path based on your academic
                     background and could lead to career opportunities in{" "}
-                    <em>[mention career fields]</em>.
+                    <em>{threeCourses[2].related_work}</em>.
                   </p>
 
                   <p>
