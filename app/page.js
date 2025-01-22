@@ -75,7 +75,7 @@ export default function Home() {
       </div>
 
       {/* FEATURES */}
-      <SectionContainer className={"text-black"}>
+      <SectionContainer className={"text-black"} id="features">
         {/* Heading */}
         <SectionHeading
           overlineText="Our main features"
@@ -128,7 +128,10 @@ export default function Home() {
       </SectionContainer>
 
       {/* COURSES */}
-      <div className="secondary-color courses border-blue-500 border-y-8">
+      <div
+        className="secondary-color courses border-blue-500 border-y-8"
+        id="courses"
+      >
         <SectionContainer>
           {/* Heading */}
           <SectionHeading
@@ -156,7 +159,7 @@ export default function Home() {
       </div>
 
       {/* ABOUT */}
-      <SectionContainer className={"text-black"}>
+      <SectionContainer className={"text-black"} id="about-us">
         {/* Heading */}
         <SectionHeading
           overlineText="Who we are"

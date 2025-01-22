@@ -37,6 +37,13 @@ export default function CoursePrediction() {
   const [gpa, setGpa] = useState();
   const [strand, setStrand] = useState("");
 
+  const [errors, setErrors] = useState({
+    firstName: false,
+    oapr: false,
+    gpa: false,
+    strand: false,
+  });
+
   let courses = [
     {
       name: "ca",
@@ -118,8 +125,46 @@ export default function CoursePrediction() {
     },
   ];
 
+  console.log(errors);
+
   // Submit form
   const handleClick = () => {
+    let formIsValid = true;
+    const updatedErrors = { ...errors };
+
+    if (!gpa) {
+      updatedErrors.gpa = true;
+      formIsValid = false;
+    } else {
+      updatedErrors.gpa = false;
+    }
+
+    if (!oapr) {
+      updatedErrors.oapr = true;
+      formIsValid = false;
+    } else {
+      updatedErrors.oapr = false;
+    }
+
+    if (!firstName) {
+      updatedErrors.firstName = true;
+      formIsValid = false;
+    } else {
+      updatedErrors.firstName = false;
+    }
+
+    if (!strand) {
+      updatedErrors.strand = true;
+      formIsValid = false;
+    } else {
+      updatedErrors.strand = false;
+    }
+
+    if (!formIsValid) {
+      setErrors(updatedErrors);
+      return; // Exit if form is invalid
+    }
+
     let randomCourses = getRandomCourses(courses, 3);
     randomCourses = assignProbabilities(randomCourses);
 
@@ -233,11 +278,15 @@ export default function CoursePrediction() {
                           name="first_name"
                           id="first_name"
                           value={firstName}
+                          className={
+                            errors.firstName ? "bg-red-300 border-red-500" : ""
+                          }
                           onChange={(e) => setFirstName(e.target.value)}
+                          required
                         />
                       </div>
                       {/* Last name */}
-                      <div className="">
+                      <div className=" hidden">
                         <Label htmlFor={"last_name"} required>
                           Last name
                         </Label>
@@ -285,6 +334,9 @@ export default function CoursePrediction() {
                           name={"oapr"}
                           id={"oapr"}
                           value={oapr}
+                          className={
+                            errors.oapr ? "bg-red-300 border-red-500" : ""
+                          }
                           onChange={(e) => setOapr(e.target.value)}
                         />
                       </div>
@@ -298,10 +350,13 @@ export default function CoursePrediction() {
                           name={"gpa"}
                           id={"gpa"}
                           value={gpa}
+                          className={
+                            errors.gpa ? "bg-red-300 border-red-500" : ""
+                          }
                           onChange={(e) => setGpa(e.target.value)}
                         />
                       </div>
-                      {/* Sex */}
+                      {/* strand */}
                       <div className="flex flex-col">
                         <Label htmlFor={"strand"} required>
                           Strand
@@ -309,12 +364,38 @@ export default function CoursePrediction() {
                         <select
                           name="strand"
                           id="strand"
-                          className="uppercase border border-black rounded-md p-2 w-full"
+                          className={`uppercase border border-black rounded-md p-2 w-full ${
+                            errors.strand ? "bg-red-300 border-red-500" : ""
+                          }`}
+                          value={strand}
+                          onChange={function (e) {
+                            setStrand(e.target.value);
+                          }}
                         >
-                          <option value="humss" defaultValue={"humss"}>
-                            humss
+                          <option value="" defaultValue={"-"}>
+                            -
                           </option>
-                          <option value="ict">ict</option>
+                          <option value="abm">
+                            ABM (Accountancy, Business, and Management)
+                          </option>
+                          <option value="humss">
+                            HUMSS (Humanities and Social Sciences)
+                          </option>
+                          <option value="stem">
+                            STEM (Science, Technology, Engineering, and
+                            Mathematics)
+                          </option>
+                          <option value="ict">
+                            ICT (Information and Communications Technology)
+                          </option>
+                          <option value="gas">
+                            GAS (General Academic Strand)
+                          </option>
+                          <option value="tvl">
+                            TVL (Technical-Vocational-Livelihood)
+                          </option>
+                          <option value="arts-design">Arts and Design</option>
+                          <option value="sports">Sports</option>
                         </select>
                       </div>
                     </div>
@@ -337,11 +418,7 @@ export default function CoursePrediction() {
                 {/* paragraph */}
                 <div className=" flex gap-5 flex-col w-full md:w-9/12 mx-auto">
                   <p>
-                    Hi{" "}
-                    <strong className="capitalize">
-                      {" "}
-                      {firstName} {lastName},
-                    </strong>{" "}
+                    Hi <strong className="capitalize"> {firstName},</strong>{" "}
                     based on your academic performance and senior high school
                     background, our system has identified the top three courses
                     that best align with your strengths and interests.

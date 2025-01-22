@@ -3,7 +3,9 @@ export default function Input({
   name,
   id,
   value = "",
+  required = false,
   onChange = function () {},
+  className = "",
 }) {
   return (
     <input
@@ -12,7 +14,8 @@ export default function Input({
       id={id}
       value={value}
       onChange={onChange}
-      className="border border-black rounded-md p-2 w-full"
+      required={required}
+      className={`border border-black rounded-md p-2 w-full ${className} `}
     />
   );
 }

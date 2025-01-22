@@ -27,13 +27,19 @@ export default function Navigator() {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="#">Features</a>
+              <Link href={`${pathname === "/" ? "" : "/"}#features`}>
+                Features
+              </Link>
             </li>
             <li>
-              <a href="#">Courses</a>
+              <Link href={`${pathname === "/" ? "" : "/"}#courses`}>
+                Courses
+              </Link>
             </li>
             <li>
-              <a href="#">About Us</a>
+              <Link href={`${pathname === "/" ? "" : "/"}#about-us`}>
+                About Us
+              </Link>
             </li>
           </ul>
 
