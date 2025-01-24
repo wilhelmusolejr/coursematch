@@ -1,5 +1,7 @@
 "use client";
 
+import { jsPDF } from "jspdf";
+
 import Button from "../components/Button";
 import CourseCard from "../components/CourseCard";
 import ImageCard from "../components/ImageCard";
@@ -22,7 +24,7 @@ import cswcd from "../../public/images/gallery/cswcd.jpeg";
 import cte from "../../public/images/gallery/cte.jpeg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faDownload } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 
@@ -125,8 +127,6 @@ export default function CoursePrediction() {
     },
   ];
 
-  console.log(errors);
-
   // Submit form
   const handleClick = () => {
     let formIsValid = true;
@@ -168,7 +168,6 @@ export default function CoursePrediction() {
     let randomCourses = getRandomCourses(courses, 3);
     randomCourses = assignProbabilities(randomCourses);
 
-    console.log(randomCourses);
     randomCourses[0].description = `<p>
                     The highest recommendation is
                     <strong className="uppercase">
@@ -212,6 +211,8 @@ export default function CoursePrediction() {
                     <em>${randomCourses[2].related_work}</em>.
                   </p>`;
 
+    console.log(randomCourses);
+
     setThreeCourses(randomCourses);
     setForm(true);
   };
@@ -242,6 +243,64 @@ export default function CoursePrediction() {
 
     return courses;
   }
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+
+    // Title
+    doc.setFontSize(16);
+    doc.text("Course Recommendation Result", 105, 15, { align: "center" });
+
+    // Greeting
+    doc.setFontSize(12);
+    doc.text(`Hi ${firstName},`, 15, 30);
+    const introText = `Based on your academic performance and senior high school background, our system has identified the top three courses that best align with your strengths and interests.`;
+    const wrappedIntro = doc.splitTextToSize(introText, 180);
+    doc.text(wrappedIntro, 15, 40);
+
+    let yOffset = 60; // Starting position for courses
+
+    // Sort courses by probability (highest first)
+    threeCourses.sort((a, b) => b.probability - a.probability);
+
+    threeCourses.forEach((course, index) => {
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold"); // Default bold font
+      doc.text(`${index + 1}. ${course.full_name}`, 15, yOffset);
+      yOffset += 8;
+
+      doc.setFontSize(12);
+      doc.setFont("helvetica", "normal"); // Default regular font
+
+      // Determine ranking label
+      let rank = "";
+      if (index === 0) rank = "1st Choice (Highly Recommended)";
+      else if (index === 1) rank = "2nd Choice";
+      else if (index === 2) rank = "3rd Choice";
+
+      // General description combining probability, ranking, and related work
+      const description = `
+    This course has been identified with a probability of ${course.probability}%.
+    It is categorized as your ${rank}.
+    Related career paths include: ${course.related_work.join}.
+  `;
+
+      const wrappedText = doc.splitTextToSize(description.trim(), 180);
+      doc.text(wrappedText, 15, yOffset);
+
+      yOffset += wrappedText.length * 6 + 10; // Adjust space for next item
+    });
+
+    // Additional Notes
+    doc.setFontSize(10);
+    const disclaimerText =
+      "*This recommendation system was trained using the Western Mindanao State University 2020 dataset, which consists of academic records from 16,000 students. The model leverages historical data to provide accurate course predictions based on past student outcomes.*";
+    const wrappedDisclaimer = doc.splitTextToSize(disclaimerText, 180);
+    doc.text(wrappedDisclaimer, 15, yOffset);
+
+    // Save PDF
+    doc.save("course-recommendation.pdf");
+  };
 
   return (
     <>
@@ -596,14 +655,19 @@ export default function CoursePrediction() {
                   </p>
                 </div>
 
-                <div className="text-center">
-                  <Button
-                    className="my-10"
+                <div className="text-center flex justify-center items-center gap-5">
+                  <div
+                    className="hover:underline cursor-pointer"
                     onClick={function () {
                       window.location.reload();
                     }}
                   >
                     Predict again
+                  </div>
+
+                  <Button className="my-10 flex gap-2" onClick={generatePDF}>
+                    <FontAwesomeIcon icon={faDownload} className="w-5 h-5" />
+                    Download
                   </Button>
                 </div>
               </div>
