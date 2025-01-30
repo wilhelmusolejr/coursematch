@@ -258,7 +258,7 @@ export default function CoursePrediction() {
     const wrappedIntro = doc.splitTextToSize(introText, 180);
     doc.text(wrappedIntro, 15, 40);
 
-    let yOffset = 60; // Starting position for courses
+    let yOffset = 60;
 
     // Sort courses by probability (highest first)
     threeCourses.sort((a, b) => b.probability - a.probability);
