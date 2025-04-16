@@ -27,6 +27,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faDownload } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
+import Footer from "../components/sections/Footer";
 
 export default function CoursePrediction() {
   const [form, setForm] = useState(false); // 'open' is the state, 'setOpen' updates it
@@ -45,6 +46,8 @@ export default function CoursePrediction() {
     gpa: false,
     strand: false,
   });
+
+  const [isLoading, setIsLoading] = useState(false);
 
   let courses = [
     {
@@ -211,10 +214,13 @@ export default function CoursePrediction() {
                     <em>${randomCourses[2].related_work}</em>.
                   </p>`;
 
-    console.log(randomCourses);
+    setIsLoading(true);
 
-    setThreeCourses(randomCourses);
-    setForm(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setThreeCourses(randomCourses);
+      setForm(true);
+    }, 3000);
   };
 
   const getRandomCourses = (arr, num) => {
@@ -309,12 +315,15 @@ export default function CoursePrediction() {
         {/* NAVIGATOR */}
         <Navigator />
 
+        <br />
+        <br />
+
         {/* content */}
         <div className="w-full mt-24 px-5 md:px-10 py-10 flex-grow flex flex-col text-black">
           <div className="border container mx-auto border-black py-10 px-5 rounded-xl primary-color-extra-light ">
             {/* Fill up form */}
             {!form && (
-              <div className="fill-up-form">
+              <div className="fill-up-form relative flex min-h-96 flex-col items-center justify-center">
                 <h1 className="uppercase font-bold text-2xl text-center mb-5 md:my-16">
                   Get your course recommended!
                 </h1>
@@ -464,12 +473,18 @@ export default function CoursePrediction() {
                 <div className="text-center mb-5 md:my-16">
                   <Button onClick={handleClick}>Submit</Button>
                 </div>
+
+                {isLoading && (
+                  <div className="absolute bg-white inset-0  flex flex-col items-center justify-center">
+                    <div className="w-16 h-16 border-4 border-red-700 rounded-full border-t-transparent animate-spin"></div>
+                  </div>
+                )}
               </div>
             )}
 
             {/* Result */}
             {form && (
-              <div className="result ">
+              <div className="result flex min-h-96  flex-col items-center justify-center">
                 <h1 className="uppercase font-bold text-2xl text-center mb-5 md:my-16">
                   Result
                 </h1>
@@ -675,6 +690,8 @@ export default function CoursePrediction() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }
