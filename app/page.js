@@ -36,6 +36,8 @@ import SectionContainer from "./components/SectionContainer";
 import IconWithBg from "./components/IconWithBg";
 import ImageCard from "./components/ImageCard";
 import Navigator from "./components/Navigator";
+import Footer from "./components/sections/Footer";
+import AnchorItem from "./components/AnchorItem";
 
 export default function Home() {
   return (
@@ -187,22 +189,20 @@ export default function Home() {
             </p>
 
             {/* LIST */}
-            <div className="flex flex-col gap-5 py-5">
+            <div className="flex flex-col gap-5 py-5 uppercase">
               {/* item */}
-              <div className="flex items-center gap-3">
-                <IconWithBg icon={faLinkedin} />
-                <a href="https://linkedin.com/wilhelmus" target="blank">
-                  linkedin.com/wilhelmus
-                </a>
-              </div>
+              <AnchorItem
+                icon={faLinkedin}
+                link={"https://www.linkedin.com/in/wilhelmusolejr/"}
+                title="linkedin.com/in/wilhelmusolejr"
+              />
 
               {/* item */}
-              <div className="flex items-center gap-3">
-                <IconWithBg icon={faGlobe} />
-                <a href="https://wilhelmus.vercel.app" target="blank">
-                  wilhelmus.vercel.app
-                </a>
-              </div>
+              <AnchorItem
+                icon={faGlobe}
+                link={"https://wilhelmus.vercel.app"}
+                title="wilhelmus.vercel.app"
+              />
             </div>
           </div>
         </div>
@@ -222,92 +222,7 @@ export default function Home() {
         </div>
       </SectionContainer>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      {/* FOOTER */}
-      <footer>
-        <div className="primary-color border-red-500 border-t-8	">
-          <SectionContainer>
-            <div className="container flex flex-wrap gap-16">
-              {/* ITEM 1 */}
-              <div className="flex gap-5 flex-col w-full xl:w-auto">
-                {/* LOGO */}
-                <Logo />
-
-                <p className="font-light max-w-md">
-                  CourseMatch: Personalized Course Prediction System is designed
-                  to help students at Western Mindanao State University discover
-                  their ideal academic paths with ease.
-                </p>
-              </div>
-
-              <div className="flex flex-grow gap-16 2xl:justify-end flex-wrap">
-                {/* Quick Links */}
-                <div className="">
-                  <h3 className="uppercase text-2xl font-semibold mb-5">
-                    Quick links
-                  </h3>
-
-                  {/* LIST */}
-                  <ul className="flex gap-3 flex-col tracking-wider font-light">
-                    <li>Home</li>
-                    <li>Features</li>
-                    <li>Courses</li>
-                    <li>About Us</li>
-                  </ul>
-                </div>
-
-                {/* Contact Information */}
-                <div className="">
-                  <h3 className="uppercase text-2xl font-semibold mb-5">
-                    Contact Information
-                  </h3>
-
-                  {/* LIST */}
-                  <div className="flex flex-col gap-5">
-                    {/* item */}
-                    <div className="flex items-center gap-3">
-                      <IconWithBg icon={faLinkedin} />
-                      <p>linkedin.com/wilhelmus</p>
-                    </div>
-                    {/* item */}
-                    <div className="flex items-center gap-3">
-                      <IconWithBg icon={faLinkedin} />
-                      <p>wilhelmus.vercel.app</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Social Links */}
-                <div className="">
-                  <h3 className="uppercase text-2xl font-semibold mb-5">
-                    Social Links
-                  </h3>
-
-                  <div className="flex flex-wrap gap-3">
-                    {/* item */}
-                    <div className="flex items-center gap-3">
-                      <IconWithBg icon={faLinkedin} />
-                    </div>
-                    {/* item */}
-                    <div className="flex items-center gap-3">
-                      <IconWithBg icon={faLinkedin} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SectionContainer>
-        </div>
-        <div className="py-10 text-center darker-secondary-color">
-          <p>Discover your future today with CourseMatch!</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
