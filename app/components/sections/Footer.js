@@ -60,7 +60,7 @@ export default function Footer() {
                 </div>
 
                 {/* Contact Information */}
-                <div className="">
+                <div className="hidden">
                   <h3 className="uppercase text-2xl font-semibold mb-5">
                     Contact Information
                   </h3>
@@ -92,11 +92,21 @@ export default function Footer() {
                   <div className="flex flex-wrap gap-3">
                     {/* item */}
                     <div className="flex items-center gap-3">
-                      <IconWithBg icon={faLinkedin} />
+                      <a
+                        href="https://www.linkedin.com/in/wilhelmusolejr/"
+                        className="transition duration-300 ease-in-out transform hover:scale-105"
+                      >
+                        <IconWithBg icon={faLinkedin} />
+                      </a>
                     </div>
                     {/* item */}
                     <div className="flex items-center gap-3">
-                      <IconWithBg icon={faLinkedin} />
+                      <a
+                        href="https://wilhelmus.vercel.app"
+                        className="transition duration-300 ease-in-out transform hover:scale-105"
+                      >
+                        <IconWithBg icon={faGlobe} />
+                      </a>
                     </div>
                   </div>
                 </div>

@@ -194,13 +194,13 @@ export default function Home() {
               <AnchorItem
                 icon={faLinkedin}
                 link={"https://www.linkedin.com/in/wilhelmusolejr/"}
-                title="linkedin.com/in/wilhelmusolejr"
+                title="linkedin.com"
               />
 
               {/* item */}
               <AnchorItem
                 icon={faGlobe}
-                link={"https://wilhelmus.vercel.app"}
+                link={"https://wilhelmus.vercel.app?ref=coursematch"}
                 title="wilhelmus.vercel.app"
               />
             </div>
