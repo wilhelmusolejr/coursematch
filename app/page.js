@@ -39,6 +39,12 @@ import Navigator from "./components/Navigator";
 import Footer from "./components/sections/Footer";
 import AnchorItem from "./components/AnchorItem";
 
+export const metadata = {
+  title: "Homepage | CourseMatch",
+  description:
+    "Discover your ideal academic path with CourseMatch, an intelligent system designed for Western Mindanao State University to predict the perfect course for you based on your unique answers and preferences.",
+};
+
 export default function Home() {
   return (
     <>
