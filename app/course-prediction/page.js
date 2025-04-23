@@ -171,10 +171,12 @@ export default function CoursePrediction() {
     let randomCourses = getRandomCourses(courses, 3);
     randomCourses = assignProbabilities(randomCourses);
 
+    console.log(randomCourses);
+
     randomCourses[0].description = `<p>
                     The highest recommendation is
                     <strong className="uppercase">
-                      ${randomCourses[0].name.toUpperCase()}
+                      ${randomCourses[0].full_name.toUpperCase()}
                     </strong>
                     , with a probability of ${randomCourses[0].probability}%,
                     making it the most suitable option given your
@@ -189,7 +191,7 @@ export default function CoursePrediction() {
     randomCourses[1].description = `<p>
                     The second-best match is 
                     <strong className="uppercase">
-                      ${randomCourses[1].name.toUpperCase()}
+                      ${randomCourses[1].full_name.toUpperCase()}
                     </strong>, with a probability of ${
                       randomCourses[1].probability
                     }%.
@@ -205,7 +207,7 @@ export default function CoursePrediction() {
     randomCourses[2].description = `<p>
                     Lastly,
                     <strong className="uppercase">
-                      ${randomCourses[2].name.toUpperCase()}
+                      ${randomCourses[2].full_name.toUpperCase()}
                     </strong>
                     emerged as another potential option, with a probability of 
                     ${randomCourses[2].probability}%. Though it ranks third, it
@@ -491,7 +493,7 @@ export default function CoursePrediction() {
 
                 {/* paragraph */}
                 <div className=" flex gap-5 flex-col w-full md:w-9/12 mx-auto">
-                  <p>
+                  <p className="text-lg">
                     Hi <strong className="capitalize"> {firstName},</strong>{" "}
                     based on your academic performance and senior high school
                     background, our system has identified the top three courses
@@ -502,23 +504,23 @@ export default function CoursePrediction() {
                 <div className="flex gap-5 flex-col lg:flex-row lg:items-end  justify-center items-center my-10 md:my-16">
                   {threeCourses && (
                     <>
-                      {/* item */}
+                      {/* item 0 */}
                       <CourseCard
                         className={
                           "dark-white-color border-2 order-1 lg:order-2  pb-20"
                         }
                       >
                         <ImageCard
-                          src={cais}
+                          src={threeCourses[0].photo}
                           className="w-1/2 mx-auto mb-10 mt-5"
                         />
 
                         <div className="mb-5">
                           <h2 className="uppercase font-semibold text-lg">
-                            College of liberal arts
+                            {threeCourses[0].full_name}
                           </h2>
                           <p className="text-sm font-light uppercase hidden">
-                            highly recommended (63%)
+                            highly recommended ({threeCourses[0].probability}%)
                           </p>
                           <div className="flex gap-1 text-yellow-500">
                             <FontAwesomeIcon
@@ -552,21 +554,21 @@ export default function CoursePrediction() {
                         ></p>
                       </CourseCard>
 
-                      {/* item */}
+                      {/* item 2 */}
                       <CourseCard
                         className={"dark-white-color order-2 lg:order-1 pb-12"}
                       >
                         <ImageCard
-                          src={csspe}
+                          src={threeCourses[2].photo}
                           className="w-1/2 mx-auto mb-10 mt-5"
                         />
 
                         <div className="mb-5">
                           <h2 className="uppercase font-semibold text-lg">
-                            College of liberal arts
+                            {threeCourses[2].full_name}
                           </h2>
                           <p className="text-sm font-light uppercase hidden">
-                            highly recommended (63%)
+                            highly recommended ({threeCourses[2].probability}%)
                           </p>
                           <div className="flex gap-1 text-yellow-500">
                             <FontAwesomeIcon
@@ -588,52 +590,6 @@ export default function CoursePrediction() {
                             <FontAwesomeIcon
                               icon={faStar}
                               className=" w-4 "
-                            ></FontAwesomeIcon>
-                          </div>
-                        </div>
-
-                        <p
-                          className="font-light"
-                          dangerouslySetInnerHTML={{
-                            __html: threeCourses[1].description,
-                          }}
-                        ></p>
-                      </CourseCard>
-
-                      {/* item */}
-                      <CourseCard className={"dark-white-color order-3"}>
-                        <ImageCard
-                          src={cn}
-                          className="w-1/2 mx-auto mb-10 mt-5"
-                        />
-
-                        <div className="mb-5">
-                          <h2 className="uppercase font-semibold text-lg">
-                            College of liberal arts
-                          </h2>
-                          <p className="text-sm font-light uppercase hidden">
-                            highly recommended (63%)
-                          </p>
-                          <div className="flex gap-1 text-yellow-500">
-                            <FontAwesomeIcon
-                              icon={faStar}
-                              className=" w-4"
-                            ></FontAwesomeIcon>
-                            <FontAwesomeIcon
-                              icon={faStar}
-                              className=" w-4"
-                            ></FontAwesomeIcon>
-                            <FontAwesomeIcon
-                              icon={faStar}
-                              className=" w-4"
-                            ></FontAwesomeIcon>
-                            <FontAwesomeIcon
-                              icon={faStar}
-                              className=" w-4"
-                            ></FontAwesomeIcon>
-                            <FontAwesomeIcon
-                              icon={faStar}
-                              className=" w-4"
                             ></FontAwesomeIcon>
                           </div>
                         </div>
@@ -642,6 +598,52 @@ export default function CoursePrediction() {
                           className="font-light"
                           dangerouslySetInnerHTML={{
                             __html: threeCourses[2].description,
+                          }}
+                        ></p>
+                      </CourseCard>
+
+                      {/* item 1 */}
+                      <CourseCard className={"dark-white-color order-3"}>
+                        <ImageCard
+                          src={threeCourses[1].photo}
+                          className="w-1/2 mx-auto mb-10 mt-5"
+                        />
+
+                        <div className="mb-5">
+                          <h2 className="uppercase font-semibold text-lg">
+                            {threeCourses[1].full_name}
+                          </h2>
+                          <p className="text-sm font-light uppercase hidden">
+                            highly recommended ({threeCourses[1].probability}%)
+                          </p>
+                          <div className="flex gap-1 text-yellow-500">
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className=" w-4"
+                            ></FontAwesomeIcon>
+                          </div>
+                        </div>
+
+                        <p
+                          className="font-light"
+                          dangerouslySetInnerHTML={{
+                            __html: threeCourses[1].description,
                           }}
                         ></p>
                       </CourseCard>

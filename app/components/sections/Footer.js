@@ -22,9 +22,9 @@ export default function Footer() {
       <footer>
         <div className="primary-color border-red-500 border-t-8	">
           <SectionContainer>
-            <div className="container flex flex-wrap gap-16">
+            <div className="container flex flex-wrap justify-center items-center gap-16">
               {/* ITEM 1 */}
-              <div className="flex gap-5 flex-col w-full xl:w-auto">
+              <div className="flex gap-5 flex-col xl:w-auto">
                 {/* LOGO */}
                 <Logo />
 
@@ -35,7 +35,7 @@ export default function Footer() {
                 </p>
               </div>
 
-              <div className="flex flex-grow gap-16 2xl:justify-end flex-wrap">
+              <div className="flex lg:flex-grow gap-16 2xl:justify-end flex-wrap">
                 {/* Quick Links */}
                 <div className="">
                   <h3 className="uppercase text-2xl font-semibold mb-5">
