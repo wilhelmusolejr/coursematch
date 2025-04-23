@@ -224,7 +224,9 @@ export default function Home() {
           <h2 className="capitalize font-bold text-2xl lg:text-4xl md:text-3xl mb-5 w-11/12 mx-auto">
             Are you ready to know your course?
           </h2>
-          <Button color="primary-color">Get Started</Button>
+          <Button color="primary-color" type="link" href="/course-prediction">
+            Get Started
+          </Button>
         </div>
       </SectionContainer>
 
