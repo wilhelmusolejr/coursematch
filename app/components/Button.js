@@ -27,7 +27,7 @@ export default function Button({
   return (
     <>
       <div
-        className={`inline-block cursor-pointer px-6 text-white py-4 rounded-3xl font-bold uppercase tracking-wider ${color} ${className}`}
+        className={`inline-block cursor-pointer px-6 text-white py-4 rounded-3xl font-bold uppercase tracking-wider transition duration-300 ease-in-out transform hover:scale-105 ${color} ${className}`}
         onClick={onClick}
       >
         {children}
