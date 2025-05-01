@@ -1,4 +1,4 @@
-# Eagle Locksmith – Website Revamp
+# Coursematch – Course Suggestion
 
 ![Project Banner](public/images/github/showcase.webp)
 
