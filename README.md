@@ -52,7 +52,7 @@ As of May 1, 2025, the backend server has been officially shut down. However, yo
 
 | ![screenshot1](public/images/github/screenshot1.png) | ![screenshot2](public/images/github/screenshot2.png) |
 | :--------------------------------------------------: | :--------------------------------------------------: |
-| ![screenshot3](public/images/github/screenshot3.png) |                                                      |
+| ![screenshot3](public/images/github/screenshot3.png) | ![screenshot4](public/images/github/screenshot4.png)                                                     |
 
 ---
 
