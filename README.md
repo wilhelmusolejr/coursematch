@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Eagle Locksmith – Website Revamp
 
-## Getting Started
+![Project Banner](public/images/github/showcase.webp)
 
-First, run the development server:
+## 📌 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Coursematch is an AI-powered system that predicts suitable courses for students based on inputs such as GPA, CET scores, and strand. It provides detailed insights into potential career paths and academic requirements. The platform is optimized for both desktop and mobile use, ensuring accessibility and ease of use.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+As of May 1, 2025, the backend server has been officially shut down. However, you can still view the demo and access the frontend UI.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🔗 **Live Demo:** <a href="https://coursematch.vercel.app/" target="_blank">https://coursematch.vercel.app</a>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- Responsive layout for mobile and desktop
+- Integrated with Next.js framework for optimized performance
+- AI-driven course prediction using machine learning
+- Downloadable PDF results for easy record-keeping
+- User account management for saving and retrieving predictions
+- Detailed insights and career path suggestions based on predicted courses
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Technologies Used
 
-## Deploy on Vercel
+**Frontend & Design:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- HTML
+- CSS
+- JavaScript
+- Tailwind CSS
+- Next.js
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Technology:**
+
+- jsPDF
+- NPM Libraries
+- Machine Learning
+- TensorFlow
+- Python
+
+**Design Tools:**
+
+- Figma
+- Adobe Photoshop
+
+---
+
+## 🖼️ Screenshots
+
+| ![screenshot1](public/images/github/screenshot1.png) | ![screenshot2](public/images/github/screenshot2.png) |
+| :--------------------------------------------------: | :--------------------------------------------------: |
+| ![screenshot3](public/images/github/screenshot3.png) |                                                      |
+
+---
+
+## 📁 Project Type
+
+- 🎨 Design
+- 💻 Development
+
+---
+
+## 📂 Tags
+
+- `Machine-Learning`
+- `UI/UX-design`
+- `Artificial-Intelligence`
+- `Responsive-Design`
+- `Educational-Technology`
+
+## 🙋‍♂️ About the Developer
+
+Hi! I’m **Wilhelmus**, a Full Stack Web Developer and Web Designer passionate about building impactful digital experiences.
+
+- <a href="https://wilhelmus.vercel.app/?ref=github_course" target="_blank">Portfolio</a>
+- <a href="https://www.linkedin.com/in/wilhelmusolejr/" target="_blank">LinkedIn</a>
