@@ -7,3 +7,23 @@
 .bg-white-primary {
   background-color: #f5f5f5;
 }
+
+/* black */
+/* black */
+.text-black-secondary {
+  color: #222;
+}
+
+.text-black-tertiary {
+  color: #333;
+}
+
+/* white */
+/* white */
+.text-white-secondary {
+  color: #f5f5f5; /* slightly off-white */
+}
+
+.text-white-tertiary {
+  color: #e5e5e5; /* softer gray-white */
+}
