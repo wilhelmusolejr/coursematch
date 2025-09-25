@@ -28,9 +28,9 @@ function App() {
 
         {/* Content */}
         <div className=" flex justify-center items-center h-[80vh] p-10">
-          <div className="px-5 header-background py-20 h-full rounded-lg">
+          <div className="px-5 header-background py-20 h-full rounded-lg md:text-center">
             {/* 1 */}
-            <div className="flex  flex-col gap-2 mb-10">
+            <div className="flex  flex-col gap-2 mb-10 ">
               <h2 className="text-4xl font-bold">CourseMatch</h2>
               <p className="font-medium text-xl tracking-wide">
                 Personalized course prediction system
@@ -38,7 +38,7 @@ function App() {
             </div>
 
             {/* 2 */}
-            <p className="mb-16 leading-relaxed font-extralight">
+            <p className="mb-16 leading-relaxed font-extralight md:w-10/12 m-auto">
               Discover your ideal academic path with CourseMatch, an intelligent
               system designed for Western Mindanao State University to predict
               the perfect course for you based on your unique answers and
@@ -46,7 +46,7 @@ function App() {
             </p>
 
             {/* button */}
-            <div className="flex ">
+            <div className="flex md:items-center md:justify-center">
               <div className="rounded-3xl bg-blue-800 font-medium uppercase px-8 py-3 w-fit">
                 get started
               </div>
