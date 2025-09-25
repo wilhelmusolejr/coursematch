@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
+import FeatureCard from "./components/FeatureCard";
 
 function App() {
   return (
@@ -58,7 +59,7 @@ function App() {
           <div className="rounded-3xl bg-red-200 text-red-800 font-medium  px-8 py-3 w-fit">
             get started
           </div>
-          <h2 className="font-bold text-3xl text-center">
+          <h2 className="font-bold text-3xl text-center text-secondary">
             Our breakthrough features
           </h2>
         </div>
@@ -66,40 +67,10 @@ function App() {
         {/* parent */}
         <div className="flex flex-col gap-10">
           {/* card */}
-          <div className="bg-white rounded-xl p-5 py-15 shadow-lg flex flex-col ">
-            {/* icon */}
-            <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
-
-            {/* heading */}
-            <h3 className="capitalize mb-5 font-semibold text-2xl w-10/12">
-              Course prediction engine
-            </h3>
-
-            {/* paragraph */}
-            <p className="">
-              Accurately predicts the most suitable course for students based on
-              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
-              preferences).
-            </p>
-          </div>
+          <FeatureCard />
 
           {/* card */}
-          <div className="bg-white rounded-xl p-5 py-15 shadow-lg flex flex-col ">
-            {/* icon */}
-            <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
-
-            {/* heading */}
-            <h3 className="capitalize mb-5 font-semibold text-2xl w-10/12">
-              Course prediction engine
-            </h3>
-
-            {/* paragraph */}
-            <p className="">
-              Accurately predicts the most suitable course for students based on
-              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
-              preferences).
-            </p>
-          </div>
+          <FeatureCard />
 
           {/* highlight */}
           {/* card */}
@@ -121,40 +92,10 @@ function App() {
           </div>
 
           {/* card */}
-          <div className="bg-white rounded-xl p-5 py-15 shadow-lg flex flex-col ">
-            {/* icon */}
-            <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
-
-            {/* heading */}
-            <h3 className="capitalize mb-5 font-semibold text-2xl w-10/12">
-              Course prediction engine
-            </h3>
-
-            {/* paragraph */}
-            <p className="">
-              Accurately predicts the most suitable course for students based on
-              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
-              preferences).
-            </p>
-          </div>
+          <FeatureCard />
 
           {/* card */}
-          <div className="bg-white rounded-xl p-5 py-15 shadow-lg flex flex-col ">
-            {/* icon */}
-            <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
-
-            {/* heading */}
-            <h3 className="capitalize mb-5 font-semibold text-2xl w-10/12">
-              Course prediction engine
-            </h3>
-
-            {/* paragraph */}
-            <p className="">
-              Accurately predicts the most suitable course for students based on
-              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
-              preferences).
-            </p>
-          </div>
+          <FeatureCard />
         </div>
       </div>
 
