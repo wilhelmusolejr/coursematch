@@ -12,7 +12,7 @@ export default function FeatureCard() {
       </h3>
 
       {/* paragraph */}
-      <p className="text-black-tertiary">
+      <p className="text-black-tertiary font-light">
         Accurately predicts the most suitable course for students based on their
         inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and preferences).
       </p>
