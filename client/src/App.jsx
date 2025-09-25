@@ -112,7 +112,13 @@ function App() {
         {/* parent */}
         <div className="flex gap-5 items-center justify-center flex-wrap">
           {/* card */}
-          <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
+          <div className="w-[100px] h-[100px] bg-white rounded-lg">
+            <img
+              src="/images/department_logo.png"
+              alt=""
+              className="w-full h-full object-contain p-5"
+            />
+          </div>
           <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
           <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
           <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
