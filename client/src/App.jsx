@@ -129,12 +129,18 @@ function App() {
 
         {/* image */}
         <div className="bg-gray-200 py-10 mb-15">
-          <div className="bg-slate-900 h-[50vh]"></div>
+          <div className="h-[50vh]">
+            <img
+              src="/images/about_me.png"
+              alt=""
+              className="w-full h-full object-contain object-center"
+            />
+          </div>
         </div>
 
         <div className="px-10 mb-10">
           <h3 className="text-2xl mb-2 font-semibold ">About me</h3>
-          <p>
+          <p className="text-secondary font-light leading-relaxed">
             Wilhelmus is a passionate full-stack web developer and designer with
             a background in Computer Science. With expertise in Laravel, the
             MERN stack, and a knack for creating intuitive user interfaces,
@@ -145,7 +151,8 @@ function App() {
           </p>
         </div>
 
-        <div className="px-10 flex  gap-5 flex-col">
+        {/* parent */}
+        <div className="px-10 flex  gap-5 flex-col uppercase">
           {/* card */}
           <div className="flex gap-5 items-center">
             {/* icon */}
