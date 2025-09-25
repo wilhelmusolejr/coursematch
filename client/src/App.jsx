@@ -31,7 +31,7 @@ function App() {
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10">
               <h2 className="text-4xl font-bold">CourseMatch</h2>
-              <p className="font-semibold tracking-wide">
+              <p className="font-medium text-xl tracking-wide">
                 Personalized course prediction system
               </p>
             </div>
