@@ -4,6 +4,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import FeatureCard from "./components/FeatureCard";
 import SectionHeading from "./components/SectionHeading";
+import CourseImageCard from "./components/CourseImageCard";
 
 function App() {
   return (
@@ -112,12 +113,12 @@ function App() {
         {/* parent */}
         <div className="flex gap-5 items-center justify-center flex-wrap">
           {/* card */}
-
-          <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
-          <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
-          <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
-          <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
-          <div className="w-[100px] h-[100px] bg-white rounded-lg"></div>
+          <CourseImageCard />
+          <CourseImageCard />
+          <CourseImageCard />
+          <CourseImageCard />
+          <CourseImageCard />
+          <CourseImageCard />
         </div>
       </div>
 
