@@ -14,7 +14,8 @@ function App() {
         <nav className="bg-red-primary container flex justify-between h-[15vh] items-center px-10 ">
           {/* logo */}
           <div className="flex items-center gap-3 ">
-            <div className="w-10 h-10 border-1 rounded-lg"></div>
+            <div className="w-10 h-10 border-1 rounded-lg hidden"></div>
+            <img src="/images/logo.png" alt="" className="w-10 h-10" />
             <h2>CourseMatch</h2>
           </div>
 
@@ -26,7 +27,7 @@ function App() {
 
         {/* Content */}
         <div className=" flex justify-center items-center h-[80vh] p-10">
-          <div className="px-5 py-20 bg-black/75 h-full rounded-lg">
+          <div className="px-5 header-background py-20 h-full rounded-lg">
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10">
               <h2 className="text-4xl font-bold">CourseMatch</h2>
@@ -296,63 +297,6 @@ function App() {
           </p>
         </div>
       </footer>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   );
 }
