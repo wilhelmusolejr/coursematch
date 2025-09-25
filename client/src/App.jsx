@@ -156,7 +156,7 @@ function App() {
           {/* card */}
           <div className="flex gap-5 items-center">
             {/* icon */}
-            <div className="w-10 h-10 rounded-md border-black border-1"></div>
+            <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
             {/* paragraph */}
             <div className="">linkedin.com/wilhelmus</div>
           </div>
@@ -164,7 +164,7 @@ function App() {
           {/* card */}
           <div className="flex gap-5 items-center">
             {/* icon */}
-            <div className="w-10 h-10 rounded-md border-black border-1"></div>
+            <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
             {/* paragraph */}
             <div className="">wilhelmus.vercel.app</div>
           </div>
