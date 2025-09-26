@@ -28,7 +28,7 @@ function App() {
 
         {/* Content */}
         <div className=" flex justify-center items-center h-[80vh] p-10">
-          <div className="px-5 header-background py-20 h-full rounded-lg md:text-center">
+          <div className="px-5 header-background py-20 md:pt-25 h-full rounded-lg md:text-center">
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10 ">
               <h2 className="text-4xl font-bold">CourseMatch</h2>
@@ -64,7 +64,7 @@ function App() {
         />
 
         {/* parent */}
-        <div className="flex flex-col gap-10">
+        <div className="max-w-xl m-auto grid gap-y-7 gap-x-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {/* card */}
           <FeatureCard />
 
@@ -73,7 +73,7 @@ function App() {
 
           {/* highlight */}
           {/* card */}
-          <div className="bg-blue-900 text-white rounded-xl p-5 py-15 shadow-lg flex flex-col ">
+          <div className="hidden bg-blue-900 max-w-80 text-white rounded-xl p-5 py-15 shadow-lg  flex-col ">
             {/* icon */}
             <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
 
@@ -95,6 +95,9 @@ function App() {
 
           {/* card */}
           <FeatureCard />
+
+          {/* card */}
+          <FeatureCard />
         </div>
       </div>
 
@@ -110,9 +113,17 @@ function App() {
           </h2>
         </div>
 
-        {/* parent */}
-        <div className="flex gap-5 items-center justify-center flex-wrap">
-          {/* card */}
+        <div
+          className="
+            grid 
+            gap-5 
+            justify-center
+            grid-cols-[repeat(2,100px)]      
+            sm:grid-cols-[repeat(2,100px)]  
+            md:grid-cols-[repeat(3,150px)]  
+            lg:grid-cols-[repeat(3,200px)]  
+          "
+        >
           <CourseImageCard />
           <CourseImageCard />
           <CourseImageCard />
@@ -128,19 +139,19 @@ function App() {
         <SectionHeading tagline="About us" heading="What drives us" />
 
         {/* image */}
-        <div className="bg-gray-200 py-10 mb-15">
-          <div className="h-[50vh]">
+        <div className="bg-gray-200 py-10 mb-15  ">
+          <div className="h-[50vh] px-10  rounded-lg overflow-hidden">
             <img
               src="/images/about_me.png"
               alt=""
-              className="w-full h-full object-contain object-center"
+              className=" w-full h-full  object-contain object-center"
             />
           </div>
         </div>
 
-        <div className="px-10 mb-10">
+        <div className="px-10 mb-10 md:w-10/12 md:m-auto">
           <h3 className="text-2xl mb-2 font-semibold ">About me</h3>
-          <p className="text-secondary font-light leading-relaxed">
+          <p className="text-secondary font-light leading-relaxed ">
             Wilhelmus is a passionate full-stack web developer and designer with
             a background in Computer Science. With expertise in Laravel, the
             MERN stack, and a knack for creating intuitive user interfaces,
@@ -152,7 +163,7 @@ function App() {
         </div>
 
         {/* parent */}
-        <div className="px-10 flex  gap-5 flex-col uppercase">
+        <div className="px-10 flex gap-5 md:w-10/12 md:m-auto flex-col uppercase">
           {/* card */}
           <div className="flex gap-5 items-center">
             {/* icon */}
@@ -186,9 +197,9 @@ function App() {
       </div>
 
       {/* banner */}
-      <div className="py-30 mb-30 text-white bg-blue-200 text-center flex flex-col justify-center items-center gap-5 px-10">
+      <div className="py-30 mb-30 md:w-10/12 m-auto md:rounded-xl text-white bg-blue-200 text-center flex flex-col justify-center items-center gap-5 px-10">
         {/* heading */}
-        <h2 className="font-bold text-3xl ">
+        <h2 className="font-bold text-3xl md:w-6/12">
           Ready to find your perfect course?
         </h2>
 
@@ -203,97 +214,100 @@ function App() {
         <div className="px-10 pb-30">
           {/* logo */}
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 border-1 rounded-lg"></div>
+            <img src="/images/logo.png" alt="" className="w-10 h-10" />
             <h2>CourseMatch</h2>
           </div>
 
-          <p className="text-white-secondary font-light leading-relaxed mb-10">
+          <p className="text-white-secondary font-light leading-relaxed mb-16 md:w-10/12">
             CourseMatch: Personalized Course Prediction System is designed to
             help students at Western Mindanao State University discover their
             ideal academic paths with ease
           </p>
 
-          {/*  */}
-          <div className="mb-10">
-            <h2 className="uppercase text-2xl mb-5">Quick links</h2>
-            <ul className="capitalize flex gap-3 flex-col">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Courses</a>
-              </li>
-              <li>
-                <a href="#">About us</a>
-              </li>
-            </ul>
-          </div>
+          <div className="flex flex-wrap gap-5">
+            {/*  */}
+            <div className="mb-10 md:w-4/12">
+              <h2 className="uppercase text-2xl mb-5">Quick links</h2>
+              <ul className="capitalize flex gap-3 flex-col">
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Features</a>
+                </li>
+                <li>
+                  <a href="#">Courses</a>
+                </li>
+                <li>
+                  <a href="#">About us</a>
+                </li>
+              </ul>
+            </div>
 
-          {/*  */}
-          <div className="mb-10">
-            <h2 className="uppercase text-2xl mb-5">Contact information</h2>
+            {/*  */}
+            <div className="mb-10 md:w-5/12">
+              <h2 className="uppercase text-2xl mb-5">Contact information</h2>
 
-            {/* parent */}
-            <div className="flex flex-col gap-5">
-              {/* card */}
-              <div className="flex items-center gap-3">
-                {/* icon */}
-                <div className="w-10 h-10 rounded-md bg-white"></div>
-                {/* text */}
-                <p>support@website.com</p>
-              </div>
+              {/* parent */}
+              <div className="flex flex-col gap-5">
+                {/* card */}
+                <div className="flex items-center gap-3">
+                  {/* icon */}
+                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  {/* text */}
+                  <p>support@website.com</p>
+                </div>
 
-              {/* card */}
-              <div className="flex items-center gap-3">
-                {/* icon */}
-                <div className="w-10 h-10 rounded-md bg-white"></div>
-                {/* text */}
-                <p>(+63) 123-456-7890</p>
-              </div>
+                {/* card */}
+                <div className="flex items-center gap-3">
+                  {/* icon */}
+                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  {/* text */}
+                  <p>(+63) 123-456-7890</p>
+                </div>
 
-              {/* card */}
-              <div className="flex items-center gap-3">
-                {/* icon */}
-                <div className="min-w-10 h-10 rounded-md bg-white"></div>
-                {/* text */}
-                <p>
-                  Western Mindanao State University, Zamboanga City, Philippines
-                </p>
+                {/* card */}
+                <div className="flex items-center gap-3">
+                  {/* icon */}
+                  <div className="min-w-10 h-10 rounded-md bg-white"></div>
+                  {/* text */}
+                  <p className="w-10/12">
+                    Western Mindanao State University, Zamboanga City,
+                    Philippines
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/*  */}
-          <div className="mb-10">
-            <h2 className="uppercase text-2xl mb-5">Social Links</h2>
+            {/*  */}
+            <div className="mb-10 md:w-3/12">
+              <h2 className="uppercase text-2xl mb-5">Social Links</h2>
 
-            {/* parent */}
-            <div className="flex flex-row gap-5">
-              {/* card */}
-              <div className="flex items-center gap-3">
-                {/* icon */}
-                <div className="w-10 h-10 rounded-md bg-white"></div>
-              </div>
+              {/* parent */}
+              <div className="flex flex-row gap-5">
+                {/* card */}
+                <div className="flex items-center gap-3">
+                  {/* icon */}
+                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                </div>
 
-              {/* card */}
-              <div className="flex items-center gap-3">
-                {/* icon */}
-                <div className="w-10 h-10 rounded-md bg-white"></div>
-              </div>
+                {/* card */}
+                <div className="flex items-center gap-3">
+                  {/* icon */}
+                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                </div>
 
-              {/* card */}
-              <div className="flex items-center gap-3">
-                {/* icon */}
-                <div className="w-10 h-10 rounded-md bg-white"></div>
-              </div>
+                {/* card */}
+                <div className="flex items-center gap-3">
+                  {/* icon */}
+                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                </div>
 
-              {/* card */}
-              <div className="flex items-center gap-3">
-                {/* icon */}
-                <div className="w-10 h-10 rounded-md bg-white"></div>
+                {/* card */}
+                <div className="flex items-center gap-3">
+                  {/* icon */}
+                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                </div>
               </div>
             </div>
           </div>

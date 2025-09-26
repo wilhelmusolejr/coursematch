@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CourseImageCard() {
   return (
-    <div className="w-[100px] h-[100px] bg-white rounded-lg">
+    <div className="h-[100px] md:h-[150px] lg:h-[200px] bg-white rounded-lg">
       <img
         src="/images/department_logo.png"
         alt=""
