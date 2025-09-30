@@ -1,5 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faGlobe,
+  faLaptopCode,
+  faArrowRight,
+  faAt,
+  faPhone,
+  faMapPin,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faLinkedinIn,
+  faFacebook,
+  faGithub,
+  faFacebookF,
+  faGithubAlt,
+} from "@fortawesome/free-brands-svg-icons";
 
 import "./App.css";
 import FeatureCard from "./components/FeatureCard";
@@ -13,7 +28,7 @@ function App() {
       {/* HEADER */}
       <div className="text-white">
         {/* Navigator */}
-        <nav className="bg-red-primary h-[12vh] flex justify-center items-center">
+        <nav className=" bg-red-primary h-[12vh] flex justify-center items-center sticky top-0">
           <div className="flex justify-between items-center container xl:px-0 px-10">
             {/* logo */}
             <div className="flex items-center gap-3 ">
@@ -119,7 +134,7 @@ function App() {
       </div>
 
       {/* album of courses */}
-      <div className="py-30 px-10 bg-blue-900">
+      <div className="py-30 px-10 courses-background">
         <div className="container mx-auto">
           {/* heading */}
           <div className="capitalize mb-20 flex justify-center items-center flex-col gap-5">
@@ -140,7 +155,7 @@ function App() {
             sm:grid-cols-[repeat(2,100px)]  
             md:grid-cols-[repeat(3,150px)]  
             lg:grid-cols-[repeat(4,150px)]  
-            xl:grid-cols-[repeat(4,200px)]  
+            xl:grid-cols-[repeat(4,200px)]
           "
           >
             <CourseImageCard />
@@ -188,21 +203,79 @@ function App() {
               </div>
 
               {/* parent */}
-              <div className="px-10 flex gap-5 md:w-10/12 lg:w-full lg:m-0 md:m-auto flex-col uppercase">
+              <div className="px-10 w-full flex gap-5 md:w-10/12 lg:w-full lg:m-0 md:m-auto flex-col uppercase">
                 {/* card */}
-                <div className="flex gap-5 items-center">
+                <div className=" gap-5 items-center hidden">
                   {/* icon */}
-                  <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
+                  <div className="min-w-12 h-12 rounded-md  shadow-md flex justify-center items-center ">
+                    <FontAwesomeIcon
+                      icon={faGlobe}
+                      className="text-2xl text-blue-primary"
+                    />
+                  </div>
+
                   {/* paragraph */}
-                  <div className="">linkedin.com/wilhelmus</div>
+                  <div className="flex gap-2 items-center">
+                    <a href="">linkedin.com/wilhelmus</a>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="text-xs rotate-325 text-blue-primary"
+                    />
+                  </div>
                 </div>
 
                 {/* card */}
-                <div className="flex gap-5 items-center">
+                <div className=" gap-5 items-center hidden">
                   {/* icon */}
-                  <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
+                  <div className="min-w-12 h-12 rounded-md  shadow-md flex justify-center items-center ">
+                    <FontAwesomeIcon
+                      icon={faLaptopCode}
+                      className="text-2xl text-blue-primary"
+                    />
+                  </div>
+
                   {/* paragraph */}
-                  <div className="">wilhelmus.vercel.app</div>
+                  <div className="flex gap-2 items-center">
+                    <a href="">wilhelmus.vercel.app</a>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="text-xs rotate-325 text-blue-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center md:w-9/12 border-black/10">
+                  {/*  */}
+                  <div className="flex gap-3 items-center">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full  flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faLinkedinIn}
+                        className="text-xl"
+                      />
+                    </div>
+
+                    <a href="">linkedin.com/wilhelmus</a>
+                  </div>
+
+                  {/*  */}
+                  <FontAwesomeIcon icon={faArrowRight} className="text-xl" />
+                </div>
+
+                <div className="border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center md:w-9/12 border-black/10">
+                  {/*  */}
+                  <div className="flex gap-3 items-center">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full  flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faLaptopCode}
+                        className="text-xl"
+                      />
+                    </div>
+
+                    <a href="">wilhelmus.vercel.app</a>
+                  </div>
+
+                  {/*  */}
+                  <FontAwesomeIcon icon={faArrowRight} className="text-xl" />
                 </div>
               </div>
             </div>
@@ -225,7 +298,7 @@ function App() {
       </div>
 
       {/* banner */}
-      <div className="container py-20 mb-30 md:w-10/12 lg:w-11/12 m-auto md:rounded-xl text-white bg-blue-200 text-center flex flex-col justify-center items-center gap-5 px-10">
+      <div className="container banner-background py-20 md:py-20 mb-30 md:mt-20 md:my-50 md:w-10/12 lg:w-11/12 m-auto md:rounded-xl text-white bg-blue-200 text-center flex flex-col justify-center items-center gap-5 px-10">
         {/* heading */}
         <h2 className="font-bold text-3xl md:w-6/12">
           Ready to find your perfect course?
@@ -238,7 +311,7 @@ function App() {
       </div>
 
       {/* footer */}
-      <footer className="pt-30  bg-red-primary text-white">
+      <footer className="pt-30  bg-red-primary text-white border-t-10 border-red-500">
         <div className="container mx-auto flex justify-between flex-col lg:flex-row gap-10 xl:px-0 px-10 pb-30">
           {/* 1 */}
           <div className="lg:w-3/12 md:w-6/12">
@@ -285,7 +358,12 @@ function App() {
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
-                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+                    <FontAwesomeIcon
+                      icon={faAt}
+                      className="text-xl text-blue-primary"
+                    />
+                  </div>
                   {/* text */}
                   <p>support@website.com</p>
                 </div>
@@ -293,7 +371,12 @@ function App() {
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
-                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+                    <FontAwesomeIcon
+                      icon={faPhone}
+                      className="text-xl text-blue-primary"
+                    />
+                  </div>
                   {/* text */}
                   <p>(+63) 123-456-7890</p>
                 </div>
@@ -301,7 +384,12 @@ function App() {
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
-                  <div className="min-w-10 h-10 rounded-md bg-white"></div>
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+                    <FontAwesomeIcon
+                      icon={faMapPin}
+                      className="text-xl text-blue-primary"
+                    />
+                  </div>
                   {/* text */}
                   <p className="w-10/12">
                     Western Mindanao State University, Zamboanga City,
@@ -316,36 +404,73 @@ function App() {
               <h2 className="uppercase text-2xl mb-5">Social Links</h2>
 
               {/* parent */}
-              <div className="flex flex-row gap-5">
+              <div className="flex flex-col gap-5">
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
-                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+                    <FontAwesomeIcon
+                      icon={faFacebookF}
+                      className="text-xl text-blue-primary"
+                    />
+                  </div>
                 </div>
 
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
-                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+                    <FontAwesomeIcon
+                      icon={faGithubAlt}
+                      className="text-xl text-blue-primary"
+                    />
+                  </div>
                 </div>
 
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
-                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+                    <FontAwesomeIcon
+                      icon={faLaptopCode}
+                      className="text-xl text-blue-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center border-black/10">
+                  {/*  */}
+                  <div className="flex gap-3 items-center">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full  flex items-center justify-center">
+                      <FontAwesomeIcon
+                        icon={faLaptopCode}
+                        className="text-xl"
+                      />
+                    </div>
+
+                    <a href="">wilhelmus.vercel.app</a>
+                  </div>
+
+                  {/*  */}
+                  <FontAwesomeIcon icon={faArrowRight} className="text-xl" />
                 </div>
 
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
-                  <div className="w-10 h-10 rounded-md bg-white"></div>
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
+                    <FontAwesomeIcon
+                      icon={faLinkedinIn}
+                      className="text-xl text-blue-primary"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-blue-900 py-16 text-center">
+        <div className="bg-blue-primary py-7 text-center">
           <p className="w-10/12 m-auto">
             Discover your future today with coursematch.
           </p>

@@ -2,10 +2,25 @@
 
 /* -------- */
 .header-background {
-  background: linear-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)),
+  background: linear-gradient(
+      to top right,
+      rgba(35, 35, 35, 0.8),
+      rgba(35, 35, 35, 0.8)
+    ),
     url("/images/heading_background.png"); /* actual image */
   background-size: cover;
   background-position: center;
+}
+
+.banner-background {
+  background: linear-gradient(rgba(0, 68, 139, 0.6), rgba(0, 68, 139, 1)),
+    url("/images/ccsbldg.png"); /* actual image */
+  background-size: cover;
+  background-position: center;
+}
+
+.courses-background {
+  background: radial-gradient(circle, #2d78c7, #00448b);
 }
 /* -------- */
 
@@ -15,6 +30,14 @@
 
 .bg-white-primary {
   background-color: #f5f5f5;
+}
+
+.bg-blue-primary {
+  background-color: #00448b;
+}
+
+.text-blue-primary {
+  color: #00448b;
 }
 
 /* black */
