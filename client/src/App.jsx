@@ -162,11 +162,11 @@ function App() {
           <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center ">
             {/* image */}
             <div className="bg-gray-200 py-10 mb-15 lg:rounded-lg lg:mb-0 lg:w-5/12 xl:w-4/12 ">
-              <div className="h-[50vh] px-10 rounded-lg overflow-hidden">
+              <div className="h-[50vh] flex items-center justify-center px-10 rounded-lg overflow-hidden ">
                 <img
                   src="/images/about_me.png"
                   alt=""
-                  className=" w-full h-full  object-contain object-center"
+                  className="rounded-lg h-full object-contain object-center"
                 />
               </div>
             </div>
