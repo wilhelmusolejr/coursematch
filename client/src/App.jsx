@@ -12,23 +12,25 @@ function App() {
       {/* HEADER */}
       <div className="text-white">
         {/* Navigator */}
-        <nav className="bg-red-primary container flex justify-between h-[15vh] items-center px-10 ">
-          {/* logo */}
-          <div className="flex items-center gap-3 ">
-            <div className="w-10 h-10 border-1 rounded-lg hidden"></div>
-            <img src="/images/logo.png" alt="" className="w-10 h-10" />
-            <h2>CourseMatch</h2>
-          </div>
+        <nav className="bg-red-primary h-[15vh] flex justify-center items-center">
+          <div className="flex justify-between items-center container xl:px-0 px-10">
+            {/* logo */}
+            <div className="flex items-center gap-3 ">
+              <div className="w-10 h-10 border-1 rounded-lg hidden"></div>
+              <img src="/images/logo.png" alt="" className="w-10 h-10" />
+              <h2>CourseMatch</h2>
+            </div>
 
-          {/* hamburger */}
-          <div className="">
-            <FontAwesomeIcon icon={faBars} className=" text-3xl" />
+            {/* hamburger */}
+            <div className="">
+              <FontAwesomeIcon icon={faBars} className=" text-3xl" />
+            </div>
           </div>
         </nav>
 
         {/* Content */}
-        <div className=" flex justify-center items-center h-[80vh] p-10">
-          <div className="px-5 header-background py-20 md:pt-25 h-full rounded-lg md:text-center">
+        <div className="container mx-auto flex justify-center items-center w-full xl:px-0 px-10 h-[80vh] py-10">
+          <div className="w-full h-full px-5 lg:px-0 header-background py-20 md:pt-30 rounded-lg md:text-center">
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10 ">
               <h2 className="text-4xl font-bold">CourseMatch</h2>
@@ -38,7 +40,7 @@ function App() {
             </div>
 
             {/* 2 */}
-            <p className="mb-16 leading-relaxed font-extralight md:w-10/12 m-auto">
+            <p className="mb-16 leading-relaxed font-extralight lg:w-5/12 md:w-10/12 m-auto ">
               Discover your ideal academic path with CourseMatch, an intelligent
               system designed for Western Mindanao State University to predict
               the perfect course for you based on your unique answers and
@@ -57,147 +59,162 @@ function App() {
 
       {/* features */}
       <div className="bg-white-primary py-30 px-10">
-        {/* heading */}
-        <SectionHeading
-          tagline="Our main features"
-          heading="Our breakthrough features"
-        />
+        <div className="container mx-auto">
+          {/* heading */}
+          <SectionHeading
+            tagline="Our main features"
+            heading="Our breakthrough features"
+          />
 
-        {/* parent */}
-        <div className="max-w-xl m-auto grid gap-y-7 gap-x-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-          {/* card */}
-          <FeatureCard />
+          {/* parent */}
+          <div className="flex flex-wrap gap-5 justify-center items-center">
+            {/* card */}
+            <FeatureCard />
 
-          {/* card */}
-          <FeatureCard />
+            {/* card */}
+            <FeatureCard />
 
-          {/* highlight */}
-          {/* card */}
-          <div className="hidden bg-blue-900 max-w-80 text-white rounded-xl p-5 py-15 shadow-lg  flex-col ">
-            {/* icon */}
-            <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
+            {/* highlight */}
+            {/* card */}
+            <div className="hidden bg-blue-900 max-w-80 text-white rounded-xl p-5 py-15 shadow-lg  flex-col ">
+              {/* icon */}
+              <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
 
-            {/* heading */}
-            <h3 className="capitalize mb-5 text-white-secondary font-semibold text-2xl w-10/12">
-              Course prediction engine
-            </h3>
+              {/* heading */}
+              <h3 className="capitalize mb-5 text-white-secondary font-semibold text-2xl w-10/12">
+                Course prediction engine
+              </h3>
 
-            {/* paragraph */}
-            <p className="text-white-tertiary font-light">
-              Accurately predicts the most suitable course for students based on
-              their inputs (e.g., GPA, Cumulative Exam Test [CET] scores, and
-              preferences).
-            </p>
+              {/* paragraph */}
+              <p className="text-white-tertiary font-light">
+                Accurately predicts the most suitable course for students based
+                on their inputs (e.g., GPA, Cumulative Exam Test [CET] scores,
+                and preferences).
+              </p>
+            </div>
+
+            {/* card */}
+            <FeatureCard />
+
+            {/* card */}
+            <FeatureCard />
+
+            {/* card */}
+            <FeatureCard />
+
+            <div className="bg-white hidden flex opacity-0 w-75 md:w-68 rounded-xl p-5 py-7 shadow-lg  flex-col border-1 border-black/30"></div>
           </div>
-
-          {/* card */}
-          <FeatureCard />
-
-          {/* card */}
-          <FeatureCard />
-
-          {/* card */}
-          <FeatureCard />
         </div>
       </div>
 
       {/* album of courses */}
       <div className="py-30 px-10 bg-blue-900">
-        {/* heading */}
-        <div className="capitalize mb-20 flex justify-center items-center flex-col gap-5">
-          <div className="rounded-3xl bg-white text-red-500 font-medium  px-8 py-3 w-fit">
-            Our main courses
+        <div className="container mx-auto">
+          {/* heading */}
+          <div className="capitalize mb-20 flex justify-center items-center flex-col gap-5">
+            <div className="rounded-3xl bg-white text-red-500 font-medium  px-8 py-3 w-fit">
+              Our main courses
+            </div>
+            <h2 className="font-bold text-white text-3xl text-center text-secondary">
+              Our breakthrough courses
+            </h2>
           </div>
-          <h2 className="font-bold text-white text-3xl text-center text-secondary">
-            Our breakthrough courses
-          </h2>
-        </div>
 
-        <div
-          className="
+          <div
+            className="
             grid 
             gap-5 
             justify-center
             grid-cols-[repeat(2,100px)]      
             sm:grid-cols-[repeat(2,100px)]  
             md:grid-cols-[repeat(3,150px)]  
-            lg:grid-cols-[repeat(3,200px)]  
+            lg:grid-cols-[repeat(4,150px)]  
+            xl:grid-cols-[repeat(4,200px)]  
           "
-        >
-          <CourseImageCard />
-          <CourseImageCard />
-          <CourseImageCard />
-          <CourseImageCard />
-          <CourseImageCard />
-          <CourseImageCard />
+          >
+            <CourseImageCard />
+            <CourseImageCard />
+            <CourseImageCard />
+            <CourseImageCard />
+            <CourseImageCard />
+            <CourseImageCard />
+          </div>
         </div>
       </div>
 
       {/* about us */}
-      <div className="py-30 ">
-        {/* heading */}
-        <SectionHeading tagline="About us" heading="What drives us" />
+      <div className="py-30 lg:px-10">
+        <div className="container mx-auto">
+          {/* heading */}
+          <SectionHeading tagline="About us" heading="What drives us" />
 
-        {/* image */}
-        <div className="bg-gray-200 py-10 mb-15  ">
-          <div className="h-[50vh] px-10  rounded-lg overflow-hidden">
-            <img
-              src="/images/about_me.png"
-              alt=""
-              className=" w-full h-full  object-contain object-center"
-            />
+          <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center ">
+            {/* image */}
+            <div className="bg-gray-200 py-10 mb-15 lg:rounded-lg lg:mb-0 lg:w-5/12 xl:w-4/12 ">
+              <div className="h-[50vh] px-10 rounded-lg overflow-hidden">
+                <img
+                  src="/images/about_me.png"
+                  alt=""
+                  className=" w-full h-full  object-contain object-center"
+                />
+              </div>
+            </div>
+
+            <div className="lg:w-6/12 flex flex-col gap-10 items-center justify-center  ">
+              {/* about me */}
+              <div className="px-10 mb-10 md:w-10/12 lg:w-full md:m-auto lg:m-0 ">
+                <h3 className="text-2xl mb-2 font-semibold ">About me</h3>
+                <p className="text-secondary font-light leading-relaxed ">
+                  Wilhelmus is a passionate full-stack web developer and
+                  designer with a background in Computer Science. With expertise
+                  in Laravel, the MERN stack, and a knack for creating intuitive
+                  user interfaces, Wilhelmus brings innovative ideas to life.
+                  Known for their dedication to crafting efficient and impactful
+                  digital solutions, they thrive on building projects that solve
+                  real-world problems, including personalized systems like
+                  course prediction platforms.
+                </p>
+              </div>
+
+              {/* parent */}
+              <div className="px-10 flex gap-5 md:w-10/12 lg:w-full lg:m-0 md:m-auto flex-col uppercase">
+                {/* card */}
+                <div className="flex gap-5 items-center">
+                  {/* icon */}
+                  <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
+                  {/* paragraph */}
+                  <div className="">linkedin.com/wilhelmus</div>
+                </div>
+
+                {/* card */}
+                <div className="flex gap-5 items-center">
+                  {/* icon */}
+                  <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
+                  {/* paragraph */}
+                  <div className="">wilhelmus.vercel.app</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="px-10 mb-10 md:w-10/12 md:m-auto">
-          <h3 className="text-2xl mb-2 font-semibold ">About me</h3>
-          <p className="text-secondary font-light leading-relaxed ">
-            Wilhelmus is a passionate full-stack web developer and designer with
-            a background in Computer Science. With expertise in Laravel, the
-            MERN stack, and a knack for creating intuitive user interfaces,
-            Wilhelmus brings innovative ideas to life. Known for their
-            dedication to crafting efficient and impactful digital solutions,
-            they thrive on building projects that solve real-world problems,
-            including personalized systems like course prediction platforms.
-          </p>
-        </div>
-
-        {/* parent */}
-        <div className="px-10 flex gap-5 md:w-10/12 md:m-auto flex-col uppercase">
-          {/* card */}
-          <div className="flex gap-5 items-center">
-            {/* icon */}
-            <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
-            {/* paragraph */}
-            <div className="">linkedin.com/wilhelmus</div>
+          <div className="hidden">
+            <p className="text-secondary font-light leading-relaxed text-center w-8/12 mx-auto">
+              At CourseMatch, we are passionate about empowering students to
+              discover their true potential and make informed decisions about
+              their academic journey. Our mission is to provide a personalized
+              course prediction system that leverages advanced algorithms and
+              data-driven insights to help students find the perfect course that
+              aligns with their skills, interests, and career aspirations. We
+              believe that every student deserves the opportunity to thrive in
+              an academic environment that suits them best, and we are committed
+              to making that a reality through our innovative platform.
+            </p>
           </div>
-
-          {/* card */}
-          <div className="flex gap-5 items-center">
-            {/* icon */}
-            <div className="min-w-10 h-10 rounded-md border-black border-1"></div>
-            {/* paragraph */}
-            <div className="">wilhelmus.vercel.app</div>
-          </div>
-        </div>
-
-        <div className="hidden">
-          <p className="text-secondary font-light leading-relaxed text-center w-8/12 mx-auto">
-            At CourseMatch, we are passionate about empowering students to
-            discover their true potential and make informed decisions about
-            their academic journey. Our mission is to provide a personalized
-            course prediction system that leverages advanced algorithms and
-            data-driven insights to help students find the perfect course that
-            aligns with their skills, interests, and career aspirations. We
-            believe that every student deserves the opportunity to thrive in an
-            academic environment that suits them best, and we are committed to
-            making that a reality through our innovative platform.
-          </p>
         </div>
       </div>
 
       {/* banner */}
-      <div className="py-30 mb-30 md:w-10/12 m-auto md:rounded-xl text-white bg-blue-200 text-center flex flex-col justify-center items-center gap-5 px-10">
+      <div className="container py-20 mb-30 md:w-10/12 lg:w-11/12 m-auto md:rounded-xl text-white bg-blue-200 text-center flex flex-col justify-center items-center gap-5 px-10">
         {/* heading */}
         <h2 className="font-bold text-3xl md:w-6/12">
           Ready to find your perfect course?
@@ -211,22 +228,26 @@ function App() {
 
       {/* footer */}
       <footer className="pt-30  bg-red-primary text-white">
-        <div className="px-10 pb-30">
-          {/* logo */}
-          <div className="flex items-center gap-3 mb-5">
-            <img src="/images/logo.png" alt="" className="w-10 h-10" />
-            <h2>CourseMatch</h2>
+        <div className="container mx-auto flex justify-between flex-col lg:flex-row gap-10 xl:px-0 px-10 pb-30">
+          {/* 1 */}
+          <div className="lg:w-3/12 md:w-6/12">
+            {/* logo */}
+            <div className="flex items-center gap-3 mb-5">
+              <img src="/images/logo.png" alt="" className="w-10 h-10" />
+              <h2>CourseMatch</h2>
+            </div>
+
+            <p className="text-white-secondary font-light leading-relaxed mb-16 ">
+              CourseMatch: Personalized Course Prediction System is designed to
+              help students at Western Mindanao State University discover their
+              ideal academic paths with ease
+            </p>
           </div>
 
-          <p className="text-white-secondary font-light leading-relaxed mb-16 md:w-10/12">
-            CourseMatch: Personalized Course Prediction System is designed to
-            help students at Western Mindanao State University discover their
-            ideal academic paths with ease
-          </p>
-
-          <div className="flex flex-wrap gap-5">
+          {/* 2 */}
+          <div className="lg:w-8/12 flex flex-wrap  lg:justify-center xl:justify-end gap-15 lg:gap-10">
             {/*  */}
-            <div className="mb-10 md:w-4/12">
+            <div className="">
               <h2 className="uppercase text-2xl mb-5">Quick links</h2>
               <ul className="capitalize flex gap-3 flex-col">
                 <li>
@@ -245,11 +266,11 @@ function App() {
             </div>
 
             {/*  */}
-            <div className="mb-10 md:w-5/12">
+            <div className="max-w-80">
               <h2 className="uppercase text-2xl mb-5">Contact information</h2>
 
               {/* parent */}
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 ">
                 {/* card */}
                 <div className="flex items-center gap-3">
                   {/* icon */}
@@ -280,7 +301,7 @@ function App() {
             </div>
 
             {/*  */}
-            <div className="mb-10 md:w-3/12">
+            <div className="">
               <h2 className="uppercase text-2xl mb-5">Social Links</h2>
 
               {/* parent */}

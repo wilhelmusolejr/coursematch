@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FeatureCard() {
   return (
-    <div className="bg-white rounded-xl max-w-68 p-5 py-7 shadow-lg flex flex-col border-1 border-black/30">
+    <div className="bg-white w-75 md:w-68 rounded-xl p-5 py-7 shadow-lg flex flex-col border-1 border-black/30">
       {/* icon */}
       <div className="h-12 w-12 bg-blue-100 rounded-full mb-10"></div>
 
