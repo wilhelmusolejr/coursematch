@@ -5,6 +5,7 @@ import "./App.css";
 import FeatureCard from "./components/FeatureCard";
 import SectionHeading from "./components/SectionHeading";
 import CourseImageCard from "./components/CourseImageCard";
+import NavigatorLink from "./components/NavigatorLink";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       {/* HEADER */}
       <div className="text-white">
         {/* Navigator */}
-        <nav className="bg-red-primary h-[15vh] flex justify-center items-center">
+        <nav className="bg-red-primary h-[12vh] flex justify-center items-center">
           <div className="flex justify-between items-center container xl:px-0 px-10">
             {/* logo */}
             <div className="flex items-center gap-3 ">
@@ -21,15 +22,25 @@ function App() {
               <h2>CourseMatch</h2>
             </div>
 
+            <div className="hidden md:block">
+              <ul className="flex gap-5 uppercase lg:flex ">
+                <NavigatorLink link_path="Home" />
+                <NavigatorLink link_path="Features" />
+                <NavigatorLink link_path="Courses" />
+                <NavigatorLink link_path="About us" />
+                <NavigatorLink link_path="Recommendation" />
+              </ul>
+            </div>
+
             {/* hamburger */}
-            <div className="">
+            <div className="md:hidden">
               <FontAwesomeIcon icon={faBars} className=" text-3xl" />
             </div>
           </div>
         </nav>
 
         {/* Content */}
-        <div className="container mx-auto flex justify-center items-center w-full xl:px-0 px-10 h-[80vh] py-10">
+        <div className="container mx-auto flex justify-center items-center w-full xl:px-0 px-10 h-[85vh] py-10">
           <div className="w-full h-full px-5 lg:px-0 header-background py-20 md:pt-30 rounded-lg md:text-center">
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10 ">
