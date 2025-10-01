@@ -1,5 +1,14 @@
 import React from "react";
+import Navigator from "../components/Navigator";
 
 export default function Predictions() {
-  return <div>Predictions</div>;
+  return (
+    <>
+      {/* HEADER */}
+      <div className="text-white">
+        {/* Navigator */}
+        <Navigator />
+      </div>
+    </>
+  );
 }
