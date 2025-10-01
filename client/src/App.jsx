@@ -1,17 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
-  faGlobe,
   faLaptopCode,
-  faArrowRight,
   faAt,
   faPhone,
   faMapPin,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faLinkedinIn,
-  faFacebook,
-  faGithub,
   faFacebookF,
   faGithubAlt,
 } from "@fortawesome/free-brands-svg-icons";
@@ -205,39 +201,21 @@ function App() {
 
               {/* parent */}
               <div className="px-10 w-full flex gap-5 md:w-10/12 lg:w-full lg:m-0 md:m-auto flex-col uppercase">
-                <div className="border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center md:w-9/12 border-black/10">
-                  {/*  */}
-                  <div className="flex gap-3 items-center">
-                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full  flex items-center justify-center">
-                      <FontAwesomeIcon
-                        icon={faLinkedinIn}
-                        className="text-xl"
-                      />
-                    </div>
+                {/*  */}
+                <BoxLinkItem
+                  faIcon={faLinkedinIn}
+                  pathUrl="linkedin.com/wilhelmus"
+                  pathName="linkedin.com/wilhelmus"
+                  className="md:w-9/12"
+                />
 
-                    <a href="">linkedin.com/wilhelmus</a>
-                  </div>
-
-                  {/*  */}
-                  <FontAwesomeIcon icon={faArrowRight} className="text-xl" />
-                </div>
-
-                <div className="border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center md:w-9/12 border-black/10">
-                  {/*  */}
-                  <div className="flex gap-3 items-center">
-                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full  flex items-center justify-center">
-                      <FontAwesomeIcon
-                        icon={faLaptopCode}
-                        className="text-xl"
-                      />
-                    </div>
-
-                    <a href="">wilhelmus.vercel.app</a>
-                  </div>
-
-                  {/*  */}
-                  <FontAwesomeIcon icon={faArrowRight} className="text-xl" />
-                </div>
+                {/*  */}
+                <BoxLinkItem
+                  faIcon={faLaptopCode}
+                  pathUrl="linkedin.com/wilhelmus"
+                  pathName="wilhelmus.vercel.app"
+                  className="md:w-9/12"
+                />
               </div>
             </div>
           </div>
@@ -381,24 +359,28 @@ function App() {
                   faIcon={faFacebookF}
                   pathUrl="https://linkedin.com/wilhelmus"
                   pathName="Wilhelmus Ole"
+                  className="bg-black/10"
                 />
 
                 <BoxLinkItem
                   faIcon={faGithubAlt}
                   pathUrl="https://linkedin.com/wilhelmus"
                   pathName="wilhelmus"
+                  className="bg-black/10"
                 />
 
                 <BoxLinkItem
                   faIcon={faGithubAlt}
                   pathUrl="https://linkedin.com/wilhelmus"
                   pathName="wihelmus.vercel.app"
+                  className="bg-black/10"
                 />
 
                 <BoxLinkItem
                   faIcon={faLinkedinIn}
                   pathUrl="linkedin.com/wilhelmus"
                   pathName="wilhelmus"
+                  className="bg-black/10"
                 />
               </div>
             </div>
