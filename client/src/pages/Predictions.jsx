@@ -10,11 +10,11 @@ export default function Predictions() {
         <Navigator />
       </div>
 
-      <div className="container px-10 my-20">
-        <h1 className="text-3xl font-bold text-center mb-5">
+      <div className="container px-10 my-20 text-center">
+        <h1 className="text-3xl font-bold  mb-5">
           Get your course recommended!
         </h1>
-        <p>
+        <p className="w-10/12 m-auto">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
           quasi, velit in asperiores repellendus inventore suscipit et modi
           fugiat aspernatur?
