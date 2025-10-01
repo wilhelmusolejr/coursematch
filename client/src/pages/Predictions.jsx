@@ -1,6 +1,7 @@
 import React from "react";
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
+import CoursePredictedItem from "../components/CoursePredictedItem";
 
 export default function Predictions() {
   return (
@@ -15,14 +16,14 @@ export default function Predictions() {
         <h1 className="text-3xl uppercase font-bold mb-5">
           Get your course recommended!
         </h1>
-        <p className="w-10/12 lg:w-6/12 m-auto">
+        <p className="md:w-10/12 lg:w-6/12 m-auto">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
           quasi, velit in asperiores repellendus inventore suscipit et modi
           fugiat aspernatur?
         </p>
       </div>
 
-      <div className="container mx-auto md:mb-40 lg:mb-60 md:px-10">
+      <div className="container mx-auto md:mb-40 lg:mb-60 md:px-10 hidden">
         <div className="container mx-auto border-1  border-black/20 px-10 py-14 lg:py-20 rounded-xl bg-white-primary">
           <div className="flex md:flex-row flex-col gap-10 md:gap-5 md:justify-center">
             {/* Personal Info */}
@@ -92,6 +93,19 @@ export default function Predictions() {
               Submit
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-10 mb-30">
+        <div className="flex gap-7 flex-wrap flex-col lg:flex-row justify-center items-start">
+          {/* card */}
+          <CoursePredictedItem className="" />
+
+          {/* card */}
+          <CoursePredictedItem className="self-center lg:mt-10" />
+
+          {/* card */}
+          <CoursePredictedItem className="self-end lg:mt-30" />
         </div>
       </div>
 
