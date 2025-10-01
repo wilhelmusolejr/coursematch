@@ -21,6 +21,7 @@ import FeatureCard from "./components/FeatureCard";
 import SectionHeading from "./components/SectionHeading";
 import CourseImageCard from "./components/CourseImageCard";
 import NavigatorLink from "./components/NavigatorLink";
+import BoxLinkItem from "./components/BoxLinkItem";
 
 function App() {
   return (
@@ -204,46 +205,6 @@ function App() {
 
               {/* parent */}
               <div className="px-10 w-full flex gap-5 md:w-10/12 lg:w-full lg:m-0 md:m-auto flex-col uppercase">
-                {/* card */}
-                <div className=" gap-5 items-center hidden">
-                  {/* icon */}
-                  <div className="min-w-12 h-12 rounded-md  shadow-md flex justify-center items-center ">
-                    <FontAwesomeIcon
-                      icon={faGlobe}
-                      className="text-2xl text-blue-primary"
-                    />
-                  </div>
-
-                  {/* paragraph */}
-                  <div className="flex gap-2 items-center">
-                    <a href="">linkedin.com/wilhelmus</a>
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="text-xs rotate-325 text-blue-primary"
-                    />
-                  </div>
-                </div>
-
-                {/* card */}
-                <div className=" gap-5 items-center hidden">
-                  {/* icon */}
-                  <div className="min-w-12 h-12 rounded-md  shadow-md flex justify-center items-center ">
-                    <FontAwesomeIcon
-                      icon={faLaptopCode}
-                      className="text-2xl text-blue-primary"
-                    />
-                  </div>
-
-                  {/* paragraph */}
-                  <div className="flex gap-2 items-center">
-                    <a href="">wilhelmus.vercel.app</a>
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="text-xs rotate-325 text-blue-primary"
-                    />
-                  </div>
-                </div>
-
                 <div className="border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center md:w-9/12 border-black/10">
                   {/*  */}
                   <div className="flex gap-3 items-center">
@@ -329,7 +290,7 @@ function App() {
           </div>
 
           {/* 2 */}
-          <div className="lg:w-8/12 flex flex-wrap  lg:justify-center xl:justify-end gap-15 lg:gap-10">
+          <div className="lg:w-8/12 md:w-6/12 flex flex-wrap lg:justify-around xl:justify-end gap-15 lg:gap-10">
             {/*  */}
             <div className="">
               <h2 className="uppercase text-2xl mb-5">Quick links</h2>
@@ -406,7 +367,7 @@ function App() {
               {/* parent */}
               <div className="flex flex-col gap-5">
                 {/* card */}
-                <div className="flex items-center gap-3">
+                <div className=" items-center gap-3 hidden">
                   {/* icon */}
                   <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
                     <FontAwesomeIcon
@@ -416,55 +377,29 @@ function App() {
                   </div>
                 </div>
 
-                {/* card */}
-                <div className="flex items-center gap-3">
-                  {/* icon */}
-                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
-                    <FontAwesomeIcon
-                      icon={faGithubAlt}
-                      className="text-xl text-blue-primary"
-                    />
-                  </div>
-                </div>
+                <BoxLinkItem
+                  faIcon={faFacebookF}
+                  pathUrl="https://linkedin.com/wilhelmus"
+                  pathName="Wilhelmus Ole"
+                />
 
-                {/* card */}
-                <div className="flex items-center gap-3">
-                  {/* icon */}
-                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
-                    <FontAwesomeIcon
-                      icon={faLaptopCode}
-                      className="text-xl text-blue-primary"
-                    />
-                  </div>
-                </div>
+                <BoxLinkItem
+                  faIcon={faGithubAlt}
+                  pathUrl="https://linkedin.com/wilhelmus"
+                  pathName="wilhelmus"
+                />
 
-                <div className="border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center border-black/10">
-                  {/*  */}
-                  <div className="flex gap-3 items-center">
-                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full  flex items-center justify-center">
-                      <FontAwesomeIcon
-                        icon={faLaptopCode}
-                        className="text-xl"
-                      />
-                    </div>
+                <BoxLinkItem
+                  faIcon={faGithubAlt}
+                  pathUrl="https://linkedin.com/wilhelmus"
+                  pathName="wihelmus.vercel.app"
+                />
 
-                    <a href="">wilhelmus.vercel.app</a>
-                  </div>
-
-                  {/*  */}
-                  <FontAwesomeIcon icon={faArrowRight} className="text-xl" />
-                </div>
-
-                {/* card */}
-                <div className="flex items-center gap-3">
-                  {/* icon */}
-                  <div className="w-10 h-10 flex justify-center items-center rounded-md bg-white">
-                    <FontAwesomeIcon
-                      icon={faLinkedinIn}
-                      className="text-xl text-blue-primary"
-                    />
-                  </div>
-                </div>
+                <BoxLinkItem
+                  faIcon={faLinkedinIn}
+                  pathUrl="linkedin.com/wilhelmus"
+                  pathName="wilhelmus"
+                />
               </div>
             </div>
           </div>
