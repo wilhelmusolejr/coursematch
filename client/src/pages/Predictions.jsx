@@ -1,5 +1,6 @@
 import React from "react";
 import Navigator from "../components/Navigator";
+import Footer from "../components/Footer";
 
 export default function Predictions() {
   return (
@@ -21,7 +22,7 @@ export default function Predictions() {
         </p>
       </div>
 
-      <div className="container mx-auto md:px-10">
+      <div className="container mx-auto md:mb-40 lg:mb-60 md:px-10">
         <div className="container mx-auto border-1  border-black/20 px-10 py-14 lg:py-20 rounded-xl bg-white-primary">
           <div className="flex md:flex-row flex-col gap-10 md:gap-5 md:justify-center">
             {/* Personal Info */}
@@ -35,7 +36,7 @@ export default function Predictions() {
                 </h3>
                 <input
                   type="text"
-                  className="p-2 border-1 rounded-md w-full bg-white"
+                  className="p-2 border-1 border-black/30 rounded-md w-full bg-white"
                 />
               </div>
             </div>
@@ -55,7 +56,7 @@ export default function Predictions() {
                   </h3>
                   <input
                     type="text"
-                    className=" bg-white p-2 border-1 rounded-md w-full"
+                    className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
                   />
                 </div>
 
@@ -67,7 +68,7 @@ export default function Predictions() {
                   </h3>
                   <input
                     type="text"
-                    className=" bg-white p-2 border-1 rounded-md w-full"
+                    className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
                   />
                 </div>
 
@@ -78,7 +79,7 @@ export default function Predictions() {
                   </h3>
                   <input
                     type="text"
-                    className=" bg-white p-2 border-1 rounded-md w-full"
+                    className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
                   />
                 </div>
               </div>
@@ -94,19 +95,8 @@ export default function Predictions() {
         </div>
       </div>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      {/* footer */}
+      <Footer />
     </>
   );
 }
