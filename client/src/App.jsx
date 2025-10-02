@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/prediction" element={<Prediction />} />
+        <Route path="/recommendation" element={<Prediction />} />
       </Routes>
     </Router>
   );
