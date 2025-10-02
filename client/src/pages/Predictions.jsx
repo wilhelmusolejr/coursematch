@@ -3,15 +3,30 @@ import { React, useState } from "react";
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
 import CoursePredictedItem from "../components/CoursePredictedItem";
+import { getPrediction } from "../api/predict";
 
 export default function Predictions() {
-  const [predictResult, setPredictResult] = useState(null);
+  const [result, setResult] = useState(null);
+  const [gpa, setGpa] = useState("");
+  const [strand, setStrand] = useState("");
+  const [cet, setCet] = useState("");
+  const [name, setName] = useState("");
 
-  function submitForm() {
-    // perform form validation here
-    // if valid, call the API to get the prediction result
-    setPredictResult(true);
-  }
+  const handleSubmit = async (e) => {
+    let formData = {
+      CET: parseFloat(cet),
+      GPA: parseFloat(gpa),
+      STRAND: strand,
+    };
+
+    e.preventDefault();
+    try {
+      const prediction = await getPrediction(formData);
+      setResult(prediction.prediction);
+    } catch {
+      setResult("Error fetching prediction");
+    }
+  };
 
   return (
     <>
@@ -33,7 +48,7 @@ export default function Predictions() {
       </div>
 
       {/* Form */}
-      {predictResult || (
+      {result || (
         <div className="container mx-auto md:mb-40 lg:mb-60 md:px-10 ">
           <div className="container mx-auto border-1  border-black/20 px-10 py-14 lg:py-20 rounded-xl bg-white-primary">
             <div className="flex md:flex-row flex-col gap-10 md:gap-5 md:justify-center">
@@ -49,6 +64,9 @@ export default function Predictions() {
                   <input
                     type="text"
                     className="p-2 border-1 border-black/30 rounded-md w-full bg-white"
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
                   />
                 </div>
               </div>
@@ -67,8 +85,11 @@ export default function Predictions() {
                       Grade 12 GPA <span className="text-red-500">*</span>
                     </h3>
                     <input
-                      type="text"
+                      type="number"
                       className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
+                      onChange={(e) => {
+                        setGpa(e.target.value);
+                      }}
                     />
                   </div>
 
@@ -79,8 +100,11 @@ export default function Predictions() {
                       <span className="text-red-500">*</span>
                     </h3>
                     <input
-                      type="text"
+                      type="number"
                       className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
+                      onChange={(e) => {
+                        setCet(e.target.value);
+                      }}
                     />
                   </div>
 
@@ -92,6 +116,9 @@ export default function Predictions() {
                     <input
                       type="text"
                       className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
+                      onChange={(e) => {
+                        setStrand(e.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -102,7 +129,7 @@ export default function Predictions() {
             <div className=" text-white flex items-center justify-center mt-20">
               <div
                 className="rounded-3xl cursor-pointer bg-blue-800 font-medium uppercase px-8 py-3 w-fit"
-                onClick={submitForm}
+                onClick={(e) => handleSubmit(e)}
               >
                 Submit
               </div>
@@ -112,7 +139,7 @@ export default function Predictions() {
       )}
 
       {/* Result */}
-      {predictResult && (
+      {result && (
         <div className="container mx-auto px-10 mb-30">
           <div className="flex gap-7 flex-wrap flex-col lg:flex-row justify-center items-start">
             {/* card */}
