@@ -99,13 +99,34 @@ export default function Predictions() {
       <div className="container mx-auto px-10 mb-30">
         <div className="flex gap-7 flex-wrap flex-col lg:flex-row justify-center items-start">
           {/* card */}
-          <CoursePredictedItem className="" />
+          <CoursePredictedItem
+            heading="Best fit with your strand"
+            tagline="Aligned Choice"
+            courseName="BS Computer Science"
+            className="bg-slate-200/50"
+            aboutCourse="Computer Science focuses on problem-solving using algorithms, programming, and advanced computing concepts. It prepares you for roles in software development, AI, and systems design."
+            whyRecommended="This course aligns closely with your current academic strand, making it the most natural progression based on your strengths."
+          />
 
           {/* card */}
-          <CoursePredictedItem className="self-center lg:mt-10" />
+          <CoursePredictedItem
+            heading="Alternative outside your strand"
+            tagline="Alternative Path"
+            courseName="BS Information Technology"
+            className="bg-slate-200/40 self-center lg:mt-10"
+            aboutCourse="Information Technology emphasizes practical use of technology in business, networking, and systems management. It’s hands-on and industry-oriented."
+            whyRecommended="Although not fully aligned with your strand, this program lets you explore a broader tech field with strong career opportunities."
+          />
 
           {/* card */}
-          <CoursePredictedItem className="self-end lg:mt-30" />
+          <CoursePredictedItem
+            heading="General top pick"
+            tagline="Explore Everything"
+            courseName="BS Psychology"
+            className="bg-slate-200/30 self-end lg:mt-30"
+            aboutCourse="Psychology studies human behavior and mental processes, with applications in education, healthcare, and organizational settings."
+            whyRecommended="Chosen as a well-rounded fit from your overall profile, this course provides a unique direction if you want to explore beyond tech fields."
+          />
         </div>
       </div>
 
