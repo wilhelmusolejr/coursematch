@@ -1,0 +1,104 @@
+
+ --- MODEL INFO ---
+ 
+ Test size                : 0.15
+ 
+ GPA and CET Binning      : True
+ 
+ -- Files
+ - COURSES INCLUDED
+ BS HOSPITALLITY MANAGEMENT.csv: 151
+ BSNED.csv: 150
+ BS Geodetic Engineering.csv: 151
+ BS Mechanical EngineerinG.csv: 151
+ BSED.csv: 168
+ BSESS.csv: 162
+ BS Sanitary Engineering.csv: 172
+ BS NURSING.csv: 155
+ ABIS.csv: 151
+ BS MATH.csv: 45
+ BS INFORMATION TECHNOLOGY.csv: 172
+ BS SOCIAL WORK.csv: 172
+ BS ND.csv: 151
+ BS CRIMINOLOGY.csv: 153
+ BS STATISTICS.csv: 41
+ BS PSYCHOLOGY.csv: 156
+ Computer Engineering.csv: 150
+ BS PHYSICS.csv: 32
+ CPADS.csv: 152
+ BS HOME ECONOMICS.csv: 151
+ BATSILYER NG SINING FILIPINO.csv: 151
+ AB POLSCI.csv: 153
+ BS COMMUNITY DEVELOPMENT.csv: 172
+ BAELS.csv: 151
+ BCAED.csv: 150
+ ABAS.csv: 161
+ BS ARCHI.csv: 151
+ BS COMPUTER Science.csv: 168
+ AB JOURNALISM.csv: 151
+ BS ECONOMICS.csv: 152
+ AB HISTORY.csv: 150
+ BS CHEMISTRY.csv: 44
+ BS CIVIL EngineeR.csv: 151
+ BPED.csv: 151
+ BS Environmental Engineering.csv: 151
+ BS BIOLOGY.csv: 228
+ AB BROADCASTING.csv: 151
+ BS Electrical Engineering.csv: 151
+ BECED.csv: 151
+ BS ACCOUNTANCY.csv: 152
+ BS INDUSTRIAL ENGINEERING.csv: 151
+ BEED.csv: 167
+ BS AGRICULTURAL.csv: 51
+ BS Electronics Communication Engineering.csv: 172
+ 
+ Final dataset shape: (1950, 4)
+ 
+ Dictionary (STRAND): {'ABM': np.int64(0), 'ARTSDESIGN': np.int64(1), 'CSS': np.int64(2), 'GAS': np.int64(3), 'HUMSS': np.int64(4), 'SPORTSTRACK': np.int64(5), 'STEM': np.int64(6), 'TVL': np.int64(7)}
+ 
+ Dictionary (COURSE): {'ARCHI': np.int64(0), 'ASIAN': np.int64(1), 'CCS': np.int64(2), 'CRIM': np.int64(3), 'CTE': np.int64(4), 'ENGR': np.int64(5), 'HE': np.int64(6), 'LIBERAL': np.int64(7), 'NURSING': np.int64(8), 'PUBLIC': np.int64(9), 'SCIMATH': np.int64(10), 'SOCIAL': np.int64(11), 'SPORT': np.int64(12)}
+ 
+ -- Testing
+ Algorithm: SvmLinear
+ Accuracy: 0.23208191126279865
+ F1 Score:0.19589600242972371
+ Recall Score:0.23304955913651562
+ Precision:0.18235346168179706
+ -
+ Algorithm: SvmPoly
+ Accuracy: 0.2525597269624573
+ F1 Score:0.2087227745742134
+ Recall Score:0.2534204925509273
+ Precision:0.21672505767774314
+ -
+ Algorithm: DecisionTreeClassifier
+ Accuracy: 0.2764505119453925
+ F1 Score:0.244897063152081
+ Recall Score:0.2785041045910611
+ Precision:0.24421435171435166
+ -
+ Algorithm: LogisticRegression
+ Accuracy: 0.22525597269624573
+ F1 Score:0.1769137805669006
+ Recall Score:0.22590453025235632
+ Precision:0.15393439808186352
+ -
+ Algorithm: GaussianNB
+ Accuracy: 0.22525597269624573
+ F1 Score:0.178440291299396
+ Recall Score:0.22575250836120403
+ Precision:0.18535928375294888
+ -
+ Algorithm: KNeighborsClassifier
+ Accuracy: 0.24573378839590443
+ F1 Score:0.1997591686052567
+ Recall Score:0.246731529340225
+ Precision:0.1938113481208834
+ -
+ 
+ -- Scoring based on DecisionTreeClassifier
+ Accuracy:0.2764505119453925
+ F1 Score:0.5666666666666667
+ Recall Score:0.6
+ Precision:0.55
+ 

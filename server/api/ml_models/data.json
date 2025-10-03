@@ -1,0 +1,65 @@
+{
+  "MIXED": {
+    "STRAND": {
+      "ABM": 0,
+      "ARTSDESIGN": 1,
+      "CSS": 2,
+      "GAS": 3,
+      "HUMSS": 4,
+      "SPORTSTRACK": 5,
+      "STEM": 6,
+      "TVL": 7
+    },
+    "COURSE": {
+      "ARCHI": 0,
+      "ASIAN": 1,
+      "CCS": 2,
+      "CRIM": 3,
+      "CTE": 4,
+      "ENGR": 5,
+      "HE": 6,
+      "LIBERAL": 7,
+      "NURSING": 8,
+      "PUBLIC": 9,
+      "SCIMATH": 10,
+      "SOCIAL": 11,
+      "SPORT": 12
+    }
+  },
+  "ALIGNED": {
+    "STRAND": {
+      "ABM": 0,
+      "GAS": 1,
+      "HUMSS": 2,
+      "STEM": 3,
+      "TVL": 4
+    },
+    "COURSE": {
+      "CCS": 0,
+      "CTE": 1,
+      "ENGR": 2,
+      "HE": 3,
+      "LIBERAL": 4,
+      "SCIMATH": 5,
+      "SOCIAL": 6
+    }
+  },
+  "NOT_ALIGNED": {
+    "STRAND": {
+      "ABM": 0,
+      "ARTSDESIGN": 1,
+      "GAS": 2,
+      "HUMSS": 3,
+      "STEM": 4,
+      "TVL": 5
+    },
+    "COURSE": {
+      "ASIAN": 0,
+      "CTE": 1,
+      "ENGR": 2,
+      "HE": 3,
+      "LIBERAL": 4,
+      "SPORT": 5
+    }
+  }
+}
