@@ -1,5 +1,6 @@
 import joblib
 import os
+import json
 import pandas as pd
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -13,6 +14,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_1_PATH = os.path.join(BASE_DIR, "ml_models", "model_aligned.pkl")
 MODEL_2_PATH = os.path.join(BASE_DIR, "ml_models", "model_not_aligned.pkl")
 MODEL_3_PATH = os.path.join(BASE_DIR, "ml_models", "model_mixed.pkl")
+DATA_PATH = os.path.join(BASE_DIR, "ml_models", "data.json")
 
 # Load model
 model_1 = joblib.load(MODEL_1_PATH)
@@ -22,6 +24,10 @@ model_3 = joblib.load(MODEL_3_PATH)
 class PredictView(APIView):
     def post(self, request):
         try:
+            # Open and load the JSON file
+            with open(DATA_PATH, "r") as f:
+                course_data = json.load(f)
+
             # Get JSON input from request
             data = request.data  
 
@@ -31,17 +37,24 @@ class PredictView(APIView):
                     {"error": "Missing required fields (CET, GPA, STRAND)"},
                     status=status.HTTP_400_BAD_REQUEST
                 )
-
+                
             # Create DataFrame with correct feature names
             features = pd.DataFrame([{
                 "CET": float(data["CET"]),
                 "GPA": float(data["GPA"]),
-                "STRAND": float(data["STRAND"])
+                "STRAND": None  
             }])
-
-            # Predict
+            
+            strand_1 = course_data['MIXED']['STRAND'][data["STRAND"]]
+            features['STRAND'] = strand_1
             prediction_1 = model_1.predict(features)[0]
+            
+            strand_2 = course_data['ALIGNED']['STRAND'][data["STRAND"]]
+            features['STRAND'] = strand_2
             prediction_2 = model_2.predict(features)[0]
+            
+            strand_3 = course_data['NOT_ALIGNED']['STRAND'][data["STRAND"]]
+            features['STRAND'] = strand_3
             prediction_3 = model_3.predict(features)[0]
 
             return Response(
