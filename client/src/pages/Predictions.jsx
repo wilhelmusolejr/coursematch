@@ -9,15 +9,15 @@ export default function Predictions() {
   const [result, setResult] = useState(null);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [gpa, setGpa] = useState("");
-  const [strand, setStrand] = useState("");
-  const [cet, setCet] = useState("");
   const [name, setName] = useState("");
+  const [cet, setCet] = useState("");
+  const [strandSelected, setStrandSelected] = useState(false);
 
   const handleSubmit = async (e) => {
     let formData = {
       CET: parseFloat(cet),
       GPA: parseFloat(gpa),
-      STRAND: strand,
+      STRAND: strandSelected,
     };
 
     e.preventDefault();
@@ -29,6 +29,16 @@ export default function Predictions() {
       setResult("Error fetching prediction");
     }
   };
+
+  const strandOption = [
+    { value: "", label: "Select an option" },
+    { value: "ABM", label: "ABM" },
+    { value: "ARTSDESIGN", label: "ARTSDESIGN" },
+    { value: "GAS", label: "GAS" },
+    { value: "HUMSS", label: "HUMSS" },
+    { value: "STEM", label: "STEM" },
+    { value: "TVL", label: "TVL" },
+  ];
 
   return (
     <>
@@ -81,7 +91,7 @@ export default function Predictions() {
                   </h2>
                 </div>
                 <div className="flex gap-5 flex-col">
-                  {/* -- */}
+                  {/* GPA */}
                   <div className="">
                     <h3 className="mb-1">
                       Grade 12 GPA <span className="text-red-500">*</span>
@@ -95,7 +105,7 @@ export default function Predictions() {
                     />
                   </div>
 
-                  {/* -- */}
+                  {/* CET */}
                   <div className="">
                     <h3 className="mb-1">
                       Overall percentille rank{" "}
@@ -113,15 +123,24 @@ export default function Predictions() {
                   {/* -- */}
                   <div className="">
                     <h3 className="mb-1">
-                      Strand taken <span className="text-red-500">*</span>
+                      Strand tak en <span className="text-red-500">*</span>
                     </h3>
-                    <input
-                      type="text"
-                      className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
-                      onChange={(e) => {
-                        setStrand(e.target.value);
-                      }}
-                    />
+                    <select
+                      id="strand"
+                      value={strandSelected}
+                      onChange={(e) => setStrandSelected(e.target.value)}
+                      className="border-black/30 cursor-pointer bg-white p-2 border-1 rounded-md w-full"
+                    >
+                      {strandOption.map((opt) => (
+                        <option
+                          key={opt.value}
+                          className="cursor-pointer"
+                          value={opt.value}
+                        >
+                          {opt.label}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
               </div>
