@@ -56,13 +56,62 @@ class PredictView(APIView):
             strand_3 = course_data['NOT_ALIGNED']['STRAND'][data["STRAND"]]
             features['STRAND'] = strand_3
             prediction_3 = model_3.predict(features)[0]
+            
+            college_1 = None
+            college_2 = None
+            college_3 = None
+            
+            for key, value in course_data.items():
+                if(key == "MIXED"):
+                    for key2, value2 in value['COURSE'].items():
+                        if(value2 == prediction_1):
+                            college_1 = key2
+                            break
+            
+            for key, value in course_data.items():
+                if(key == "ALIGNED"):
+                    for key2, value2 in value['COURSE'].items():
+                        if(value2 == prediction_1):
+                            college_2 = key2
+                            break
+                        
+            for key, value in course_data.items():
+                if(key == "NOT_ALIGNED"):
+                    for key2, value2 in value['COURSE'].items():
+                        if(value2 == prediction_1):
+                            college_3 = key2
+                            break
+        
+            
+            predictions = {
+                "mixed": {
+                    "name" : college_1,
+                    "img": "test",
+                    "about": "test",
+                    "why": "test",
+                    "programs": ["test1", "test2"],
+                    "career_path": ["test1", "test2"]
+                },
+                "aligned": {
+                    "name" : college_2,
+                    "img": "test",
+                    "about": "test",
+                    "why": "test",
+                    "programs": ["test1", "test2"],
+                    "career_path": ["test1", "test2"]
+                },
+                "not_aligned": {
+                    "name" : college_3,
+                    "img": "test",
+                    "about": "test",
+                    "why": "test",
+                    "programs": ["test1", "test2"],
+                    "career_path": ["test1", "test2"]
+                }
+            }
 
             return Response(
-                {
-                    "prediction1": str(prediction_1),
-                    "prediction2": str(prediction_2),
-                    "prediction3": str(prediction_3),
-                },
+                predictions,
                 status=status.HTTP_200_OK
             )
 
