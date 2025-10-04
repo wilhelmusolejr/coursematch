@@ -1,16 +1,36 @@
 import React from "react";
 
 export default function CoursePredictedItem({
-  heading,
-  tagline,
   courseName = "",
-  className = "",
   aboutCourse = "",
   whyRecommended = "",
+  programs = [],
+  careerPath = [],
+  college_type = "",
 }) {
+  let classname, heading, tagline;
+
+  switch (college_type) {
+    case "aligned":
+      classname = "bg-slate-200/50 order-1";
+      heading = "Best fit with your strand";
+      tagline = "Aligned Choice";
+      break;
+    case "not_aligned":
+      classname = "bg-slate-200/40 self-center lg:mt-10 order-2";
+      heading = "Alternative outside your strand";
+      tagline = "Alternative Path";
+      break;
+    case "mixed":
+      classname = "bg-slate-200/30 self-end lg:mt-30 order-3";
+      heading = "General top pick";
+      tagline = "Explore Everything";
+      break;
+  }
+
   return (
     <div
-      className={`px-5 py-16 rounded-lg border-1 border-black/10  max-w-100 xl:flex-1 ${className}`}
+      className={`px-5 py-16 rounded-lg border-1 border-black/10  max-w-100 xl:flex-1 ${classname}`}
     >
       {/* heading */}
       <div className="flex justify-center items-center gap-5 flex-col text-center">
@@ -50,10 +70,9 @@ export default function CoursePredictedItem({
         <div className="">
           <h4 className="font-medium text-lg mb-1">Programs</h4>
           <ul className="font-light ms-2 list-disc list-inside">
-            <li>Computer science</li>
-            <li>Computer science</li>
-            <li>Computer science</li>
-            <li>Computer science</li>
+            {programs.map((prog, index) => (
+              <li key={index}>{prog}</li>
+            ))}
           </ul>
         </div>
 
@@ -61,10 +80,9 @@ export default function CoursePredictedItem({
         <div className="">
           <h4 className="font-medium text-lg mb-1">Career path</h4>
           <ul className="font-light ms-2 list-disc list-inside">
-            <li>Computer science</li>
-            <li>Computer science</li>
-            <li>Computer science</li>
-            <li>Computer science</li>
+            {careerPath.map((career, index) => (
+              <li key={index}>{career}</li>
+            ))}
           </ul>
         </div>
       </div>
