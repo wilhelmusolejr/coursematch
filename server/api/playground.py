@@ -1,19 +1,76 @@
+import joblib
 import os
 import json
+import pandas as pd
 
+# from rest_framework.views import APIView
+# from rest_framework.response import Response
+# from rest_framework import status
+
+# Load the model (only once when Django starts)
 # Current directory: api/
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Path to the ml_models folder
-DATA_PATH = os.path.join(BASE_DIR, "ml_models", "data.json")
+MODEL_1_PATH = os.path.join(BASE_DIR, "ml_models", "model_aligned.pkl")
+MODEL_2_PATH = os.path.join(BASE_DIR, "ml_models", "model_not_aligned.pkl")
+MODEL_3_PATH = os.path.join(BASE_DIR, "ml_models", "model_mixed.pkl")
+COURSEDATA_PATH = os.path.join(BASE_DIR, "ml_models", "data.json")
+DEFINITION_PATH = os.path.join(BASE_DIR, "ml_models", "definition.json")
 
-target = 1
+# Load model
+model_1 = joblib.load(MODEL_1_PATH)
+model_2 = joblib.load(MODEL_2_PATH)
+model_3 = joblib.load(MODEL_3_PATH)  
 
-with open(DATA_PATH, "r") as f:
+# Open and load the JSON file
+with open(COURSEDATA_PATH, "r") as f:
     course_data = json.load(f)
+with open(DEFINITION_PATH, "r") as f:
+    definition_data = json.load(f)
+    
+# Get JSON input from request
+data = {
+    "CET": 7,
+    "GPA": 8,
+    "STRAND": "ABM"
+} 
 
-for key, value in course_data.items():
-    if(key == "MIXED"):
-        for key2, value2 in value['COURSE'].items():
-            if(value2 == target):
-                print(key2)
+college_type = ['MIXED', 'ALIGNED', 'NOT_ALIGNED']
+models = [model_1, model_2, model_3]
+dataframes = {}
+            
+# Create DataFrame with correct feature names
+features = pd.DataFrame([{
+    "CET": data["CET"],
+    "GPA": data['GPA'],
+    "STRAND": None  
+}])
+            
+for college in college_type:
+    dataframes[college] = features.copy()
+    
+for index, college in enumerate(college_type):
+    dataframes[college]['STRAND'] = course_data[college]['STRAND'][data["STRAND"]]
+    prediction = models[index].predict(dataframes[college])[0]
+    dataframes[college]["PREDICTION"] = prediction
+    
+for college_dataframe in dataframes:
+    target_college = dataframes[college_dataframe]["PREDICTION"].values[0]
+    
+    for key, value in course_data[college_dataframe]['COLLEGE'].items():
+        if(value == target_college):
+            dataframes[college_dataframe]["PREDICTION"] = key
+
+prediction_result = {}
+
+for index, college in enumerate(college_type):
+    college_name = dataframes[college]["PREDICTION"].values[0]
+    
+    for key, value in definition_data.items():
+        if(key == college_name):
+            prediction_result[college.lower()] = value
+            break
+
+prediction_result['mixed']['html'] = "test"
+print(prediction_result['mixed'])
