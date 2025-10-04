@@ -10,20 +10,20 @@
       "STEM": 6,
       "TVL": 7
     },
-    "COURSE": {
-      "ARCHI": 0,
-      "ASIAN": 1,
-      "CCS": 2,
-      "CRIM": 3,
-      "CTE": 4,
-      "ENGR": 5,
-      "HE": 6,
-      "LIBERAL": 7,
-      "NURSING": 8,
-      "PUBLIC": 9,
-      "SCIMATH": 10,
-      "SOCIAL": 11,
-      "SPORT": 12
+    "COLLEGE": {
+      "College of Architecture": 0,
+      "College of Asian Studies": 1,
+      "College of Computing Studies": 2,
+      "College of Criminology": 3,
+      "College of Teacher Education": 4,
+      "College of Engineering": 5,
+      "College of Home Economics": 6,
+      "College of Liberal Arts": 7,
+      "College of Nursing": 8,
+      "College of Public Administration": 9,
+      "College of Science and Mathematics": 10,
+      "College of Social Sciences": 11,
+      "College of Sports, Physical Education and Recreation": 12
     }
   },
   "ALIGNED": {
@@ -34,14 +34,14 @@
       "STEM": 3,
       "TVL": 4
     },
-    "COURSE": {
-      "CCS": 0,
-      "CTE": 1,
-      "ENGR": 2,
-      "HE": 3,
-      "LIBERAL": 4,
-      "SCIMATH": 5,
-      "SOCIAL": 6
+    "COLLEGE": {
+      "College of Computing Studies": 0,
+      "College of Teacher Education": 1,
+      "College of Engineering": 2,
+      "College of Home Economics": 3,
+      "College of Liberal Arts": 4,
+      "College of Science and Mathematics": 5,
+      "College of Social Sciences": 6
     }
   },
   "NOT_ALIGNED": {
@@ -53,13 +53,13 @@
       "STEM": 4,
       "TVL": 5
     },
-    "COURSE": {
-      "ASIAN": 0,
-      "CTE": 1,
-      "ENGR": 2,
-      "HE": 3,
-      "LIBERAL": 4,
-      "SPORT": 5
+    "COLLEGE": {
+      "College of Asian Studies": 0,
+      "College of Teacher Education": 1,
+      "College of Engineering": 2,
+      "College of Home Economics": 3,
+      "College of Liberal Arts": 4,
+      "College of Sports, Physical Education and Recreation": 5
     }
   }
 }
