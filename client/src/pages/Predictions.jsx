@@ -26,7 +26,7 @@ export default function Predictions() {
       prediction.predictions.forEach;
       setResult(prediction);
       setHasSubmitted(true);
-      // console.log(prediction);
+      console.log(prediction);
     } catch {
       setResult("Error fetching prediction");
     }
@@ -174,6 +174,7 @@ export default function Predictions() {
                       key={index}
                       courseName={value["name"]}
                       aboutCourse={value["about"]}
+                      imgUrl={value["image"]}
                       whyRecommended="This course aligns closely with your current academic strand, making it the most natural progression based on your strengths."
                       programs={value["program"]}
                       careerPath={value["career_path"]}
