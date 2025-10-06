@@ -86,6 +86,8 @@ class PredictView(APIView):
                 
                 for key, value in definition_data.items():
                     if(key == college_name):
+                        update_name = value['name'].replace(" ", "+")
+                        value['img'] = "https://dummyimage.com/200x200/cccccc/000000.png&text=" + update_name
                         prediction_result[college.lower()] = value
                         break
             
