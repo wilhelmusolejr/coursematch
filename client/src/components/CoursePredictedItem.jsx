@@ -6,6 +6,7 @@ export default function CoursePredictedItem({
   whyRecommended = "",
   programs = [],
   careerPath = [],
+  imgUrl = "",
   college_type = "",
 }) {
   let classname, heading, tagline;
@@ -45,7 +46,13 @@ export default function CoursePredictedItem({
       </div>
 
       {/* image */}
-      <div className="h-60 bg-slate-300 rounded-md my-7"></div>
+      <div className="rounded-md my-7 flex items-center justify-center">
+        <img
+          src="https://dummyimage.com/200x200/cccccc/000000.png&text=College+of+Teacher+Education"
+          alt=""
+          className=" rounded-md"
+        />
+      </div>
 
       {/* Information */}
       <h3 className="uppercase text-[#111] font-medium text-xl my-10">
