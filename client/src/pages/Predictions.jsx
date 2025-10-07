@@ -13,6 +13,13 @@ export default function Predictions() {
   const [cet, setCet] = useState("");
   const [strandSelected, setStrandSelected] = useState(false);
 
+  const [pageHeading, setPageHeading] = useState(
+    "Find the Course That Fits You Best!"
+  );
+  const [pageDescription, setPageDescription] = useState(
+    "Take the first step toward your future! Provide your academic details, and our system will guide you to the college or department that aligns perfectly with your interests and potential."
+  );
+
   const handleSubmit = async (e) => {
     let formData = {
       CET: parseFloat(cet),
@@ -26,7 +33,11 @@ export default function Predictions() {
       prediction.predictions.forEach;
       setResult(prediction);
       setHasSubmitted(true);
-      console.log(prediction);
+
+      setPageHeading(`Hi, ${name}! Here are your course recommendations`);
+      setPageDescription(
+        `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]}GPA, and ${formData["STRAND"]} strand — to generate the most suitable college and department matches. Review your results below and discover where your strengths truly align.`
+      );
     } catch {
       setResult("Error fetching prediction");
     }
@@ -50,14 +61,8 @@ export default function Predictions() {
       </div>
 
       <div className="container mx-auto px-10 mt-32 mb-20 text-center">
-        <h1 className="text-3xl uppercase font-bold mb-5">
-          Get your course recommended!
-        </h1>
-        <p className="md:w-10/12 lg:w-6/12 m-auto">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          quasi, velit in asperiores repellendus inventore suscipit et modi
-          fugiat aspernatur?
-        </p>
+        <h1 className="text-3xl uppercase font-bold mb-5">{pageHeading}</h1>
+        <p className="md:w-10/12 lg:w-6/12 m-auto">{pageDescription}</p>
       </div>
 
       {/* Form */}
