@@ -35,7 +35,6 @@ export default function Predictions() {
   const strandOption = [
     { value: "", label: "Select an option" },
     { value: "ABM", label: "ABM" },
-    { value: "ARTSDESIGN", label: "ARTSDESIGN" },
     { value: "GAS", label: "GAS" },
     { value: "HUMSS", label: "HUMSS" },
     { value: "STEM", label: "STEM" },
