@@ -10,7 +10,8 @@ export default function BoxLinkItem({
   className = "",
 }) {
   return (
-    <div
+    <a
+      href={pathUrl}
       className={`border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center gap-5 border-black/10 ${className}`}
     >
       {/*  */}
@@ -26,6 +27,6 @@ export default function BoxLinkItem({
 
       {/*  */}
       <FontAwesomeIcon icon={faArrowRight} className="text-xl" />
-    </div>
+    </a>
   );
 }
