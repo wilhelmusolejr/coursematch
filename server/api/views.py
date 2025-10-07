@@ -35,7 +35,9 @@ class PredictView(APIView):
                 definition_data = json.load(f)
 
             # Get JSON input from request
-            data = request.data  
+            data = request.data
+            
+            print(data)
 
             # Validate input (optional, but recommended)
             if not all(k in data for k in ["CET", "GPA", "STRAND"]):
@@ -52,7 +54,7 @@ class PredictView(APIView):
             features = pd.DataFrame([{
                 "CET": math.floor(data['CET'] / 10),
                 "GPA": math.floor(data['GPA'] / 10),
-                "STRAND": "ABM"  
+                "STRAND": data['STRAND']  
             }])
             
             # Creates a copy of 3 features for each college type
@@ -86,8 +88,8 @@ class PredictView(APIView):
                 
                 for key, value in definition_data.items():
                     if(key == college_name):
-                        update_name = value['name'].replace(" ", "+")
-                        value['img'] = "https://dummyimage.com/200x200/cccccc/000000.png&text=" + update_name
+                        path = "/images/colleges/" + definition_data[key]['name'] + ".png"
+                        definition_data[key]['image'] = path
                         prediction_result[college.lower()] = value
                         break
             
@@ -101,3 +103,25 @@ class PredictView(APIView):
 
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        
+class CourseImageView(APIView):
+    def post(self,request):
+        try:
+            # Open and load the JSON file
+            with open(DEFINITION_PATH, "r") as f:
+                definition_data = json.load(f)
+                
+            for key,value in definition_data.items():
+                path = "/images/colleges/" + definition_data[key]['name'] + ".png"
+                definition_data[key]['image'] = path
+       
+            return Response(
+                {
+                    "colleges": definition_data,
+                },
+                status=status.HTTP_200_OK
+            )
+            
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    
