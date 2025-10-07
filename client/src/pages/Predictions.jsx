@@ -34,9 +34,58 @@ export default function Predictions() {
       setResult(prediction);
       setHasSubmitted(true);
 
+      console.log(prediction);
+
+      let duplicates = [];
+
+      for (let college in prediction.predictions) {
+        let firstObj = prediction.predictions[college];
+
+        for (let inside_college in prediction.predictions) {
+          let secondObj = prediction.predictions[inside_college];
+
+          if (firstObj.model_no === secondObj.model_no) {
+            continue;
+          } else {
+            if (firstObj.name === secondObj.name) {
+              duplicates.push(firstObj.model_no);
+              duplicates.push(secondObj.model_no);
+            }
+          }
+        }
+      }
+
+      duplicates = [...new Set(duplicates)];
+      console.log(duplicates);
+
+      let duplicateParagraph;
+
+      if (duplicates.length > 0) {
+        if (duplicates.length === 2) {
+          let college_dup_name = "";
+
+          for (let college in prediction.predictions) {
+            let obj = prediction.predictions[college];
+            if (
+              obj.model_no === duplicates[0] ||
+              obj.model_no === duplicates[1]
+            ) {
+              college_dup_name = obj.name;
+              break;
+            }
+          }
+
+          duplicateParagraph = `Model ${duplicates[0]} and Model ${duplicates[1]} both recommended the same college ${college_dup_name}. This indicates a strong alignment between your academic background and the recommended department, suggesting that this option is particularly well-suited to your strengths and interests.`;
+          console.log(duplicateParagraph);
+        } else {
+          duplicateParagraph = `All three models recommended the same college. This strong consensus across different predictive approaches highlights a significant alignment between your academic profile and the recommended department, suggesting that this option is exceptionally well-suited to your strengths and interests.`;
+          console.log(duplicateParagraph);
+        }
+      }
+
       setPageHeading(`Hi, ${name}! Here are your course recommendations`);
       setPageDescription(
-        `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]}GPA, and ${formData["STRAND"]} strand — to generate the most suitable college and department matches. Review your results below and discover where your strengths truly align.`
+        `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]} GPA, and ${formData["STRAND"]} strand — to generate the most suitable department matches. Review your results below and discover where your strengths truly align.`
       );
     } catch {
       setResult("Error fetching prediction");
@@ -51,6 +100,11 @@ export default function Predictions() {
     { value: "STEM", label: "STEM" },
     { value: "TVL", label: "TVL" },
   ];
+
+  let isThereDuplicate;
+
+  let paragraph1 =
+    "Based on your provided academic profile — including your CET, GPA, and senior high school strand — our system analyzed your data using three machine learning models: Aligned, Not Aligned, and Mixed.";
 
   return (
     <>
@@ -169,7 +223,6 @@ export default function Predictions() {
       {hasSubmitted && (
         <div className="container mx-auto px-10 mb-30">
           <div className="flex gap-7 flex-wrap flex-col lg:flex-row justify-center items-start">
-            {/* test */}
             {result && result.predictions && (
               <>
                 {Object.entries(result.predictions).map(
@@ -189,6 +242,8 @@ export default function Predictions() {
               </>
             )}
           </div>
+
+          <p>test</p>
         </div>
       )}
 
