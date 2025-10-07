@@ -19,7 +19,9 @@ export default function BoxLinkItem({
           <FontAwesomeIcon icon={faIcon} className="text-xl" />
         </div>
 
-        <a href={pathUrl}>{pathName}</a>
+        <a className="text-xs sm:text-base" href={pathUrl}>
+          {pathName}
+        </a>
       </div>
 
       {/*  */}

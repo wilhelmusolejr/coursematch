@@ -116,7 +116,7 @@ function App() {
           />
 
           {/* parent */}
-          <div className="flex flex-wrap gap-5 justify-center ">
+          <div className="flex flex-wrap gap-5 justify-center items-center">
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
@@ -223,7 +223,7 @@ function App() {
                   faIcon={faLinkedinIn}
                   pathUrl="linkedin.com/wilhelmus"
                   pathName="linkedin.com/wilhelmus"
-                  className="md:w-9/12"
+                  className="md:w-10/12"
                 />
 
                 {/*  */}
@@ -231,7 +231,7 @@ function App() {
                   faIcon={faLaptopCode}
                   pathUrl="linkedin.com/wilhelmus"
                   pathName="wilhelmus.vercel.app"
-                  className="md:w-9/12"
+                  className="md:w-10/12 xl:w-9/12"
                 />
               </div>
             </div>
