@@ -116,7 +116,7 @@ function App() {
           />
 
           {/* parent */}
-          <div className="flex flex-wrap gap-5 justify-center items-center">
+          <div className="flex flex-wrap gap-5 justify-center ">
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
