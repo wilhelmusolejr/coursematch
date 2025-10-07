@@ -23,7 +23,7 @@ export default function CoursePredictedItem({
       tagline = "Alternative Path";
       break;
     case "mixed":
-      classname = "bg-slate-200/30 self-end lg:mt-30 order-3";
+      classname = "bg-slate-200/30 self-end lg:mt-20 order-3";
       heading = "General top pick";
       tagline = "Explore Everything";
       break;
@@ -47,11 +47,7 @@ export default function CoursePredictedItem({
 
       {/* image */}
       <div className="rounded-md my-7 flex items-center justify-center">
-        <img
-          src="https://dummyimage.com/200x200/cccccc/000000.png&text=College+of+Teacher+Education"
-          alt=""
-          className=" rounded-md"
-        />
+        <img src={imgUrl} alt="" className=" rounded-md" />
       </div>
 
       {/* Information */}
