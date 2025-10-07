@@ -1,6 +1,7 @@
 import joblib
 import os
 import json
+import copy
 import pandas as pd
 import math
 from rest_framework.views import APIView
@@ -37,8 +38,6 @@ class PredictView(APIView):
             # Get JSON input from request
             data = request.data
             
-            print(data)
-
             # Validate input (optional, but recommended)
             if not all(k in data for k in ["CET", "GPA", "STRAND"]):
                 return Response(
@@ -90,9 +89,10 @@ class PredictView(APIView):
                     if(key == college_name):
                         path = "/images/colleges/" + definition_data[key]['name'] + ".png"
                         definition_data[key]['image'] = path
-                        prediction_result[college.lower()] = value
+                        prediction_result[college.lower()] = copy.deepcopy(value)
+                        prediction_result[college.lower()]['model_no'] = index + 1
                         break
-            
+                
             return Response(
                 {
                     "predictions": prediction_result,
