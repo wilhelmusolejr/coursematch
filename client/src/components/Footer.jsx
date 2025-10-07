@@ -25,7 +25,7 @@ export default function Footer() {
           <p className="text-white-secondary font-light leading-relaxed mb-16 ">
             CourseMatch: Personalized Course Prediction System is designed to
             help students at Western Mindanao State University discover their
-            ideal academic paths with ease
+            ideal academic paths with ease.
           </p>
         </div>
 
