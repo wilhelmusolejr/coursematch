@@ -12,9 +12,9 @@
     },
     "COLLEGE": {
       "College of Architecture": 0,
-      "College of Asian Studies": 1,
+      "College of Asian and Islamic Studies": 1,
       "College of Computing Studies": 2,
-      "College of Criminology": 3,
+      "College of Criminal Justice Education": 3,
       "College of Teacher Education": 4,
       "College of Engineering": 5,
       "College of Home Economics": 6,
@@ -23,7 +23,7 @@
       "College of Public Administration": 9,
       "College of Science and Mathematics": 10,
       "College of Social Sciences": 11,
-      "College of Sports, Physical Education and Recreation": 12
+      "College of Sports Science and Phyiscal Education": 12
     }
   },
   "ALIGNED": {
@@ -54,12 +54,12 @@
       "TVL": 5
     },
     "COLLEGE": {
-      "College of Asian Studies": 0,
+      "College of Asian and Islamic Studies": 0,
       "College of Teacher Education": 1,
       "College of Engineering": 2,
       "College of Home Economics": 3,
       "College of Liberal Arts": 4,
-      "College of Sports, Physical Education and Recreation": 5
+      "College of Sports Science and Phyiscal Education": 5
     }
   }
 }
