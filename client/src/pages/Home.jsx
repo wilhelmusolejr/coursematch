@@ -1,5 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLaptopCode,
+  faBrain,
+  faFileDownload,
+  faNetworkWired,
+  faChartLine,
+  faCompass,
+} from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import "../App.css";
@@ -11,7 +18,58 @@ import BoxLinkItem from "../components/BoxLinkItem";
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
 
+import { getAllCourse } from "../api/getAllCourse";
+import { useEffect, useState } from "react";
+
 function App() {
+  const [courses, setCourses] = useState({ colleges: {} });
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const data = await getAllCourse();
+        setCourses(data);
+      } catch (error) {
+        console.error("Error fetching courses:", error);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  let features = [
+    {
+      heading: "Course Prediction Engine",
+      description:
+        "Accurately recommends the most suitable college course based on your CET score, GPA, and senior high school strand — ensuring a data-driven and personalized guidance experience.",
+      icon: faBrain,
+    },
+    {
+      heading: "Downloadable Results",
+      description:
+        "Instantly download your prediction results as a report for easy sharing with parents, teachers, or guidance counselors — helping you make informed academic decisions anytime, anywhere.",
+      icon: faFileDownload,
+    },
+    {
+      heading: "Multi-Model Prediction System",
+      description:
+        "Utilizes three specialized machine learning models to cover all scenarios — aligned, not aligned, and mixed — ensuring fair and accurate predictions regardless of your academic background.",
+      icon: faNetworkWired,
+    },
+    {
+      heading: "High-Accuracy Predictions",
+      description:
+        "Built with advanced machine learning algorithms, each model achieves up to 80% accuracy, providing reliable results that guide you confidently toward your ideal college path.",
+      icon: faChartLine,
+    },
+    {
+      heading: "Smart Career Guidance",
+      description:
+        "Beyond predictions, our system offers insights on why certain courses fit your strengths — helping you explore future career paths aligned with your interests and academic performance.",
+      icon: faCompass,
+    },
+  ];
+
   return (
     <>
       {/* HEADER */}
@@ -58,12 +116,15 @@ function App() {
           />
 
           {/* parent */}
-          <div className="flex flex-wrap gap-5 justify-center items-center">
-            {/* card */}
-            <FeatureCard />
-
-            {/* card */}
-            <FeatureCard />
+          <div className="flex flex-wrap gap-5 justify-center ">
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                heading={feature.heading}
+                icon={feature.icon}
+                description={feature.description}
+              />
+            ))}
 
             {/* highlight */}
             {/* card */}
@@ -83,15 +144,6 @@ function App() {
                 and preferences).
               </p>
             </div>
-
-            {/* card */}
-            <FeatureCard />
-
-            {/* card */}
-            <FeatureCard />
-
-            {/* card */}
-            <FeatureCard />
 
             <div className="bg-white hidden flex opacity-0 w-75 md:w-68 rounded-xl p-5 py-7 shadow-lg  flex-col border-1 border-black/30"></div>
           </div>
@@ -116,19 +168,16 @@ function App() {
             grid 
             gap-5 
             justify-center
-            grid-cols-[repeat(2,100px)]      
-            sm:grid-cols-[repeat(2,100px)]  
+            grid-cols-[repeat(2,120px)]      
+            sm:grid-cols-[repeat(2,120px)]  
             md:grid-cols-[repeat(3,150px)]  
             lg:grid-cols-[repeat(4,150px)]  
             xl:grid-cols-[repeat(4,200px)]
           "
           >
-            <CourseImageCard />
-            <CourseImageCard />
-            <CourseImageCard />
-            <CourseImageCard />
-            <CourseImageCard />
-            <CourseImageCard />
+            {Object.entries(courses.colleges).map(([key, value]) => (
+              <CourseImageCard key={key} img_url={value["image"]} />
+            ))}
           </div>
         </div>
       </div>
