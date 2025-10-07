@@ -15,10 +15,10 @@
       "Landscape Architect"
     ]
   },
-  "College of Asian Studies": {
+  "College of Asian and Islamic Studies": {
     "id": 1,
-    "name": "College of Asian Studies",
-    "about": "The College of Asian Studies focuses on the history, culture, politics, and economies of Asian nations. It prepares students to engage in global affairs with a deeper understanding of Asia’s diverse societies, fostering expertise in regional development, diplomacy, and intercultural relations.",
+    "name": "College of Asian and Islamic Studies",
+    "about": "The College of Asian and Islamic Studies focuses on the history, culture, politics, and economies of Asian nations. It prepares students to engage in global affairs with a deeper understanding of Asia’s diverse societies, fostering expertise in regional development, diplomacy, and intercultural relations.",
     "program": [
       "Bachelor of Arts in Asian Studies",
       "Bachelor of Arts in International Studies"
@@ -48,10 +48,10 @@
       "UI/UX Designer"
     ]
   },
-  "College of Criminology": {
+  "College of Criminal Justice Education": {
     "id": 3,
-    "name": "College of Criminology",
-    "about": "The College of Criminology focuses on the study of crime, criminal behavior, and the justice system. It prepares students to work in law enforcement, corrections, forensic science, and other fields related to crime prevention and investigation.",
+    "name": "College of Criminal Justice Education",
+    "about": "The College of Criminal Justice Education focuses on the study of crime, criminal behavior, and the justice system. It prepares students to work in law enforcement, corrections, forensic science, and other fields related to crime prevention and investigation.",
     "program": [
       "Bachelor of Science in Criminology",
       "Bachelor of Forensic Science"
@@ -205,10 +205,10 @@
       "Educator"
     ]
   },
-  "College of Sports, Physical Education and Recreation": {
+  "College of Sports Science and Phyiscal Education": {
     "id": 12,
-    "name": "College of Sports, Physical Education and Recreation",
-    "about": "The College of Sports, Physical Education and Recreation is dedicated to training students in physical fitness, sports science, coaching, and recreational management. It prepares graduates to promote health, wellness, and athletic excellence in schools, communities, and professional sports organizations.",
+    "name": "College of Sports Science and Phyiscal Education",
+    "about": "The College of Sports Science and Phyiscal Education is dedicated to training students in physical fitness, sports science, coaching, and recreational management. It prepares graduates to promote health, wellness, and athletic excellence in schools, communities, and professional sports organizations.",
     "program": [
       "Bachelor of Physical Education",
       "Bachelor of Science in Exercise and Sports Science",
