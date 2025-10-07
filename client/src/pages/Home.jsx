@@ -203,16 +203,18 @@ function App() {
             <div className="lg:w-6/12 flex flex-col gap-10 items-center justify-center  ">
               {/* about me */}
               <div className="px-10 mb-10 md:w-10/12 lg:w-full md:m-auto lg:m-0 ">
-                <h3 className="text-2xl mb-2 font-semibold ">About me</h3>
+                <h3 className="text-2xl mb-2 font-semibold ">CourseMatch</h3>
                 <p className="text-secondary font-light leading-relaxed ">
-                  Wilhelmus is a passionate full-stack web developer and
-                  designer with a background in Computer Science. With expertise
-                  in Laravel, the MERN stack, and a knack for creating intuitive
-                  user interfaces, Wilhelmus brings innovative ideas to life.
-                  Known for their dedication to crafting efficient and impactful
-                  digital solutions, they thrive on building projects that solve
-                  real-world problems, including personalized systems like
-                  course prediction platforms.
+                  At CourseMatch, we are passionate about empowering students to
+                  discover their true potential and make informed decisions
+                  about their academic journey. Our mission is to provide a
+                  personalized course prediction system that leverages advanced
+                  algorithms and data-driven insights to help students find the
+                  perfect course that aligns with their skills, interests, and
+                  career aspirations. We believe that every student deserves the
+                  opportunity to thrive in an academic environment that suits
+                  them best, and we are committed to making that a reality
+                  through our innovative platform.
                 </p>
               </div>
 
@@ -221,7 +223,7 @@ function App() {
                 {/*  */}
                 <BoxLinkItem
                   faIcon={faLinkedinIn}
-                  pathUrl="linkedin.com/wilhelmus"
+                  pathUrl="https://linkedin.com/wilhelmus"
                   pathName="linkedin.com/wilhelmus"
                   className="md:w-10/12"
                 />
@@ -229,26 +231,12 @@ function App() {
                 {/*  */}
                 <BoxLinkItem
                   faIcon={faLaptopCode}
-                  pathUrl="linkedin.com/wilhelmus"
+                  pathUrl="https://wilhelmus.vercel.app"
                   pathName="wilhelmus.vercel.app"
                   className="md:w-10/12 xl:w-9/12"
                 />
               </div>
             </div>
-          </div>
-
-          <div className="hidden">
-            <p className="text-secondary font-light leading-relaxed text-center w-8/12 mx-auto">
-              At CourseMatch, we are passionate about empowering students to
-              discover their true potential and make informed decisions about
-              their academic journey. Our mission is to provide a personalized
-              course prediction system that leverages advanced algorithms and
-              data-driven insights to help students find the perfect course that
-              aligns with their skills, interests, and career aspirations. We
-              believe that every student deserves the opportunity to thrive in
-              an academic environment that suits them best, and we are committed
-              to making that a reality through our innovative platform.
-            </p>
           </div>
         </div>
       </div>
