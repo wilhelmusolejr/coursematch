@@ -72,5 +72,11 @@ for index, college in enumerate(college_type):
             prediction_result[college.lower()] = value
             break
 
-prediction_result['mixed']['html'] = "test"
-print(prediction_result['mixed'])
+for key, value in prediction_result.items():
+    updated_name = prediction_result['mixed']['name'].replace(" ", "+")
+    prediction_result[key]['img'] = "https://dummyimage.com/200x200/cccccc/000000.png&text=" + updated_name
+
+for key,value in definition_data.items():
+    updated_name = definition_data[key]['name'].replace(" ", "+")
+    definition_data[key]['img'] = "https://dummyimage.com/200x200/cccccc/000000.png&text=" + updated_name
+    
