@@ -8,10 +8,10 @@ import { getPrediction } from "../api/predict";
 export default function Predictions() {
   const [result, setResult] = useState(null);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [strandSelected, setStrandSelected] = useState(false);
   const [gpa, setGpa] = useState("");
   const [name, setName] = useState("");
   const [cet, setCet] = useState("");
-  const [strandSelected, setStrandSelected] = useState(false);
 
   const [pageHeading, setPageHeading] = useState(
     "Find the Course That Fits You Best!"
@@ -20,9 +20,13 @@ export default function Predictions() {
     "Take the first step toward your future! Provide your academic details, and our system will guide you to the college or department that aligns perfectly with your interests and potential."
   );
 
+  let intro_paragraph = `Each model provided a unique recommendation, showcasing the diverse opportunities available based on your academic profile. This variety allows you to explore different paths and consider multiple options that align with your strengths and interests.`;
+
   const [summaryParagraph, setSummaryParagraph] = useState([]);
 
+  // handle data submit
   const handleSubmit = async (e) => {
+    // DATA from from
     let formData = {
       CET: parseFloat(cet),
       GPA: parseFloat(gpa),
@@ -33,11 +37,10 @@ export default function Predictions() {
     try {
       const prediction = await getPrediction(formData);
 
-      console.log(prediction);
-
-      let duplicates = [];
+      let duplicates_model_no = [];
       const paragraph_summary = [];
 
+      // Loop each college if there is duplication in the result and store in duplicates_model_no array
       for (let college in prediction.predictions) {
         let firstObj = prediction.predictions[college];
 
@@ -48,56 +51,47 @@ export default function Predictions() {
             continue;
           } else {
             if (firstObj.name === secondObj.name) {
-              duplicates.push(firstObj.model_no);
-              duplicates.push(secondObj.model_no);
+              duplicates_model_no.push(firstObj.model_no);
             }
           }
         }
       }
 
-      duplicates = [...new Set(duplicates)];
+      // Removes model_no duplication
+      duplicates_model_no = [...new Set(duplicates_model_no)];
 
-      if (duplicates.length > 0) {
+      // True if there is duplication
+      if (duplicates_model_no.length > 0) {
         let duplicateParagraph = "";
 
-        if (duplicates.length === 2) {
+        if (duplicates_model_no.length === 2) {
           let college_dup_name = "";
           let college_other_name = "";
           let college_other_modelno = "";
 
           for (let college in prediction.predictions) {
             let obj = prediction.predictions[college];
-            if (
-              obj.model_no === duplicates[0] ||
-              obj.model_no === duplicates[1]
-            ) {
+
+            // if this college model no exist in the duplicate model number array, save the college name to college duplicate name var
+            if (duplicates_model_no.includes(obj.model_no)) {
               college_dup_name = obj.name;
-              college_other_modelno = obj.model_no;
-              break;
-            }
-          }
-
-          for (let college in prediction.predictions) {
-            let obj = prediction.predictions[college];
-            if (duplicates.includes(obj.model_no)) {
-              continue;
             } else {
+              // else if this college model no do not exist in the duplicate model number array, save the college name to other college name
               college_other_name = obj.name;
-              break;
+              college_other_modelno = obj.model_no;
             }
           }
 
-          duplicateParagraph = `Model ${duplicates[0]} and Model ${duplicates[1]} both recommended the same college ${college_dup_name}. This indicates a strong alignment between your academic background and the recommended department, suggesting that this option is particularly well-suited to your strengths and interests. Lastly, Model ${college_other_modelno} recommended ${college_other_name}.`;
-          paragraph_summary.push(duplicateParagraph);
+          paragraph_summary.push(intro_paragraph);
+          duplicateParagraph = `Model ${duplicates_model_no[0]} and Model ${duplicates_model_no[1]} both recommended the same college, ${college_dup_name}. This indicates a strong alignment between your academic background and the recommended department, suggesting that this option is particularly well-suited to your strengths and interests. Lastly, Model ${college_other_modelno} recommended ${college_other_name}.`;
         } else {
           duplicateParagraph = `All three models recommended the same college. This strong consensus across different predictive approaches highlights a significant alignment between your academic profile and the recommended department, suggesting that this option is exceptionally well-suited to your strengths and interests.`;
-          paragraph_summary.push(duplicateParagraph);
         }
+
+        paragraph_summary.push(duplicateParagraph);
       } else {
         const keys = Object.keys(prediction.predictions);
         const lastKey = keys[keys.length - 1];
-
-        let intro_paragraph = `Each model provided a unique recommendation, showcasing the diverse opportunities available based on your academic profile. This variety allows you to explore different paths and consider multiple options that align with your strengths and interests.`;
 
         let dump_paragraph = [];
 
