@@ -8,10 +8,15 @@ import { getPrediction } from "../api/predict";
 export default function Predictions() {
   const [result, setResult] = useState(null);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [strandSelected, setStrandSelected] = useState(false);
+  const [strandSelected, setStrandSelected] = useState("-");
   const [gpa, setGpa] = useState("");
   const [name, setName] = useState("");
   const [cet, setCet] = useState("");
+
+  const [gpaError, setGpaError] = useState(false);
+  const [cetError, setCetError] = useState(false);
+  const [strandError, setStandError] = useState(false);
+  const [nameError, setNameError] = useState("");
 
   const [pageHeading, setPageHeading] = useState(
     "Find the Course That Fits You Best!"
@@ -26,6 +31,22 @@ export default function Predictions() {
 
   // handle data submit
   const handleSubmit = async (e) => {
+    const isGpaValid = gpa === "" || gpa < 0 || gpa > 100;
+    const isCetInvalid = cet === "" || cet < 0 || cet > 100;
+    const isStrandInvalid = strandSelected === "-" || strandSelected === "";
+    const nameUser = name === "" ? "user" : name;
+
+    console.log(nameUser);
+    console.log(nameError);
+
+    setGpaError(isGpaValid);
+    setCetError(isCetInvalid);
+    setStandError(isStrandInvalid);
+
+    if (isGpaValid || isCetInvalid || isStrandInvalid || nameError !== "") {
+      return;
+    }
+
     // DATA from from
     let formData = {
       CET: parseFloat(cet),
@@ -115,7 +136,7 @@ export default function Predictions() {
       }
 
       setSummaryParagraph(paragraph_summary);
-      setPageHeading(`Hi, ${name}! Here are your course recommendations`);
+      setPageHeading(`Hi, ${nameUser}! Here are your course recommendations`);
       setPageDescription(
         `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]} GPA, and ${formData["STRAND"]} strand — to generate the most suitable department matches. Review your results below and discover where your strengths truly align.`
       );
@@ -126,8 +147,25 @@ export default function Predictions() {
     }
   };
 
+  const handleNameChange = (e) => {
+    const value = e.target.value;
+    setName(value);
+
+    if (value && value.trim().length < 2) {
+      setNameError("Name must be at least 2 characters.");
+    } else if (value && !/^[a-zA-Z\s'-]+$/.test(value)) {
+      setNameError(
+        "Name can only contain letters, spaces, apostrophes, and hyphens."
+      );
+    } else if (value.length > 50) {
+      setNameError("Name cannot exceed 50 characters.");
+    } else {
+      setNameError("");
+    }
+  };
+
   const strandOption = [
-    { value: "", label: "Select an option" },
+    { value: "-", label: "Select an option" },
     { value: "ABM", label: "ABM" },
     { value: "GAS", label: "GAS" },
     { value: "HUMSS", label: "HUMSS" },
@@ -159,16 +197,15 @@ export default function Predictions() {
                   Personal information
                 </h2>
                 <div className="">
-                  <h3 className="mb-1">
-                    Name <span className="text-red-500">*</span>
-                  </h3>
+                  <h3 className="mb-1">Name</h3>
                   <input
                     type="text"
                     className="p-2 border-1 border-black/30 rounded-md w-full bg-white"
-                    onChange={(e) => {
-                      setName(e.target.value);
-                    }}
+                    onChange={(e) => handleNameChange(e)}
                   />
+                  {nameError && (
+                    <p className="text-red-500 text-sm mt-1">{nameError}</p>
+                  )}
                 </div>
               </div>
 
@@ -189,9 +226,26 @@ export default function Predictions() {
                       type="number"
                       className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
                       onChange={(e) => {
-                        setGpa(e.target.value);
+                        const value = e.target.value;
+
+                        // prevent negative or non-numeric
+                        if (
+                          value === "" ||
+                          (Number(value) >= 0 && Number(value) <= 100)
+                        ) {
+                          setGpa(value);
+                          setGpaError(false);
+                        } else {
+                          e.target.value = gpa;
+                          setGpaError(true);
+                        }
                       }}
                     />
+                    {gpaError && (
+                      <p className="text-red-500 text-sm mt-1">
+                        GPA must be between 0 and 100.
+                      </p>
+                    )}
                   </div>
 
                   {/* CET */}
@@ -204,12 +258,29 @@ export default function Predictions() {
                       type="number"
                       className="border-black/30 bg-white p-2 border-1 rounded-md w-full"
                       onChange={(e) => {
-                        setCet(e.target.value);
+                        let value = e.target.value;
+
+                        // prevent negative or non-numeric
+                        if (
+                          value === "" ||
+                          (Number(value) >= 0 && Number(value) <= 100)
+                        ) {
+                          setCet(value);
+                          setCetError(false);
+                        } else {
+                          e.target.value = cet;
+                          setCetError(true);
+                        }
                       }}
                     />
+                    {cetError && (
+                      <p className="text-red-500 text-sm mt-1">
+                        CET must be between 0 and 100.
+                      </p>
+                    )}
                   </div>
 
-                  {/* -- */}
+                  {/* STRAND */}
                   <div className="">
                     <h3 className="mb-1">
                       Strand tak en <span className="text-red-500">*</span>
@@ -217,7 +288,18 @@ export default function Predictions() {
                     <select
                       id="strand"
                       value={strandSelected}
-                      onChange={(e) => setStrandSelected(e.target.value)}
+                      onChange={(e) => {
+                        let value = e.target.value;
+
+                        if (value === "-") {
+                          setStandError(true);
+                        } else {
+                          setStrandSelected(value);
+                          setStandError(false);
+                        }
+
+                        console.log(value);
+                      }}
                       className="border-black/30 cursor-pointer bg-white p-2 border-1 rounded-md w-full"
                     >
                       {strandOption.map((opt) => (
@@ -230,6 +312,11 @@ export default function Predictions() {
                         </option>
                       ))}
                     </select>
+                    {strandError && (
+                      <p className="text-red-500 text-sm mt-1">
+                        Choose the strand correctly.
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
