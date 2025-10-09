@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
@@ -179,6 +179,20 @@ export default function Predictions() {
     { value: "TVL", label: "TVL" },
   ];
 
+  useEffect(() => {
+    let college_count = Object.keys(result.predictions || {}).length;
+
+    if (college_count === 0 && !hasSubmitted) {
+      document.title = "Recommendation | CourseMatch";
+    } else if (college_count > 0 && hasSubmitted) {
+      document.title = `We found ${college_count} college${
+        college_count > 1 ? "s" : ""
+      } for you! | CourseMatch`;
+    } else {
+      document.title = "We Couldn’t Find a Match | CourseMatch";
+    }
+  }, [result.predictions, hasSubmitted]);
+
   return (
     <>
       {/* HEADER */}
@@ -303,8 +317,6 @@ export default function Predictions() {
                           setStrandSelected(value);
                           setStandError(false);
                         }
-
-                        console.log(value);
                       }}
                       className="border-black/30 cursor-pointer bg-white p-2 border-1 rounded-md w-full"
                     >
