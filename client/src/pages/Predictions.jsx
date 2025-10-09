@@ -201,7 +201,7 @@ export default function Predictions() {
         <Navigator />
       </div>
 
-      <div className="container mx-auto px-10 mt-32 mb-20 text-center">
+      <div className="container mx-auto px-10 mt-60 mb-20 text-center">
         <h1 className="text-3xl uppercase font-bold mb-5">{pageHeading}</h1>
         <p className="md:w-10/12 lg:w-6/12 m-auto">{pageDescription}</p>
       </div>
@@ -303,7 +303,7 @@ export default function Predictions() {
                   {/* STRAND */}
                   <div className="">
                     <h3 className="mb-1">
-                      Strand tak en <span className="text-red-500">*</span>
+                      Strand taken <span className="text-red-500">*</span>
                     </h3>
                     <select
                       id="strand"

@@ -37,6 +37,10 @@ function App() {
     fetchCourses();
   }, []);
 
+  useEffect(() => {
+    document.title = "Discover Your Path | CourseMatch";
+  }, []);
+
   let features = [
     {
       heading: "Course Prediction Engine",
@@ -78,7 +82,7 @@ function App() {
         <Navigator />
 
         {/* Content */}
-        <div className="container mx-auto flex justify-center items-center w-full xl:px-0 px-10 h-[85vh] py-10">
+        <div className="container mx-auto mt-30 flex justify-center items-center w-full xl:px-0 px-10 h-[85vh] py-10">
           <div className="w-full h-full px-5 lg:px-0 header-background py-20 md:pt-30 rounded-lg md:text-center">
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10 ">

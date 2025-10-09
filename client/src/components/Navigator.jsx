@@ -5,7 +5,7 @@ import NavigatorLink from "./NavigatorLink";
 
 export default function Navigator() {
   return (
-    <nav className=" bg-red-primary h-[12vh] flex justify-center items-center sticky top-0">
+    <nav className="w-full bg-red-primary h-[12vh] flex justify-center items-center fixed top-0">
       <div className="flex justify-between items-center container xl:px-0 px-10">
         {/* logo */}
         <a href="/" className="flex items-center gap-3 ">
