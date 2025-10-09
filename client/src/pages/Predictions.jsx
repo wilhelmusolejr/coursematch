@@ -6,7 +6,7 @@ import CoursePredictedItem from "../components/CoursePredictedItem";
 import { getPrediction } from "../api/predict";
 
 export default function Predictions() {
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState({ predictions: {} });
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [strandSelected, setStrandSelected] = useState("-");
   const [gpa, setGpa] = useState("");
@@ -36,14 +36,20 @@ export default function Predictions() {
     const isStrandInvalid = strandSelected === "-" || strandSelected === "";
     const nameUser = name === "" ? "user" : name;
 
-    console.log(nameUser);
-    console.log(nameError);
-
     setGpaError(isGpaValid);
     setCetError(isCetInvalid);
     setStandError(isStrandInvalid);
 
     if (isGpaValid || isCetInvalid || isStrandInvalid || nameError !== "") {
+      return;
+    }
+
+    if (gpa < 70 || cet < 50) {
+      setPageHeading("Uh oh, this is awkward...");
+      setPageDescription(
+        `It seems that your current academic data doesn’t match any existing college profiles in our system. Please review your inputs or try again with updated information.`
+      );
+      setHasSubmitted(true);
       return;
     }
 
@@ -187,7 +193,7 @@ export default function Predictions() {
       </div>
 
       {/* Form */}
-      {hasSubmitted || (
+      {Object.keys(result.predictions || {}).length === 0 && !hasSubmitted && (
         <div className="container mx-auto md:mb-40 lg:mb-60 md:px-10 ">
           <div className="container mx-auto border-1  border-black/20 px-10 py-14 lg:py-20 rounded-xl bg-white-primary">
             <div className="flex md:flex-row flex-col gap-10 md:gap-5 md:justify-center">
@@ -336,7 +342,7 @@ export default function Predictions() {
       )}
 
       {/* Result */}
-      {hasSubmitted && (
+      {Object.keys(result.predictions || {}).length > 0 && hasSubmitted && (
         <div className="container mx-auto px-10 mb-30">
           <div className="flex gap-7 flex-wrap flex-col lg:flex-row justify-center items-start">
             {result && result.predictions && (
