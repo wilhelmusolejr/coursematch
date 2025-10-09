@@ -8,6 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
+import { Link, Links } from "react-router-dom";
+
 import "../App.css";
 
 import FeatureCard from "../components/FeatureCard";
@@ -19,6 +21,8 @@ import Footer from "../components/Footer";
 
 import { getAllCourse } from "../api/getAllCourse";
 import { useEffect, useState } from "react";
+
+import { motion } from "framer-motion";
 
 function App() {
   const [courses, setCourses] = useState({ colleges: {} });
@@ -73,6 +77,30 @@ function App() {
     },
   ];
 
+  // ANIMATION
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       {/* HEADER */}
@@ -119,10 +147,17 @@ function App() {
           />
 
           {/* parent */}
-          <div className="flex flex-wrap gap-5 justify-center ">
+          <motion.div
+            className="flex flex-wrap gap-5 justify-center"
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
+                variantItem={item}
                 heading={feature.heading}
                 icon={feature.icon}
                 description={feature.description}
@@ -149,7 +184,7 @@ function App() {
             </div>
 
             <div className="bg-white hidden flex opacity-0 w-75 md:w-68 rounded-xl p-5 py-7 shadow-lg  flex-col border-1 border-black/30"></div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -166,7 +201,7 @@ function App() {
             </h2>
           </div>
 
-          <div
+          <motion.div
             className="
             grid 
             gap-5 
@@ -177,11 +212,19 @@ function App() {
             lg:grid-cols-[repeat(4,150px)]  
             xl:grid-cols-[repeat(4,200px)]
           "
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
           >
             {Object.entries(courses.colleges).map(([key, value]) => (
-              <CourseImageCard key={key} img_url={value["image"]} />
+              <CourseImageCard
+                key={key}
+                img_url={value["image"]}
+                variantItem={item}
+              />
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -252,9 +295,12 @@ function App() {
         </h2>
 
         {/* button */}
-        <div className="rounded-3xl bg-red-800 font-medium uppercase px-8 py-3 w-fit">
+        <Link
+          to="/recommendation"
+          className="rounded-3xl bg-red-800 font-medium uppercase px-8 py-3 w-fit"
+        >
           get started
-        </div>
+        </Link>
       </div>
 
       {/* footer */}
