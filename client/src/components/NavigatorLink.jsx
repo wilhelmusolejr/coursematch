@@ -17,7 +17,7 @@ export default function NavigatorLink({ link_name, link_path }) {
 
   return (
     <li>
-      <a href={correctPath}>{link_name}</a>
+      <a href={correctPath.toLowerCase()}>{link_name}</a>
     </li>
   );
 }
