@@ -31,6 +31,9 @@ export default function Predictions() {
 
   // handle data submit
   const handleSubmit = async (e) => {
+    // scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     const isGpaValid = gpa === "" || gpa < 0 || gpa > 100;
     const isCetInvalid = cet === "" || cet < 0 || cet > 100;
     const isStrandInvalid = strandSelected === "-" || strandSelected === "";
@@ -383,6 +386,25 @@ export default function Predictions() {
                 {paragraph}
               </p>
             ))}
+          </div>
+
+          <hr className="border-black/10" />
+
+          <div class="flex items-center space-x-4 justify-center mt-10 mb-20">
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.location.reload();
+              }}
+            >
+              Try again
+            </p>
+            <div class="border-l h-6 border-gray-400"></div>
+            {/* button */}
+            <div className="rounded-3xl bg-blue-800 font-medium uppercase px-8 py-3 w-fit text-white cursor-pointer">
+              Download results
+            </div>
           </div>
         </div>
       )}
