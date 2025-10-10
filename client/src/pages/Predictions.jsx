@@ -4,6 +4,7 @@ import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
 import CoursePredictedItem from "../components/CoursePredictedItem";
 import { getPrediction } from "../api/predict";
+import DownloadPdfButton from "../components/DownloadPdfButton";
 
 export default function Predictions() {
   const [result, setResult] = useState({ predictions: {} });
@@ -69,6 +70,8 @@ export default function Predictions() {
 
       let duplicates_model_no = [];
       const paragraph_summary = [];
+
+      console.log(prediction);
 
       // Loop each college if there is duplication in the result and store in duplicates_model_no array
       for (let college in prediction.predictions) {
@@ -146,6 +149,7 @@ export default function Predictions() {
 
       setSummaryParagraph(paragraph_summary);
       setPageHeading(`Hi, ${nameUser}! Here are your course recommendations`);
+      setName(nameUser);
       setPageDescription(
         `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]} GPA, and ${formData["STRAND"]} strand — to generate the most suitable department matches. Review your results below and discover where your strengths truly align.`
       );
@@ -400,11 +404,16 @@ export default function Predictions() {
             >
               Try again
             </p>
-            <div class="border-l h-6 border-gray-400"></div>
+            <div className="border-l h-6 border-gray-400"></div>
+
             {/* button */}
-            <div className="rounded-3xl bg-blue-800 font-medium uppercase px-8 py-3 w-fit text-white cursor-pointer">
-              Download results
-            </div>
+            <DownloadPdfButton
+              name={name}
+              CET={cet}
+              GPA={gpa}
+              STRAND={strandSelected}
+              colleges={result.predictions}
+            />
           </div>
         </div>
       )}
