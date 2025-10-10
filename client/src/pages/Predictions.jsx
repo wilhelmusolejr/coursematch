@@ -394,7 +394,7 @@ export default function Predictions() {
 
           <hr className="border-black/10" />
 
-          <div class="flex items-center space-x-4 justify-center mt-10 mb-20">
+          <div class="flex items-center md:flex-row flex-col gap-5 justify-center mt-10 mb-20">
             <p
               className="cursor-pointer"
               onClick={() => {
@@ -404,7 +404,9 @@ export default function Predictions() {
             >
               Try again
             </p>
-            <div className="border-l h-6 border-gray-400"></div>
+
+            <div className="border-l h-6 hidden md:block border-gray-400"></div>
+            <div className="border-b md:hidden w-10 border-gray-400"></div>
 
             {/* button */}
             <DownloadPdfButton
