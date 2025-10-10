@@ -1,0 +1,225 @@
+{
+  "College of Architecture": {
+    "id": 0,
+    "name": "College of Architecture",
+    "about": "The College of Architecture is committed to shaping future architects with strong foundations in design, planning, and sustainable construction. It emphasizes creativity, innovation, and technical skills to prepare graduates for the challenges of modern architecture and urban development.",
+    "program": [
+      "Bachelor of Science in Architecture",
+      "Master of Architecture"
+    ],
+    "career_path": [
+      "Licensed Architect",
+      "Urban Planner",
+      "Interior Designer",
+      "Construction Project Manager",
+      "Landscape Architect"
+    ]
+  },
+  "College of Asian and Islamic Studies": {
+    "id": 1,
+    "name": "College of Asian and Islamic Studies",
+    "about": "The College of Asian and Islamic Studies focuses on the history, culture, politics, and economies of Asian nations. It prepares students to engage in global affairs with a deeper understanding of Asia’s diverse societies, fostering expertise in regional development, diplomacy, and intercultural relations.",
+    "program": [
+      "Bachelor of Arts in Asian Studies",
+      "Bachelor of Arts in International Studies"
+    ],
+    "career_path": [
+      "Foreign Service Officer",
+      "International Relations Specialist",
+      "Researcher on Asian Affairs",
+      "Educator in Asian Studies",
+      "Policy Analyst"
+    ]
+  },
+  "College of Computing Studies": {
+    "id": 2,
+    "name": "College of Computing Studies",
+    "about": "The College of Computing Studies provides students with strong foundations in computer science, software engineering, and information technology. It equips learners with both theoretical knowledge and practical skills to innovate and solve problems using modern computing technologies.",
+    "program": [
+      "Bachelor of Science in Computer Science",
+      "Bachelor of Science in Information Technology",
+      "Bachelor of Science in Information Systems"
+    ],
+    "career_path": [
+      "Software Developer",
+      "Data Analyst",
+      "IT Specialist",
+      "System Administrator",
+      "UI/UX Designer"
+    ]
+  },
+  "College of Criminal Justice Education": {
+    "id": 3,
+    "name": "College of Criminal Justice Education",
+    "about": "The College of Criminal Justice Education focuses on the study of crime, criminal behavior, and the justice system. It prepares students to work in law enforcement, corrections, forensic science, and other fields related to crime prevention and investigation.",
+    "program": [
+      "Bachelor of Science in Criminology",
+      "Bachelor of Forensic Science"
+    ],
+    "career_path": [
+      "Police Officer",
+      "Forensic Specialist",
+      "Criminal Investigator",
+      "Correctional Officer",
+      "Security Consultant"
+    ]
+  },
+  "College of Teacher Education": {
+    "id": 4,
+    "name": "College of Teacher Education",
+    "about": "The College of Teacher Education trains future educators with the knowledge, skills, and values needed to teach effectively in basic and higher education. It emphasizes pedagogy, curriculum development, classroom management, and research in education.",
+    "program": [
+      "Bachelor of Elementary Education",
+      "Bachelor of Secondary Education",
+      "Bachelor of Physical Education",
+      "Bachelor of Early Childhood Education"
+    ],
+    "career_path": [
+      "Elementary School Teacher",
+      "High School Teacher",
+      "Education Researcher",
+      "School Administrator",
+      "Curriculum Developer"
+    ]
+  },
+  "College of Engineering": {
+    "id": 5,
+    "name": "College of Engineering",
+    "about": "The College of Engineering develops future engineers equipped with technical expertise, problem-solving skills, and innovation to address real-world challenges. It emphasizes strong foundations in mathematics, science, and engineering applications across various fields.",
+    "program": [
+      "Bachelor of Civil Engineering",
+      "Bachelor of Mechanical Engineering",
+      "Bachelor of Electrical Engineering",
+      "Bachelor of Electronics Engineering",
+      "Bachelor of Computer Engineering"
+    ],
+    "career_path": [
+      "Civil Engineer",
+      "Mechanical Engineer",
+      "Electrical Engineer",
+      "Electronics Engineer",
+      "Computer Engineer",
+      "Project Manager",
+      "Research and Development Engineer"
+    ]
+  },
+  "College of Home Economics": {
+    "id": 6,
+    "name": "College of Home Economics",
+    "about": "The College of Home Economics focuses on improving quality of life and family well-being through applied knowledge in nutrition, hospitality, interior design, clothing, and family resource management. It equips students with practical and entrepreneurial skills for personal and community development.",
+    "program": [
+      "Bachelor of Science in Home Economics",
+      "Bachelor of Science in Nutrition and Dietetics",
+      "Bachelor of Science in Hospitality Management",
+      "Bachelor of Science in Interior Design",
+      "Bachelor of Science in Clothing Technology"
+    ],
+    "career_path": [
+      "Nutritionist-Dietitian",
+      "Hospitality Manager",
+      "Interior Designer",
+      "Food Service Manager",
+      "Fashion Designer",
+      "Family Life Educator"
+    ]
+  },
+  "College of Liberal Arts": {
+    "id": 7,
+    "name": "College of Liberal Arts",
+    "about": "The College of Liberal Arts offers a broad education in the humanities and social sciences, developing critical thinking, communication, and research skills. It prepares students for diverse fields through flexible programs that emphasize culture, society, and human behavior.",
+    "program": [
+      "Bachelor of Arts in English",
+      "Bachelor of Arts in Political Science",
+      "Bachelor of Arts in Communication",
+      "Bachelor of Arts in Psychology",
+      "Bachelor of Arts in Sociology"
+    ],
+    "career_path": [
+      "Writer or Editor",
+      "Psychologist",
+      "Communications Specialist",
+      "Policy Analyst",
+      "Researcher",
+      "Educator"
+    ]
+  },
+  "College of Nursing": {
+    "id": 8,
+    "name": "College of Nursing",
+    "about": "The College of Nursing is dedicated to training students in the science and art of nursing, equipping them with the knowledge, clinical skills, and compassion needed to provide quality healthcare. It emphasizes both theoretical learning and hands-on hospital experience.",
+    "program": ["Bachelor of Science in Nursing"],
+    "career_path": [
+      "Registered Nurse",
+      "Clinical Instructor",
+      "Public Health Nurse",
+      "Nurse Practitioner",
+      "Healthcare Administrator"
+    ]
+  },
+  "College of Public Administration": {
+    "id": 9,
+    "name": "College of Public Administration",
+    "about": "The College of Public Administration develops leaders in governance, public policy, and community development. It provides students with knowledge of administrative systems, leadership principles, and ethical governance to prepare them for service in both government and non-government sectors.",
+    "program": ["Bachelor of Public Administration"],
+    "career_path": [
+      "Public Administrator",
+      "Policy Analyst",
+      "Government Officer",
+      "Community Development Specialist",
+      "Non-Governmental Organization (NGO) Leader"
+    ]
+  },
+  "College of Science and Mathematics": {
+    "id": 10,
+    "name": "College of Science and Mathematics",
+    "about": "The College of Science and Mathematics provides strong foundations in natural sciences and mathematics. It equips students with analytical, problem-solving, and research skills to prepare them for careers in education, research, industry, and scientific innovation.",
+    "program": [
+      "Bachelor of Science in Biology",
+      "Bachelor of Science in Chemistry",
+      "Bachelor of Science in Mathematics",
+      "Bachelor of Science in Physics"
+    ],
+    "career_path": [
+      "Research Scientist",
+      "Laboratory Analyst",
+      "Data Analyst",
+      "Science Educator",
+      "Environmental Consultant"
+    ]
+  },
+  "College of Social Sciences": {
+    "id": 11,
+    "name": "College of Social Sciences",
+    "about": "The College of Social Sciences focuses on the study of human behavior, society, culture, and governance. It trains students to critically analyze social issues and contribute to community development, policy-making, and social advocacy.",
+    "program": [
+      "Bachelor of Arts in Political Science",
+      "Bachelor of Arts in Sociology",
+      "Bachelor of Arts in Psychology",
+      "Bachelor of Arts in History"
+    ],
+    "career_path": [
+      "Policy Analyst",
+      "Community Development Officer",
+      "Social Researcher",
+      "Human Resource Specialist",
+      "Educator"
+    ]
+  },
+  "College of Sports Science and Phyiscal Education": {
+    "id": 12,
+    "name": "College of Sports Science and Phyiscal Education",
+    "about": "The College of Sports Science and Phyiscal Education is dedicated to training students in physical fitness, sports science, coaching, and recreational management. It prepares graduates to promote health, wellness, and athletic excellence in schools, communities, and professional sports organizations.",
+    "program": [
+      "Bachelor of Physical Education",
+      "Bachelor of Science in Exercise and Sports Science",
+      "Bachelor of Science in Recreation and Leisure Management"
+    ],
+    "career_path": [
+      "PE Teacher",
+      "Sports Coach",
+      "Athletic Trainer",
+      "Recreation Program Coordinator",
+      "Fitness Instructor"
+    ]
+  }
+}
