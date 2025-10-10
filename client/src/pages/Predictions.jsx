@@ -1,10 +1,15 @@
 import { React, useEffect, useState } from "react";
 
+import { faClose, faWarning } from "@fortawesome/free-solid-svg-icons";
+
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
 import CoursePredictedItem from "../components/CoursePredictedItem";
 import { getPrediction } from "../api/predict";
 import DownloadPdfButton from "../components/DownloadPdfButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import definitionData from "../data/definition.json";
 
 export default function Predictions() {
   const [result, setResult] = useState({ predictions: {} });
@@ -18,6 +23,8 @@ export default function Predictions() {
   const [cetError, setCetError] = useState(false);
   const [strandError, setStandError] = useState(false);
   const [nameError, setNameError] = useState("");
+
+  const [isServerOffline, setIsServerOffline] = useState(false);
 
   const [pageHeading, setPageHeading] = useState(
     "Find the Course That Fits You Best!"
@@ -70,8 +77,6 @@ export default function Predictions() {
 
       let duplicates_model_no = [];
       const paragraph_summary = [];
-
-      console.log(prediction);
 
       // Loop each college if there is duplication in the result and store in duplicates_model_no array
       for (let college in prediction.predictions) {
@@ -155,8 +160,73 @@ export default function Predictions() {
       );
       setResult(prediction);
       setHasSubmitted(true);
-    } catch {
+    } catch (e) {
       setResult("Error fetching prediction");
+      if (e.message === "Network Error") {
+        let chosenColleges = {};
+
+        let college_count = Object.keys(definitionData).length;
+        let random_id = [
+          Math.floor(Math.random() * college_count),
+          Math.floor(Math.random() * college_count),
+          Math.floor(Math.random() * college_count),
+        ];
+
+        let college_type = ["MIXED", "ALIGNED", "NOT_ALIGNED"];
+
+        let index = 1;
+        for (let id of random_id) {
+          for (let college in definitionData) {
+            if (definitionData[college].id === id) {
+              definitionData[college]["image"] =
+                "/images/colleges/" + definitionData[college]["name"] + ".png";
+              definitionData[college]["model_no"] = index;
+              chosenColleges[college_type[index - 1].toLowerCase()] =
+                definitionData[college];
+            }
+          }
+
+          index++;
+        }
+
+        const keys = Object.keys(chosenColleges);
+        const lastKey = keys[keys.length - 1];
+
+        const paragraph_summary = [];
+        let dump_paragraph = [];
+
+        for (let college in chosenColleges) {
+          let obj = chosenColleges[college];
+          const isLast = college === lastKey;
+
+          if (!isLast) {
+            dump_paragraph.push(
+              `Model ${obj.model_no} recommended ${obj.name},`
+            );
+          } else {
+            dump_paragraph.push(
+              `and Model ${obj.model_no} recommended ${obj.name}.`
+            );
+          }
+        }
+
+        paragraph_summary.push(intro_paragraph);
+        paragraph_summary.push(dump_paragraph.join(" "));
+
+        console.log({ predictions: chosenColleges });
+        console.log(paragraph_summary);
+
+        setResult({ predictions: chosenColleges });
+        setSummaryParagraph(paragraph_summary);
+        setHasSubmitted(true);
+        setIsServerOffline(true);
+
+        setPageHeading(`Hi, ${nameUser}! Here are your course recommendations`);
+        setName(nameUser);
+        setPageDescription(
+          `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]} GPA, and ${formData["STRAND"]} strand — to generate the most suitable department matches. Review your results below and discover where your strengths truly align.`
+        );
+      }
     }
   };
 
@@ -212,6 +282,37 @@ export default function Predictions() {
         <h1 className="text-3xl uppercase font-bold mb-5">{pageHeading}</h1>
         <p className="md:w-10/12 lg:w-6/12 m-auto">{pageDescription}</p>
       </div>
+
+      {isServerOffline && (
+        <div className="fixed inset-0 w-full h-full flex justify-center items-center">
+          <div className="max-w-xl p-10 rounded-lg border-1 border-black/20 md:mx-auto mx-10 shadow-lg relative z-10 bg-white">
+            <div className="flex flex-col md:flex-row justify-start items-start gap-5 ">
+              <div className="min-w-10 min-h-10 rounded-full bg-red-200 flex items-center justify-center">
+                <FontAwesomeIcon
+                  icon={faWarning}
+                  className="text-red-600 h-6 w-6 "
+                />
+              </div>
+              <div className="">
+                <h2 className="font-semibold text-xl text-yellow-600 mb-2">
+                  Server Offline
+                </h2>
+                <p className="text-[#111111] font-light">
+                  It looks like our server is temporarily unavailable. The
+                  results shown are just sample data generated automatically.
+                  Don’t worry — you can try again later once the service is back
+                  online.
+                </p>
+              </div>
+            </div>
+            <FontAwesomeIcon
+              icon={faClose}
+              onClick={() => setIsServerOffline(false)}
+              className="absolute top-5 right-5 h-6 w-6 cursor-pointer"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Form */}
       {Object.keys(result.predictions || {}).length === 0 && !hasSubmitted && (
