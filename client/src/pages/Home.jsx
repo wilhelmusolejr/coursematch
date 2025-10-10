@@ -24,6 +24,8 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 
+import definitionData from "../data/definition.json";
+
 function App() {
   const [courses, setCourses] = useState({ colleges: {} });
 
@@ -33,7 +35,13 @@ function App() {
         const data = await getAllCourse();
         setCourses(data);
       } catch (error) {
-        console.error("Error fetching courses:", error);
+        if (error.message === "Network Error") {
+          for (let college in definitionData) {
+            definitionData[college]["image"] =
+              "/images/colleges/" + definitionData[college]["name"] + ".png";
+          }
+          setCourses({ colleges: definitionData });
+        }
       }
     };
 
