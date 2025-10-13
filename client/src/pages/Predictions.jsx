@@ -65,6 +65,8 @@ export default function Predictions() {
     }
 
     // DATA from from
+    // DATA from from
+    // DATA from from
     let formData = {
       CET: parseFloat(cet),
       GPA: parseFloat(gpa),
