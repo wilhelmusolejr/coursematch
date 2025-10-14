@@ -11,6 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import definitionData from "../data/definition.json";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 export default function Predictions() {
   const [result, setResult] = useState({ predictions: {} });
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -18,6 +20,7 @@ export default function Predictions() {
   const [gpa, setGpa] = useState("");
   const [name, setName] = useState("");
   const [cet, setCet] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const [gpaError, setGpaError] = useState(false);
   const [cetError, setCetError] = useState(false);
@@ -39,9 +42,6 @@ export default function Predictions() {
 
   // handle data submit
   const handleSubmit = async (e) => {
-    // scroll to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
     const isGpaValid = gpa === "" || gpa < 0 || gpa > 100;
     const isCetInvalid = cet === "" || cet < 0 || cet > 100;
     const isStrandInvalid = strandSelected === "-" || strandSelected === "";
@@ -55,6 +55,9 @@ export default function Predictions() {
       return;
     }
 
+    // scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     if (gpa < 70 || cet < 50) {
       setPageHeading("Uh oh, this is awkward...");
       setPageDescription(
@@ -64,8 +67,9 @@ export default function Predictions() {
       return;
     }
 
-    // DATA from from
-    // DATA from from
+    // loader
+    setIsLoading(true);
+
     // DATA from from
     let formData = {
       CET: parseFloat(cet),
@@ -229,6 +233,9 @@ export default function Predictions() {
           `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]} GPA, and ${formData["STRAND"]} strand — to generate the most suitable department matches. Review your results below and discover where your strengths truly align.`
         );
       }
+    } finally {
+      // loader
+      setIsLoading(false);
     }
   };
 
@@ -272,6 +279,8 @@ export default function Predictions() {
     }
   }, [result.predictions, hasSubmitted]);
 
+  const handleClose = () => setIsServerOffline(false);
+
   return (
     <>
       {/* HEADER */}
@@ -285,34 +294,61 @@ export default function Predictions() {
         <p className="md:w-10/12 lg:w-6/12 m-auto">{pageDescription}</p>
       </div>
 
-      {isServerOffline && (
-        <div className="fixed inset-0 w-full h-full flex justify-center items-center">
-          <div className="max-w-xl p-10 rounded-lg border-1 border-black/20 md:mx-auto mx-10 shadow-lg relative z-10 bg-white">
-            <div className="flex flex-col md:flex-row justify-start items-start gap-5 ">
-              <div className="min-w-10 min-h-10 rounded-full bg-red-200 flex items-center justify-center">
+      <AnimatePresence>
+        {isServerOffline && (
+          <>
+            {/* Background overlay */}
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            />
+
+            {/* Modal box */}
+            <motion.div
+              className="fixed inset-0 w-full h-full flex justify-center items-center z-50"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <div className="max-w-xl p-10 rounded-lg border border-black/20 shadow-lg bg-white relative">
+                <div className="flex flex-col md:flex-row justify-start items-start gap-5">
+                  <div className="min-w-10 min-h-10 rounded-full bg-red-200 flex items-center justify-center">
+                    <FontAwesomeIcon
+                      icon={faWarning}
+                      className="text-red-600 h-6 w-6"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="font-semibold text-xl text-yellow-600 mb-2">
+                      Server Offline
+                    </h2>
+                    <p className="text-[#111111] font-light">
+                      It seems our server is currently offline. The results you
+                      see below are <em className="font-semibold">demo data</em>{" "}
+                      generated automatically for display purposes only. Please
+                      check back later once the service is back online.
+                    </p>
+                  </div>
+                </div>
+
                 <FontAwesomeIcon
-                  icon={faWarning}
-                  className="text-red-600 h-6 w-6 "
+                  icon={faClose}
+                  onClick={handleClose}
+                  className="absolute top-5 right-5 h-6 w-6 cursor-pointer text-gray-700 hover:text-red-600 transition-colors"
                 />
               </div>
-              <div className="">
-                <h2 className="font-semibold text-xl text-yellow-600 mb-2">
-                  Server Offline
-                </h2>
-                <p className="text-[#111111] font-light">
-                  It seems our server is currently offline. The results you see
-                  below are <em className="font-semibold">demo data</em>{" "}
-                  generated automatically for display purposes only. Please
-                  check back later once the service is back online.
-                </p>
-              </div>
-            </div>
-            <FontAwesomeIcon
-              icon={faClose}
-              onClick={() => setIsServerOffline(false)}
-              className="absolute top-5 right-5 h-6 w-6 cursor-pointer"
-            />
-          </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {isLoading && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
 
