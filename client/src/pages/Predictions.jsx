@@ -300,10 +300,10 @@ export default function Predictions() {
                   Server Offline
                 </h2>
                 <p className="text-[#111111] font-light">
-                  It looks like our server is temporarily unavailable. The
-                  results shown are just sample data generated automatically.
-                  Don’t worry — you can try again later once the service is back
-                  online.
+                  It seems our server is currently offline. The results you see
+                  below are <em className="font-semibold">demo data</em>{" "}
+                  generated automatically for display purposes only. Please
+                  check back later once the service is back online.
                 </p>
               </div>
             </div>
