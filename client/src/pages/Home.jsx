@@ -1,3 +1,8 @@
+// React
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+// FontAwesome Icons
 import {
   faLaptopCode,
   faBrain,
@@ -8,10 +13,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-import { Link, Links } from "react-router-dom";
-
+// CSS
 import "../App.css";
 
+// Component
 import FeatureCard from "../components/FeatureCard";
 import SectionHeading from "../components/SectionHeading";
 import CourseImageCard from "../components/CourseImageCard";
@@ -19,12 +24,12 @@ import BoxLinkItem from "../components/BoxLinkItem";
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
 
+// data // api
 import { getAllCourse } from "../api/getAllCourse";
-import { useEffect, useState } from "react";
-
-import { motion } from "framer-motion";
-
 import definitionData from "../data/definition.json";
+
+// Framer Motion
+import { motion } from "framer-motion";
 
 function App() {
   const [courses, setCourses] = useState({ colleges: {} });
