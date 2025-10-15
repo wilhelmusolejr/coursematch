@@ -151,7 +151,7 @@ function App() {
       </div>
 
       {/* features */}
-      <div className="bg-white-primary py-30 px-10">
+      <div id="features" className="bg-white-primary py-30 px-10">
         <div className="container mx-auto">
           {/* heading */}
           <SectionHeading
@@ -202,7 +202,7 @@ function App() {
       </div>
 
       {/* album of courses */}
-      <div className="py-30 px-10 courses-background">
+      <div id="courses" className="py-30 min-h-[50vh] px-10 courses-background">
         <div className="container mx-auto">
           {/* heading */}
           <div className="capitalize mb-20 flex justify-center items-center flex-col gap-5">
@@ -242,7 +242,7 @@ function App() {
       </div>
 
       {/* about us */}
-      <div className="py-30 lg:px-10">
+      <div id="about" className="py-30 lg:px-10">
         <div className="container mx-auto">
           {/* heading */}
           <SectionHeading tagline="About us" heading="What drives us" />
