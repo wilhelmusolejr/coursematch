@@ -34,24 +34,28 @@ import { motion } from "framer-motion";
 function App() {
   const [courses, setCourses] = useState({ colleges: {} });
 
+  // let isBackend = import.meta.env.VITE_BACKEND_URL;
+  let isBackendAlive = false;
+
   useEffect(() => {
     const fetchCourses = async () => {
-      try {
-        const data = await getAllCourse();
-        setCourses(data);
-      } catch (error) {
-        if (error.message === "Network Error") {
-          for (let college in definitionData) {
-            definitionData[college]["image"] =
-              "/images/colleges/" + definitionData[college]["name"] + ".png";
-          }
-          setCourses({ colleges: definitionData });
+      if (isBackendAlive) {
+        try {
+          const data = await getAllCourse();
+          setCourses(data);
+        } catch (error) {
+          console.error("Error fetching courses:", error);
         }
+      } else {
+        for (let college in definitionData) {
+          definitionData[college]["image"] =
+            "/images/colleges/" + definitionData[college]["name"] + ".png";
+        }
+        setCourses({ colleges: definitionData });
       }
     };
-
     fetchCourses();
-  }, []);
+  }, [isBackendAlive]);
 
   useEffect(() => {
     document.title = "Discover Your Path | CourseMatch";
