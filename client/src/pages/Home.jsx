@@ -35,7 +35,7 @@ function App() {
   const [courses, setCourses] = useState({ colleges: {} });
 
   // let isBackend = import.meta.env.VITE_BACKEND_URL;
-  let isBackendAlive = false;
+  let isBackendAlive = import.meta.env.VITE_BACKEND_ALIVE === "true";
 
   useEffect(() => {
     const fetchCourses = async () => {
