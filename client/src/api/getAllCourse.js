@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/courses/";
+const API_URL = import.meta.env.VITE_DJANGO_API_URL;
 
 export const getAllCourse = async (payload) => {
   try {
