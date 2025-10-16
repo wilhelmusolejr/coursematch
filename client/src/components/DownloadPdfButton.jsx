@@ -188,7 +188,7 @@ export default function DownloadPdfButton({
         >
           For more info, visit{" "}
           <a
-            href="https://test.com"
+            href="https://coursematch.vercel.app/"
             style={{ color: "blue", textDecoration: "underline" }}
           >
             https://test.com
