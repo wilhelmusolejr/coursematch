@@ -59,3 +59,7 @@
 .text-white-tertiary {
   color: #e5e5e5; /* softer gray-white */
 }
+
+.lobster {
+  font-family: "Lobster", sans-serif;
+}

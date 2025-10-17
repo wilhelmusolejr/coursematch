@@ -130,7 +130,9 @@ function App() {
           <div className="w-full h-full px-5 lg:px-0 header-background py-20 md:pt-30 rounded-lg md:text-center">
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10 ">
-              <h2 className="text-4xl font-bold">FindMyCollege</h2>
+              <h2 className="md:text-5xl font-bold lobster tracking-widest text-2xl">
+                FindMyCollege
+              </h2>
               <p className="font-medium text-xl tracking-wide">
                 Personalized college prediction system
               </p>

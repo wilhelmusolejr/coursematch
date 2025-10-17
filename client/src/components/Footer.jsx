@@ -19,7 +19,7 @@ export default function Footer() {
           {/* logo */}
           <div className="flex items-center gap-3 mb-5">
             <img src="/images/logo.png" alt="" className="w-10 h-10" />
-            <h2>CourseMatch</h2>
+            <h2 className="text-xl lobster">FindMyCollege</h2>
           </div>
 
           <p className="text-white-secondary font-light leading-relaxed mb-16 ">

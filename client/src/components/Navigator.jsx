@@ -15,10 +15,10 @@ export default function Navigator() {
       <nav className="w-full bg-red-primary z-50 h-[12vh] flex justify-center items-center fixed top-0 transition-all duration-300">
         <div className="flex justify-between items-center container xl:px-0 px-10">
           {/* logo */}
-          <a href="/" className="flex items-center gap-3 ">
+          <a href="/" className="flex items-center gap-3 logo">
             <div className="w-10 h-10 border-1 rounded-lg hidden"></div>
             <img src="/images/logo.png" alt="" className="w-10 h-10" />
-            <h2>FindMyCollege</h2>
+            <h2 className="text-xl lobster">FindMyCollege</h2>
           </a>
 
           <div className="hidden md:block">
