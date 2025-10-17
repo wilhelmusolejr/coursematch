@@ -21,21 +21,23 @@ export default function Navigator() {
             <h2 className="text-xl lobster">FindMyCollege</h2>
           </a>
 
-          <div className="hidden md:block">
-            <ul className="flex gap-5 uppercase lg:flex ">
+          <div className="hidden lg:block">
+            <ul className="flex gap-5 uppercase items-center lg:flex ">
               <NavigatorLink link_path="/" link_name="Home" />
               <NavigatorLink link_path="#Features" link_name="Features" />
               <NavigatorLink link_path="#Courses" link_name="Courses" />
               <NavigatorLink link_path="#About" link_name="About us" />
-              <NavigatorLink
-                link_path="Recommendation"
-                link_name="Recommendation"
-              />
+              <a
+                href="/recommendation"
+                className="rounded-3xl bg-blue-800 hover:bg-blue-900 transition-colors duration-200 font-medium uppercase px-5 py-3 w-fit"
+              >
+                Recommendation
+              </a>
             </ul>
           </div>
 
           {/* hamburger */}
-          <div className="md:hidden" onClick={() => setOpenNav(true)}>
+          <div className="lg:hidden" onClick={() => setOpenNav(true)}>
             <FontAwesomeIcon icon={faBars} className=" text-3xl" />
           </div>
         </div>
@@ -66,10 +68,12 @@ export default function Navigator() {
                   <NavigatorLink link_path="#Features" link_name="Features" />
                   <NavigatorLink link_path="#Courses" link_name="Courses" />
                   <NavigatorLink link_path="#About" link_name="About us" />
-                  <NavigatorLink
-                    link_path="Recommendation"
-                    link_name="Recommendation"
-                  />
+                  <a
+                    href="/recommendation"
+                    className="rounded-3xl bg-blue-800 hover:bg-blue-900 transition-colors duration-200 font-medium uppercase px-5 py-3 w-fit"
+                  >
+                    Recommendation
+                  </a>
                 </ul>
               </div>
 

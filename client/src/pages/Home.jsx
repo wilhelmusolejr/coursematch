@@ -292,8 +292,8 @@ function App() {
                 {/*  */}
                 <BoxLinkItem
                   faIcon={faLinkedinIn}
-                  pathUrl="https://linkedin.com/wilhelmus"
-                  pathName="linkedin.com/wilhelmus"
+                  pathUrl="https://www.linkedin.com/in/wilhelmusolejr/"
+                  pathName="linkedin.com/in/wilhelmusolejr"
                   className="md:w-10/12"
                 />
 

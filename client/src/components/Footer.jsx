@@ -1,7 +1,12 @@
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faPhone, faMapPin } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAt,
+  faPhone,
+  faMapPin,
+  faLaptopCode,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faLinkedinIn,
   faFacebookF,
@@ -117,30 +122,23 @@ export default function Footer() {
               </div>
 
               <BoxLinkItem
-                faIcon={faFacebookF}
-                pathUrl="https://linkedin.com/wilhelmus"
+                faIcon={faLinkedinIn}
+                pathUrl="https://www.linkedin.com/in/wilhelmusolejr/"
                 pathName="Wilhelmus Ole"
                 className="bg-black/10"
               />
 
               <BoxLinkItem
-                faIcon={faGithubAlt}
-                pathUrl="https://linkedin.com/wilhelmus"
-                pathName="wilhelmus"
-                className="bg-black/10"
-              />
-
-              <BoxLinkItem
-                faIcon={faGithubAlt}
-                pathUrl="https://linkedin.com/wilhelmus"
+                faIcon={faLaptopCode}
+                pathUrl="https://wilhelmus.vercel.app"
                 pathName="wihelmus.vercel.app"
                 className="bg-black/10"
               />
 
               <BoxLinkItem
-                faIcon={faLinkedinIn}
-                pathUrl="linkedin.com/wilhelmus"
-                pathName="wilhelmus"
+                faIcon={faGithubAlt}
+                pathUrl="https://github.com/wilhelmusolejr"
+                pathName="wilhelmusolejr"
                 className="bg-black/10"
               />
             </div>
