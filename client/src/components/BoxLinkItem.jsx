@@ -12,7 +12,7 @@ export default function BoxLinkItem({
   return (
     <a
       href={pathUrl}
-      className={`border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center gap-5 border-black/10 ${className}`}
+      className={`border-1 rounded-md py-3 px-3 lg:p-3 flex justify-between items-center gap-5 border-black/10 hover:bg-black/5 transition-colors duration-200 ${className}`}
     >
       {/*  */}
       <div className="flex gap-3 items-center">
