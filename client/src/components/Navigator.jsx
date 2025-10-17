@@ -18,7 +18,7 @@ export default function Navigator() {
           <a href="/" className="flex items-center gap-3 ">
             <div className="w-10 h-10 border-1 rounded-lg hidden"></div>
             <img src="/images/logo.png" alt="" className="w-10 h-10" />
-            <h2>CourseMatch</h2>
+            <h2>FindMyCollege</h2>
           </a>
 
           <div className="hidden md:block">

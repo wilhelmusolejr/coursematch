@@ -30,7 +30,7 @@ export default function Predictions() {
   const [isServerOffline, setIsServerOffline] = useState(false);
 
   const [pageHeading, setPageHeading] = useState(
-    "Find the Course That Fits You Best!"
+    "Find the College That Fits You Best!"
   );
   const [pageDescription, setPageDescription] = useState(
     "Take the first step toward your future! Provide your academic details, and our system will guide you to the college or department that aligns perfectly with your interests and potential."
@@ -159,7 +159,7 @@ export default function Predictions() {
       }
 
       setSummaryParagraph(paragraph_summary);
-      setPageHeading(`Hi, ${nameUser}! Here are your course recommendations`);
+      setPageHeading(`Hi, ${nameUser}! Here are your college recommendations`);
       setName(nameUser);
       setPageDescription(
         `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]} GPA, and ${formData["STRAND"]} strand — to generate the most suitable department matches. Review your results below and discover where your strengths truly align.`
@@ -227,7 +227,9 @@ export default function Predictions() {
         setHasSubmitted(true);
         setIsServerOffline(true);
 
-        setPageHeading(`Hi, ${nameUser}! Here are your course recommendations`);
+        setPageHeading(
+          `Hi, ${nameUser}! Here are your college recommendations`
+        );
         setName(nameUser);
         setPageDescription(
           `Our intelligent prediction system has processed your academic data — ${formData["CET"]} CET score, ${formData["GPA"]} GPA, and ${formData["STRAND"]} strand — to generate the most suitable department matches. Review your results below and discover where your strengths truly align.`
@@ -269,13 +271,13 @@ export default function Predictions() {
     let college_count = Object.keys(result.predictions || {}).length;
 
     if (college_count === 0 && !hasSubmitted) {
-      document.title = "Recommendation | CourseMatch";
+      document.title = "Recommendation | FindMyCollege";
     } else if (college_count > 0 && hasSubmitted) {
       document.title = `We found ${college_count} college${
         college_count > 1 ? "s" : ""
-      } for you! | CourseMatch`;
+      } for you! | FindMyCollege`;
     } else {
-      document.title = "We Couldn’t Find a Match | CourseMatch";
+      document.title = "We Couldn’t Find a Match | FindMyCollege";
     }
   }, [result.predictions, hasSubmitted]);
 

@@ -58,7 +58,7 @@ function App() {
   }, [isBackendAlive]);
 
   useEffect(() => {
-    document.title = "Discover Your Path | CourseMatch";
+    document.title = "Discover Your Path | FindMyCollege";
   }, []);
 
   let features = [
@@ -130,18 +130,19 @@ function App() {
           <div className="w-full h-full px-5 lg:px-0 header-background py-20 md:pt-30 rounded-lg md:text-center">
             {/* 1 */}
             <div className="flex  flex-col gap-2 mb-10 ">
-              <h2 className="text-4xl font-bold">CourseMatch</h2>
+              <h2 className="text-4xl font-bold">FindMyCollege</h2>
               <p className="font-medium text-xl tracking-wide">
-                Personalized course prediction system
+                Personalized college prediction system
               </p>
             </div>
 
             {/* 2 */}
             <p className="mb-16 leading-relaxed font-extralight lg:w-5/12 md:w-10/12 m-auto ">
-              Discover your ideal academic path with CourseMatch, an intelligent
-              system designed for Western Mindanao State University to predict
-              the perfect course for you based on your unique answers and
-              preferences.
+              Discover your ideal academic path with FindMyCollege, an
+              intelligent system designed for{" "}
+              <span className="italic">Western Mindanao State University</span>{" "}
+              to predict the perfect college for you based on your unique
+              answers and preferences.
             </p>
 
             {/* button */}
