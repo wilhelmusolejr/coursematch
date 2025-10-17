@@ -489,7 +489,7 @@ export default function Predictions() {
             {/* button */}
             <div className=" text-white flex items-center justify-center mt-20">
               <div
-                className="rounded-3xl cursor-pointer bg-blue-800 font-medium uppercase px-8 py-3 w-fit"
+                className="rounded-3xl cursor-pointer bg-blue-800 hover:bg-blue-900 transition-colors duration-200 font-medium uppercase px-8 py-3 w-fit"
                 onClick={(e) => handleSubmit(e)}
               >
                 Submit

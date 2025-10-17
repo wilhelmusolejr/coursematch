@@ -146,9 +146,12 @@ function App() {
 
             {/* button */}
             <div className="flex md:items-center md:justify-center">
-              <div className="rounded-3xl bg-blue-800 font-medium uppercase px-8 py-3 w-fit">
+              <a
+                href="/recommendation"
+                className="rounded-3xl bg-blue-800 hover:bg-blue-900 transition-colors duration-200 font-medium uppercase px-8 py-3 w-fit"
+              >
                 get started
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -311,13 +314,12 @@ function App() {
           Ready to find your perfect course?
         </h2>
 
-        {/* button */}
-        <Link
-          to="/recommendation"
-          className="rounded-3xl bg-red-800 font-medium uppercase px-8 py-3 w-fit"
+        <a
+          href="/recommendation"
+          className="rounded-3xl bg-red-800 hover:bg-red-900 font-medium uppercase px-8 py-3 w-fit transition-colors duration-200"
         >
           get started
-        </Link>
+        </a>
       </div>
 
       {/* footer */}

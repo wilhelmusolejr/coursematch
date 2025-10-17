@@ -199,7 +199,7 @@ export default function DownloadPdfButton({
       {/* BUTTON */}
       <div
         onClick={handleDownload}
-        className="rounded-3xl bg-blue-800 font-medium uppercase px-8 py-3 w-fit text-white cursor-pointer"
+        className="rounded-3xl bg-blue-800 hover:bg-blue-900 transition-colors font-medium uppercase px-8 py-3 w-fit text-white cursor-pointer"
       >
         Download results
       </div>
