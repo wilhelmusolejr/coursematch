@@ -17,6 +17,7 @@ import {
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 // CSS
+// CSS
 import "../App.css";
 
 // Component

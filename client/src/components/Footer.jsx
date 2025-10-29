@@ -22,6 +22,7 @@ export default function Footer() {
         {/* 1 */}
         <div className="lg:w-3/12 md:w-6/12">
           {/* logo */}
+          {/* logo */}
           <div className="flex items-center gap-3 mb-5">
             <img src="/images/logo.png" alt="" className="w-10 h-10" />
             <h2 className="text-xl lobster">FindMyCollege</h2>
