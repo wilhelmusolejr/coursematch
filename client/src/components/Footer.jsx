@@ -20,6 +20,7 @@ export default function Footer() {
     <footer className="pt-30  bg-red-primary text-white border-t-10 border-red-500">
       <div className="container mx-auto flex justify-between flex-col lg:flex-row gap-10 xl:px-0 px-10 pb-30">
         {/* 1 */}
+        {/* 1 */}
         <div className="lg:w-3/12 md:w-6/12">
           {/* logo */}
           {/* logo */}
